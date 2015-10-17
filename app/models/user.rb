@@ -1,3 +1,4 @@
+# class User
 class User
   include Mongoid::Document
   # Include default devise modules. Others available are:
@@ -22,6 +23,10 @@ class User
   field :last_sign_in_at,    type: Time
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
+
+  # Associations
+  has_and_belongs_to_many :assesments
+  has_many :answers
 
   ## Confirmable
   # field :confirmation_token,   type: String
