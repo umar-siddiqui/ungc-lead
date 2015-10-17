@@ -4,6 +4,6 @@ class Assesment
   include Mongoid::Timestamps
 
   # Associations
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :users, dependent: :destroy
   has_many :sections, dependent: :destroy
 end

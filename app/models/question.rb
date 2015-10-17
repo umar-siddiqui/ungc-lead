@@ -7,6 +7,6 @@ class Question
 
   # Associations
   belongs_to :section
-  has_many :options
-  has_many :answers
+  has_many :options, dependent: :destroy
+  has_many :answers, dependent: :destroy
 end

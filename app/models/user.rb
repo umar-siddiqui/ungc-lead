@@ -25,8 +25,8 @@ class User
   field :last_sign_in_ip,    type: String
 
   # Associations
-  has_and_belongs_to_many :assesments
-  has_many :answers
+  has_and_belongs_to_many :assesments, dependent: :destroy
+  has_many :answers, dependent: :destroy
 
   ## Confirmable
   # field :confirmation_token,   type: String
