@@ -1,0 +1,13 @@
+<div class="navbar navbar-static-top" style="background-color:#215C6C;">
+    <div class="navbar-inner">
+        <div class="container">
+          <div class="pull-right">
+              <ul class="nav nav-pills pull-right" ng-controller="SessionController" style="padding-top:5%;">
+                <li role="presentation"><a href="javascript:void(0)" style="color:white;">Home</a></li>
+                <li role="presentation" ng-hide="isAuthenticated"><a href="#/sign_in" style="color:white;">Sign In</a></li>
+                <li role="presentation" ng-show="isAuthenticated"><a href ="javascript:void(0)" ng-click="logout()" style="color:white;">Logout</a></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+ </div>
