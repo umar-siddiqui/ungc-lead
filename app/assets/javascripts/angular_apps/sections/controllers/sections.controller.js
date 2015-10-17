@@ -36,7 +36,12 @@
     }
 
     $scope.fetchQuestions = function (section){
-      $state.go('sections.questions', { section_id: section.id });
+      if(!section.submitted) {
+        $scope.section = section;
+        $state.go('sections.questions', { section_id: section._id });
+      } else{
+        alert('Section Already Submitted');
+      }
     };
 
     init();

@@ -14,7 +14,8 @@ class SectionsController < ApplicationController
           .where(assesment_id: params[:assesment_id], section_id: nil)
 
         render json: {
-          sections: sections.map { |section| section.self_and_descendents }
+          sections: sections
+            .map { |section| section.self_and_descendents(current_user._id) }
         }
       end
     end
