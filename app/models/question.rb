@@ -3,6 +3,7 @@ class Question
   include Mongoid::Document
 
   # Attributes
+  field :description
   field :control_type
 
   # Associations

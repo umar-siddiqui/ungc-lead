@@ -4,4 +4,15 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
   respond_to :html, :json
+
+  protected
+
+  def doc_not_found
+    render json: { errors: ['Document Not Found'] }, status: :not_found
+  end
+
+  def doc_invalid(exception)
+    render json: { errors: exception.document.errors },
+           status: :unprocessable_entity
+  end
 end

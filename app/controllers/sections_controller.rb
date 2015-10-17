@@ -7,5 +7,16 @@ class SectionsController < ApplicationController
   end
 
   def index
+    respond_to do |format|
+      format.html
+      format.json do
+        sections = Section
+          .where(assesment_id: params[:assesment_id], section_id: nil)
+
+        render json: {
+          sections: sections.map { |section| section.self_and_descendents }
+        }
+      end
+    end
   end
 end

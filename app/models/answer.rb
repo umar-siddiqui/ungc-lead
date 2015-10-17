@@ -9,5 +9,5 @@ class Answer
   belongs_to :user
   belongs_to :question
   belongs_to :section
-  belongs_to :assesmets
+  belongs_to :assesment
 end

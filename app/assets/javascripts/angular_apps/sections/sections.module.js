@@ -25,7 +25,7 @@
 
     $stateProvider
       .state('sections.questions', {
-        url: '/:id/questions',
+        url: '/:section_id/questions',
         templateUrl: 'sections/questions.html',
         controller: 'QuestionsController'
       });

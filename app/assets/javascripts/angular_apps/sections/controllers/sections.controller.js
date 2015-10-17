@@ -4,66 +4,47 @@
   angular
     .module('ungc.session')
     .controller('SectionsController', [
-      '$scope', '$window', '$state',
+      '$scope', '$window', '$state', '$http', '$stateParams',
       SectionsController
     ]);
 
-  function SectionsController($scope, $window, $state) {
-    $scope.list = [
-      {
-        "id": 1,
-        "title": "1. dragon-breath",
-        "items": []
-      },
-      {
-        "id": 2,
-        "title": "2. moiré-vision",
-        "items": [
-          {
-            "id": 21,
-            "title": "2.1. tofu-animation",
-            "items": [
-              {
-                "id": 211,
-                "title": "2.1.1. spooky-giraffe",
-                "items": []
-              },
-              {
-                "id": 212,
-                "title": "2.1.2. bubble-burst",
-                "items": []
-              }
-            ]
-          },
-          {
-            "id": 22,
-            "title": "2.2. barehand-atomsplitting",
-            "items": []
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "3. unicorn-zapper",
-        "items": []
-      },
-      {
-        "id": 4,
-        "title": "4. romantic-transclusion",
-        "items": []
+  function SectionsController($scope, $window, $state, $http, $stateParams) {
+
+    function init(){
+      getSectionTree();
+    }
+
+    function getSectionTree(){
+
+      function successCallback(response) {
+        $scope.sections = response.data['sections'];
+        console.log(response);
       }
-    ];
+
+      function errorCallback(response) {
+        alert('Error')
+      }
+
+      return $http({
+        method: 'GET',
+        url: '/sections.json',
+        params: {
+          assesment_id: $stateParams.assesment_id || '562262cd2227cb669c000000'
+        }
+      }).then(successCallback, errorCallback);
+
+    }
 
     $scope.fetchQuestions = function (section){
-      $state.go('sections.questions', { id: section.id });
+      $state.go('sections.questions', { section_id: section.id });
     };
 
+    init();
 
     $scope
       .$on('onSelectNode', function (event, section) {
         $scope.fetchQuestions(section)
       });
-
   }
 
 })();
