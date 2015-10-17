@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UngcLead</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag @asset_module || "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="<%= controller.controller_name %>" ng-app="<%= @angular_module %>">
+
+  <nav>
+    <ul class="nav nav-pills pull-right" ng-controller="SessionController">
+      <li role="presentation"><a href="javascript:void(0)">Home</a></li>
+      <li role="presentation" ng-hide="isAuthenticated">
+        <a href="#/sign_in">Sign In</a>
+      </li>
+      <li role="presentation" ng-show="isAuthenticated">
+        <a href ="javascript:void(0)" ng-click="logout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+  <%= yield %>
+</body>
+
+</html>
