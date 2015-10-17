@@ -1,3 +1,4 @@
+# class AuthenticationController
 class AuthenticationController < ApplicationController
   before_action :init_ng_module
 
