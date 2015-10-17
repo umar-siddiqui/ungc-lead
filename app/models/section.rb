@@ -4,7 +4,6 @@ class Section
 
   # Attributes
   field :name, type: String
-  field :status
   field :description
 
   # Associations
@@ -14,23 +13,25 @@ class Section
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
 
-  def descendents
+  def descendents(user_id)
     sections.map do |child|
       {
-        id: child.id,
+        _id: child.id,
+        assesment_id: child.assesment_id,
         name: child.name,
-        status: child.status,
-        sections: child.descendents
+        sections: child.descendents(user_id),
+        submitted: Answer.where(user_id: user_id, section_id: child._id).count > 0
       }
     end
   end
 
-  def self_and_descendents
+  def self_and_descendents(user_id)
     {
-      id: id,
+      _id: id,
+      assesment_id: assesment_id,
       name: name,
-      status: status,
-      sections: descendents
+      sections: descendents(user_id),
+      submitted: Answer.where(user_id: user_id, section_id: _id).count > 0
     }
   end
 end

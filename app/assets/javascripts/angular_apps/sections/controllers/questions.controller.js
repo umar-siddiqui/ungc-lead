@@ -19,7 +19,7 @@
 
       function successCallback(response) {
         $scope.questions = response.data['questions'];
-        $scope.section = response.data['section'];
+        // $scope.section = response.data['section'];
       }
 
       function errorCallback(response) {
@@ -36,6 +36,7 @@
 
       function successCallback(response) {
         console.log(response);
+        $scope.section.submitted = true;
         alert('Section Questions Saved');
         $state.go('sections');
       }

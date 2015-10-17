@@ -5,23 +5,13 @@ class AnswersController < ApplicationController
   def create
     answers = params[:answers].map do |ans|
       answer = Answer
-        .new(ans.permit(:question_id, :section_id, :assesment_id, :value))
+        .new(
+          ans.permit(:question_id, :section_id, :assesment_id, :value)
+            .merge({ user_id: current_user._id })
+        )
       answer.save!
       answer
     end
-
-    section = Section.find(answers.first.section_id)
-    section.status = 'submitted'
-    section.save!
-
     render json: { answers: answers }
-  end
-
-  private
-
-  def permitted_params
-    params
-      .require(:answers)
-      .permit(:question_id, :section_id, :assesment_id, :value)
   end
 end
