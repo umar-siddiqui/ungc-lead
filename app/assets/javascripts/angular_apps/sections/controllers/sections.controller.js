@@ -12,6 +12,7 @@
 
     function init(){
       getSectionTree();
+      $scope.canPublish = true;
     }
 
     function getSectionTree(){
@@ -43,6 +44,19 @@
         alert('Section Already Submitted');
       }
     };
+
+    function checkPublishable(sections){
+      angular.forEach(sections, function(section){
+        if (!section.submitted) { return $scope.canPublish = false; };
+        checkPublishable(section.sections)
+      });
+    }
+
+    $scope.checkCanPublish = function(){
+      checkPublishable($scope.sections);
+      console.log('######################');
+      console.log($scope.canPublish);
+    }
 
     init();
 
