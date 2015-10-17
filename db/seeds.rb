@@ -96,7 +96,7 @@ quest3.options.create([
   { label: 'high',value: '3' }])
 
 
-sect03.sections
+sect03 = sect0.sections
   .create(
    name: 'Role of Executive Management (EM) in developing sustainability agenda and goals',
    assesment_id: assesment._id)
@@ -136,7 +136,7 @@ quest3.options.create([
   { label: 'medium',value: '2' },
   { label: 'high',value: '3' }]
 
-sect04.sections
+sect04 = sect0.sections
   .create(
    name: 'Goal Setting',
    assesment_id: assesment._id)
@@ -176,7 +176,7 @@ quest3.options.create([
   { label: 'medium',value: '2' },
   { label: 'high',value: '3' }]
 
-sect05.sections
+sect05 = sect0.sections
   .create(
    name: 'Case for Change/Aspiration',
    assesment_id: assesment._id)
