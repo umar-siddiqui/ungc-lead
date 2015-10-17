@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :authentication, only: [:index]
   resources :sections, only: [:index]
   resources :dashboard, only: [:index]#, :show]
-  resources :assesment, only: [:create]#, :edit, :update]
+  resources :assesment, only: [:index, :create]#, :edit, :update]
 
   root to: "authentication#index"
 end
