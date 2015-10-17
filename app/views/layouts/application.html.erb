@@ -8,19 +8,12 @@
 
 <body class="<%= controller.controller_name %>" ng-app="<%= @angular_module %>">
 
-  <nav>
-    <ul class="nav nav-pills pull-right" ng-controller="SessionController">
-      <li role="presentation"><a href="javascript:void(0)">Home</a></li>
-      <li role="presentation" ng-hide="isAuthenticated">
-        <a href="#/sign_in">Sign In</a>
-      </li>
-      <li role="presentation" ng-show="isAuthenticated">
-        <a href ="javascript:void(0)" ng-click="logout()">Logout</a>
-      </li>
-    </ul>
-  </nav>
+  <%= render partial: "layouts/header" %>
 
-  <%= yield %>
+    <div class="contentWrap">
+      <%= yield %>
+    </div> <!-- /container -->
+
 </body>
 
 </html>
