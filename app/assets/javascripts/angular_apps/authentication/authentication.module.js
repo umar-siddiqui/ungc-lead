@@ -15,7 +15,7 @@
     config
   ]);
 
-  function config($stateProvider, $urlRouterProvider, $httpProvider) {
+  function config($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -31,10 +31,6 @@
       });
 
     $urlRouterProvider.otherwise('/');
-
-    $httpProvider
-      .defaults.headers
-      .common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
   }
 
 })();

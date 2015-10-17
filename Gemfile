@@ -16,7 +16,7 @@ gem 'bower-rails', '0.10.0'
 
 gem 'angular-rails-templates', '0.2.0'
 
-gem 'angular_rails_csrf'
+gem 'angular_rails_csrf', '1.0.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
