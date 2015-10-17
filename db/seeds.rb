@@ -55,8 +55,7 @@ quest3.options.create([
 
 
 
-sect02 = sect0.sections
-  .create(
+sect02 = sect0.sections.create(
    name: 'Sustainability Office/Function (SO)',
    assesment_id: assesment._id)
 
@@ -96,8 +95,7 @@ quest3.options.create([
   { label: 'high',value: '3' }])
 
 
-sect03 = sect0.sections
-  .create(
+sect03 = sect0.sections.create(
    name: 'Role of Executive Management (EM) in developing sustainability agenda and goals',
    assesment_id: assesment._id)
 
@@ -134,10 +132,9 @@ quest3 = sect03.questions.create(
 quest3.options.create([
   { label: 'low',value: '1' },
   { label: 'medium',value: '2' },
-  { label: 'high',value: '3' }]
+  { label: 'high',value: '3' }])
 
-sect04 = sect0.sections
-  .create(
+sect04 = sect0.sections.create(
    name: 'Goal Setting',
    assesment_id: assesment._id)
 
@@ -174,10 +171,9 @@ quest3 = sect04.questions.create(
 quest3.options.create([
   { label: 'low',value: '1' },
   { label: 'medium',value: '2' },
-  { label: 'high',value: '3' }]
+  { label: 'high',value: '3' }])
 
-sect05 = sect0.sections
-  .create(
+sect05 = sect0.sections.create(
    name: 'Case for Change/Aspiration',
    assesment_id: assesment._id)
 
@@ -214,15 +210,14 @@ quest3 = sect05.questions.create(
 quest3.options.create([
   { label: 'low',value: '1' },
   { label: 'medium',value: '2' },
-  { label: 'high',value: '3' }]
+  { label: 'high',value: '3' }])
 
-sect1 = assesment.sections
-                 .create(
+sect1 = assesment.sections.create(
                   name: 'Priority Function Identification',
                   description: 'This self assessment is intended to help you identify how to better engage and integrate sustainability into other business functions in your company.  With the ever present scarcity of resources, all leaders must choose where to prioritize investment of their resources.  This section is to help identify which functions are the most important for you to invest resources, based on your current or desired Stage of Sustainability.  In addition, if you have limited time to invest in this self assessment questionnaire, this section can help target the most important functions to answer in Section 3 - Function Specific Questions.')
 
 sect11 = sect1.sections
-             .create(
+              .create(
                name: 'Executive Management & Leadership',
                assesment_id: assesment._id)
 
