@@ -5,6 +5,7 @@
 //= require angular-animate
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-ui-tree
 
 //= require_tree ../templates/sections
 
@@ -13,3 +14,4 @@
 
 //= require ./angular_apps/sections/sections.module.js
 //= require_tree ./angular_apps/sections/controllers
+//= require_tree ./angular_apps/sections/directives
