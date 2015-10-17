@@ -4,7 +4,7 @@ class Section
 
   # Associations
   belongs_to :assesment
-  has_many :sections, class_name: 'sub-section'
+  has_many :sub_sections, class_name: 'Section'
   has_many :questions
   has_many :answers
 end
