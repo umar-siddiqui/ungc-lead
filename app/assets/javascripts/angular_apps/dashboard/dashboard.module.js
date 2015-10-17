@@ -1,7 +1,7 @@
 ( function() {
   'use strict';
 
-  angular.module('ungc.authentication', [
+  angular.module('ungc.dashboard', [
     'ngAnimate',
     'ui.router',
     'templates',
@@ -11,23 +11,22 @@
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    '$httpProvider',
     config
   ]);
 
   function config($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('index', {
         url: '/',
-        templateUrl: 'authentication/home.html',
-        controller: 'HomeController'
+        templateUrl: 'dashboard/index.html',
+        controller: 'DashboardController'
       });
 
     $stateProvider
-      .state('sign_in', {
-        url: '/sign_in',
-        templateUrl: 'authentication/sign_in.html',
-        controller: 'SignInController'
+      .state('show', {
+        url: '/show',
+        templateUrl: 'dashboard/show.html',
+        controller: 'DashboardController'
       });
 
     $urlRouterProvider.otherwise('/');
