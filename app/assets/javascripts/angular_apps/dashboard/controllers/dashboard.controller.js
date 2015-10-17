@@ -4,12 +4,16 @@
   angular
     .module('ungc.dashboard')
     .controller('DashboardController',[
-      '$scope',
+      '$scope', '$http',
       DashboardController
     ]);
 
-    function DashboardController($scope) {
-      $scope.things = ['Data Entry', 'Update', 'View Report!!'];
+    function DashboardController($scope, $http) {
+      $http.get("/dashboard.json").success(function(data){
+        $scope.myAssesments = data.dashboard;
+      }), function(error) {
+        alert('Something went wrong!');
+      };
     }
 
 })();
