@@ -5,8 +5,7 @@ class QuestionsController < ApplicationController
       .where(section_id: params[:section_id])
       .as_json(include: :options)
     render json: {
-      questions: questions,
-      section: Section.find(params[:section_id])
+      questions: questions
     }
   end
 end

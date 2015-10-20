@@ -10,17 +10,21 @@
 
       <div class="panel-body">
         <div class="row" style="padding-top:20px;">
-        <form ng-submit="signIn()" novalidate>
+        <form class="signUp" ng-submit="signIn()" novalidate>
           <div class="form-group">
             <label for="inputEmail" class="signInLabel">Email Address</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" ng-model="credentials.email">
+            <input type="email" class="form-control signUp"
+                   id="inputEmail" placeholder="Enter email"
+                   ng-model="credentials.email">
           </div>
           <div class="form-group">
             <label for="inputPassword" class="signInLabel">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="credentials.password">
+            <input type="password" class="form-control signUp"
+                   id="inputPassword" placeholder="Password"
+                   ng-model="credentials.password">
           </div>
           <center>
-            <input type="submit" class="btn btn-default" value="Sign Up" />
+            <input type="submit" class="btn btn-default" value="Log In" />
           </center>
         </form>
         </div>

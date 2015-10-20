@@ -1,25 +1,31 @@
-<h1>{{section.name}}</h1>
-<div>
-  {{section.description}}
-</div>
-<div>
-  <form ng-submit="save()" novalidate>
+<div class="con-tab1 right-cont">
+  <h4>{{section.name}}</h4>
+  <h4>{{section.description}}</h4>
 
+  <form novalidate>
     <div ng-repeat="question in questions"
          ng-init="answer = $parent.answers[$index] = initAnswer(question)">
-      <p>{{question.description}}</p>
+      <h6>{{question.description}}</h6>
 
-        <div ng-repeat="option in question.options"
-             ng-show="question.control_type == 'checkbox'">
-          <input type="radio" value="{{option.value}}"
-                 ng-model="$parent.answer.value"/>
-          <p>{{option.label}}</p>
-        </div>
+      <div class="data"
+           ng-repeat="option in question.options"
+           ng-show="question.control_type == 'radio'">
+        <input type="radio" name="radio" value="{{option.value}}"
+               id="{{option.value}}"
+               ng-click="$parent.answer.option_id = option._id"
+               ng-model="$parent.answer.value">
+        <p>{{option.label}}</p>
+      </div>
     </div>
 
-    <input ng-show="questions.length > 0" type="submit" class="btn btn-default"
-           value="Save" />
+    <div class="submitBtn">
+        <a ng-show="questions.length > 0" href="javascript:void(0)"
+           ng-click="save()">
+          save
+        </a>
+    </div>
   </form>
+
 </div>
 <pre>
   {{answers | json}}

@@ -30,7 +30,7 @@
         method: 'GET',
         url: '/sections.json',
         params: {
-          assesment_id: $stateParams.assesment_id || '562262cd2227cb669c000000'
+          assesment_id: $stateParams.assesment_id
         }
       }).then(successCallback, errorCallback);
 

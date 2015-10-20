@@ -4,7 +4,7 @@ class Option
 
   # Attributes
   field :label, type: String
-  field :value, type: String
+  field :value, type: Integer
 
   # Associations
   belongs_to :question

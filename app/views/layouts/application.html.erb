@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>UngcLead</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag @asset_module || "application" %>
-</head>
+<html lang="en">
+  <head>
+    <!-- Document Meta Data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <title>UngcLead</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag @asset_module || "application" %>
+  </head>
 
-<body class="<%= controller.controller_name %>" ng-app="<%= @angular_module %>">
+  <body class="<%= controller.controller_name %>" ng-app="<%= @angular_module %>">
 
-  <%= render partial: "layouts/header" %>
+    <%= render partial: "layouts/header" %>
 
-    <div class="contentWrap">
+    <div class="container">
       <%= yield %>
     </div> <!-- /container -->
 
-</body>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <p>Copyright 2015 · All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 
 </html>

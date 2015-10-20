@@ -12,6 +12,10 @@ class Section
   has_many :sections, class_name: 'Section', dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
+  has_many :formulas, dependent: :destroy
+
+  accepts_nested_attributes_for :questions, allow_destroy: true
+  accepts_nested_attributes_for :sections, allow_destroy: true
 
   def descendents(user_id)
     sections.map do |child|
@@ -32,8 +36,8 @@ class Section
       assesment_id: assesment_id,
       name: name,
       sections: descendents(user_id),
-      submitted: Answer.where(user_id: user_id, section_id: _id)
-                       .count > 0 || questions.count == 0
+      submitted: Answer.where(user_id: user_id, section_id: _id).count > 0 ||
+                 questions.count == 0
     }
   end
 end
