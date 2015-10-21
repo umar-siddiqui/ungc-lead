@@ -41,6 +41,7 @@ sect1 = assesment.sections.create(
         {
           control_type: 'radio',
           order_no: 1,
+          type: 'Readiness',
           label: 'Current Performance',
           description: 'In relation to the figure above, where would you position the development of sustainability in your company.  Recognize that individual programs may be scattered across the development spectrum.  Where is the “center of gravity” of the majority of your current sustainability program? ',
           options_attributes: [
@@ -91,6 +92,7 @@ sect1 = assesment.sections.create(
       name: 'Sustainability Office/Function (SO)',
       assesment_id: assesment._id,
       business_function_id: ra._id,
+      type: 'Readiness',
       questions_attributes: [
         {
           control_type: 'radio',
@@ -143,6 +145,7 @@ sect1 = assesment.sections.create(
     },
     {
       name: 'Role of Executive Management (EM) in developing sustainability agenda and goals',
+      type: 'Readiness',
       business_function_id: ra._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -199,6 +202,7 @@ sect1 = assesment.sections.create(
       name: 'Goal Setting',
       assesment_id: assesment._id,
       business_function_id: ra._id,
+      type: 'Readiness',
       questions_attributes: [
         {
           control_type: 'radio',
@@ -251,6 +255,7 @@ sect1 = assesment.sections.create(
     },
     {
       name: 'Case for Change/Aspiration',
+      type: 'Readiness',
       assesment_id: assesment._id,
       business_function_id: ra._id,
       questions_attributes: [
@@ -318,6 +323,7 @@ sect2 = assesment.sections.create(
   sections_attributes: [
     {
       name: 'Executive Management & Leadership',
+      type: 'Priority',
       assesment_id: assesment._id,
       business_function_id: eml._id,
       questions_attributes: [
@@ -347,6 +353,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Marketing, Branding & PR',
+      type: 'Priority',
       business_function_id: mbp._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -376,6 +383,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Sales, Advertising & Customer Service',
+      type: 'Priority',
       business_function_id: sac._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -405,6 +413,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Research',
+      type: 'Priority',
       business_function_id: rh._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -434,6 +443,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Product Development & Design',
+      type: 'Priority',
       business_function_id: pdd._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -463,6 +473,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Finance, Investor Relations & Reporting',
+      type: 'Priority',
       business_function_id: fir._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -492,6 +503,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Accounting',
+      type: 'Priority',
       business_function_id: ag._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -521,6 +533,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Manufacturing & Distribution',
+      type: 'Priority',
       business_function_id: md._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -550,6 +563,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Supply Chain',
+      type: 'Priority',
       business_function_id: sc._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -579,6 +593,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Legal',
+      type: 'Priority',
       assesment_id: assesment._id,
       business_function_id: le._id,
       questions_attributes: [
@@ -608,6 +623,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'External Affairs',
+      type: 'Priority',
       business_function_id: ea._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -637,6 +653,7 @@ sect2 = assesment.sections.create(
     },
     {
       name: 'Human Resources',
+      type: 'Priority',
       business_function_id: hr._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -687,6 +704,7 @@ sect31 = sect3.sections.create(
   sections_attributes: [
     {
       name: 'Strategic Integration',
+      type: 'Strategic',
       business_function_id: eml._id,
       assesment_id: assesment._id,
       questions_attributes: [
@@ -741,6 +759,7 @@ sect31 = sect3.sections.create(
     },
     {
       name: 'Cultural Integration',
+      type: 'Cultural',
       assesment_id: assesment._id,
       business_function_id: eml._id,
       questions_attributes: [

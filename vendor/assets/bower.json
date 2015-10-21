@@ -6,6 +6,7 @@
     "angular-devise": "latest",
     "angular-ui-router": "latest",
     "angular-animate": "latest",
-    "angular-ui-tree": "latest"
+    "angular-ui-tree": "latest",
+    "underscore": "latest"
   }
 }

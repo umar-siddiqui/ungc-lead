@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require angular/angular
 //= require angular-devise
 //= require angular-animate
