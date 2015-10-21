@@ -11,4 +11,5 @@ class Answer
   belongs_to :section
   belongs_to :assesment
   belongs_to :option
+  belongs_to :score
 end

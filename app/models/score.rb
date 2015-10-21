@@ -10,4 +10,5 @@ class Score
   belongs_to :formula
   belongs_to :section
   belongs_to :user
+  has_many :answers
 end

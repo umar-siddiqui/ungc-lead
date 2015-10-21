@@ -30,6 +30,13 @@
         controller: 'QuestionsController'
       });
 
+    $stateProvider
+      .state('report', {
+        url: '/report',
+        templateUrl: 'sections/report.html',
+        controller: 'ReportController'
+      });
+
     $urlRouterProvider.otherwise('/');
   }
 

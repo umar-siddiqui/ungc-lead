@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-10">
+      <div ng-repeat="section in sections">
+        <h2>{{section.name}}</h2>
+        <div ng-repeat="node in section.sections">
+          <h3>{{node.name}}</h3>
+          <div ng-repeat="answer in node.answers">
+            <h4>Stage {{answer.value}}</h4>
+            <h4>{{answer.question.description}}</h4>
+            <!-- <h4>{{answer.option.label}}</h4> -->
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<pre>
+  {{sections | json}}
+</pre>

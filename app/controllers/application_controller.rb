@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   respond_to :html, :json
 
+  def default_serializer_options
+    { root: false }
+  end
+
   protected
 
   def doc_not_found

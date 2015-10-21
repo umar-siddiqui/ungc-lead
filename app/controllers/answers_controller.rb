@@ -17,14 +17,23 @@ class AnswersController < ApplicationController
     render json: { answers: answers, scores: scores }
   end
 
+  def current_graph
+    answers = Answer
+              .includes(:question, :section)
+              .select { |a| a.question.label == 'Current Performance'  }
+    render json: { answers: answers, serializer: CurrentGraphSerializer }
+  end
+
   def generate_scores(answers)
     Formula.where(section_id: answers.first.section_id).map do |formula|
       score_value = formula.calculate(answers)
       score = Score
         .new(
           value: score_value, user_id: current_user._id,
-          formula_id: formula._id, name: formula.name)
+          formula_id: formula._id, name: formula.name,
+          section_id: formula.section_id)
       score.save!
+      answers.map { |answer| answer.score_id = score._id; answer.save! }
       score
     end
   end

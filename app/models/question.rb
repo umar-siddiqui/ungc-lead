@@ -4,6 +4,7 @@ class Question
 
   # Attributes
   field :description
+  field :label
   field :control_type
   field :order_no, type: Integer
 
