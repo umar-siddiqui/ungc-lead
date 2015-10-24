@@ -419,3 +419,8 @@ label{
   -moz-transition: .5s;
   -webkit-transition: .5s;
 }
+/*Graph CSS*/
+.graph td {
+  width: 75px;
+}
+/*Graph CSS End*/

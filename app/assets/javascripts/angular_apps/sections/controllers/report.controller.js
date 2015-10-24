@@ -37,7 +37,6 @@
     }
 
     function drawDynamicTable(test) {
-      var test = test
       var MaxRowLength = 0;
       var MaxColumbLength = test.length;
 
@@ -49,7 +48,7 @@
       console.log("MaxRowLength: ", MaxRowLength);
       console.log("MaxColumbLength: ", MaxColumbLength);
 
-      var myTableDiv = document.getElementById('graph');
+      var myTableDiv = document.getElementsByClassName('graph')[0];
 
       var table = document.createElement('TABLE');
       table.border = '1';
@@ -83,7 +82,6 @@
           var stage = test[j];
 
           var td = document.createElement('TD');
-          td.width = '75';
           if (count == _.filter(stage.list, function(col) {
               return !col.disable
             }).length) {
@@ -91,7 +89,9 @@
               return !col.disable
             })[0]
             td.appendChild(document.createTextNode(block.label));
-            block.disable = true
+            td.className = block.type;
+            td.setAttribute("title", block.full_label);
+            block.disable = true;
             tr.appendChild(td);
           } else {
             td.className = "blank"
