@@ -4,11 +4,11 @@
   angular
     .module('ungc.authentication')
     .controller('SignInController',[
-      '$scope', 'Auth', '$state',
+      '$scope', 'Auth', '$window',
       SignInController
     ]);
 
-  function SignInController($scope, Auth, $state) {
+  function SignInController($scope, Auth, $window) {
 
     function init(){
       $scope.credentials = { email: '', password: '' };
@@ -17,7 +17,7 @@
     $scope.signIn = function() {
       // Code to use 'angular-devise' component
       Auth.login($scope.credentials).then(function(user) {
-        $state.go('home');
+        $window.location.href = '/sections#/';
         alert('Successfully signed in user!')
       }, function(error) {
         console.info('Error in authenticating user!');

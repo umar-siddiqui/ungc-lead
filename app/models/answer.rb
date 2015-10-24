@@ -3,11 +3,13 @@ class Answer
   include Mongoid::Document
 
   # Attributes
-  field :value, type: String
+  field :value, type: Integer
 
   # Associations
   belongs_to :user
   belongs_to :question
   belongs_to :section
-  belongs_to :assesmets
+  belongs_to :assesment
+  belongs_to :option
+  belongs_to :score
 end

@@ -1,0 +1,32 @@
+<div class="con-tab1 right-cont">
+  <h4>{{section.name}}</h4>
+  <h4>{{section.description}}</h4>
+
+  <form novalidate>
+    <div ng-repeat="question in questions"
+         ng-init="answer = $parent.answers[$index] = initAnswer(question)">
+      <h6>{{question.description}}</h6>
+
+      <div class="data"
+           ng-repeat="option in question.options"
+           ng-show="question.control_type == 'radio'">
+        <input type="radio" name="radio" value="{{option.value}}"
+               id="{{option.value}}"
+               ng-click="$parent.answer.option_id = option._id"
+               ng-model="$parent.answer.value">
+        <p>{{option.label}}</p>
+      </div>
+    </div>
+
+    <div class="submitBtn">
+        <a ng-show="questions.length > 0" href="javascript:void(0)"
+           ng-click="save()">
+          save
+        </a>
+    </div>
+  </form>
+
+</div>
+<pre>
+  {{answers | json}}
+</pre>
