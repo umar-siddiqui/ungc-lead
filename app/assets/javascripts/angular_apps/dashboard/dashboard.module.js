@@ -23,15 +23,8 @@
       });
 
     $stateProvider
-      .state('show', {
-        url: '/show',
-        templateUrl: 'dashboard/show.html',
-        controller: 'DashboardController'
-      });
-
-    $stateProvider
-      .state('dashboard_video', {
-        url: '/dashboard_video',
+      .state('instructions', {
+        url: '/instructions',
         templateUrl: 'dashboard/dashboard_video.html'
       });
 

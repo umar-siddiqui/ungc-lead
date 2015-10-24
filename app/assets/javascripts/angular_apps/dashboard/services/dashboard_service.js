@@ -12,7 +12,7 @@
 
       this.getAssesments = function() {
         var requestDetails = {
-          url: '/dashboard.json',
+          url: '/assesments.json',
           method: 'GET'
         };
         return PromiseFactory.generateHttpPromise(requestDetails);
