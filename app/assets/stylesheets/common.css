@@ -403,6 +403,11 @@ footer p{
 .btn {
     margin-right: 8px;
 }
+.btn-warning {
+background-color: rgba(220,131,114	,1);
+border-color: rgba(220,131,114	,1);
+
+}
 
 .angular-ui-tree-handle {
     background: #f8faff;
@@ -514,8 +519,77 @@ label{
   -moz-transition: .5s;
   -webkit-transition: .5s;
 }
+
 /*Graph CSS*/
 .graph td {
-  width: 75px;
+
+    width: 100px;
+    height: 25px;
+	text-align: center;
+    border: 0px solid black;
 }
+
+.graph .rowlabel {
+
+	height: 20px;
+	border: 0px ;
+
+}
+
+.graph .blank {
+
+	border: 0px;
+	height: 10px;
+	
+
+}
+
+.graph .strategic {
+
+	background: rgba(230,194,135,1);
+	border: 0px ;
+}
+.graph .cultural {
+
+	background: rgba(228,232,187,1);
+	border: 0px ;
+}
+.graph .operational {
+
+	background: rgba(104,176,167,1);
+	border: 0px ;
+}
+.graph .readiness {
+
+	background: rgba(220,131,114	,1);
+	border: 0px ;
+}
+
+.graph .line {
+	height: 10px;
+}
+
+.graph .line hr {
+
+	border-top: 1px solid gray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.graph .rowlabeldesc{
+	vertical-align: top;
+	font-size: 12px;
+	height: 15px;
+}
+
+.graph table {
+
+	font-size: 18;
+	/*border: 1px solid black;*/
+	border-spacing: 10px 5px;
+    border-collapse: separate;
+
+}
+
 /*Graph CSS End*/
+
+
