@@ -12,4 +12,5 @@ Rails.application.config.assets.precompile += %w(
   authentication.js
   sections.js
   dashboard.js
+  reports.js
 )

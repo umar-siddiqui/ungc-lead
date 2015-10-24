@@ -1,7 +1,7 @@
 ( function() {
   'use strict';
 
-  angular.module('ungc.dashboard', [
+  angular.module('ungc.reports', [
     'ngAnimate',
     'ui.router',
     'templates',
@@ -16,16 +16,10 @@
 
   function config($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('index', {
+      .state('report', {
         url: '/',
-        templateUrl: 'dashboard/index.html',
-        controller: 'DashboardController'
-      });
-
-    $stateProvider
-      .state('instructions', {
-        url: '/instructions',
-        templateUrl: 'dashboard/dashboard_video.html'
+        templateUrl: 'reports/generate_report.html',
+        controller: 'ReportController'
       });
 
     $urlRouterProvider.otherwise('/');
