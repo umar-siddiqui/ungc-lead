@@ -29,6 +29,12 @@
         controller: 'DashboardController'
       });
 
+    $stateProvider
+      .state('dashboard_video', {
+        url: '/dashboard_video',
+        templateUrl: 'dashboard/dashboard_video.html'
+      });
+
     $urlRouterProvider.otherwise('/');
   }
 

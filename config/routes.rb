@@ -12,8 +12,8 @@ Rails.application.routes.draw do
       get :current_graph
     end
   end
-  resources :dashboard, only: [:index]#, :show]
-  resources :assesment, only: [:index, :create]#, :edit, :update]
+  resources :dashboard, only: [:index]
+  resources :assesment, only: [:index, :create]
 
-  root to: "authentication#index"
+  root to: 'authentication#index'
 end
