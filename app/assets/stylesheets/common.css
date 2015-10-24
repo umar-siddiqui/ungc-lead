@@ -1,3 +1,97 @@
+/* Global css code starts */
+.allCaps{
+  text-transform: uppercase;
+}
+.topSpace0{
+  margin-top: 0;
+}
+.topSpace1{
+  margin-top: 5px;
+}
+.topSpace2{
+  margin-top: 10px;
+}
+.topSpace3{
+  margin-top: 15px;
+}
+.topSpace4{
+  margin-top: 20px;
+}
+.topSpace5{
+  margin-top: 25px;
+}
+.topSpace6{
+  margin-top: 30px;
+}
+.table {
+  margin-bottom: 0;
+}
+.bottomSpace0 {
+  margin-bottom: 0;
+}
+.bottomSpace1{
+  margin-bottom: 5px;
+}
+.bottomSpace2{
+  margin-bottom: 10px;
+}
+.bottomSpace3{
+  margin-bottom: 15px;
+}
+.bottomSpace4{
+  margin-bottom: 20px;
+}
+.bottomSpace5{
+  margin-bottom: 25px;
+}
+.bottomSpace6{
+  margin-bottom: 30px;
+}
+.bottomSpace7{
+  margin-bottom: 35px;
+}
+.leftSpace0{
+  margin-left: 0;
+}
+.leftSpace1{
+  margin-left: 5px;
+}
+.leftSpace2{
+  margin-left: 10px;
+}
+.leftSpace3{
+  margin-left: 15px;
+}
+.leftSpace4{
+  margin-left: 20px;
+}
+.leftSpace5{
+  margin-left: 25px;
+}
+.leftSpace6{
+  margin-left: 30px;
+}
+.rightSpace0{
+  margin-right: 0;
+}
+.rightSpace1{
+  margin-right: 5px;
+}
+.rightSpace2{
+  margin-right: 10px;
+}
+.rightSpace3{
+  margin-right: 15px;
+}
+.rightSpace4{
+  margin-right: 20px;
+}
+.rightSpace5{
+  margin-right: 25px;
+}
+.rightSpace6{
+  margin-right: 30px;
+}
 body{
 	font-family: 'Open Sans', sans-serif;
 }

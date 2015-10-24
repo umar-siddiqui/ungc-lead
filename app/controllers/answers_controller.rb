@@ -21,7 +21,8 @@ class AnswersController < ApplicationController
     answers = Answer
               .includes(:question, :section)
               .select { |a| a.question.label == 'Current Performance'  }
-    render json: answers, serializer: CurrentGraphSerializer
+    render json: answers,
+           serializer: AnswersSerializers::CurrentGraphSerializer
   end
 
   def generate_scores(answers)
