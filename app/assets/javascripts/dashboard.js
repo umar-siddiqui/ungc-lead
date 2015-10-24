@@ -12,3 +12,5 @@
 
 //= require ./angular_apps/dashboard/dashboard.module.js
 //= require_tree ./angular_apps/dashboard/controllers
+//= require_tree ./angular_apps/dashboard/services
+//= require_tree ./angular_apps/common
