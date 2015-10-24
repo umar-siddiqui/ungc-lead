@@ -7,8 +7,9 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
-  field :email,              type: String, default: ""
-  field :encrypted_password, type: String, default: ""
+  field :email,              type: String, default: ''
+  field :encrypted_password, type: String, default: ''
+  field :type, type: String
 
   ## Recoverable
   field :reset_password_token,   type: String

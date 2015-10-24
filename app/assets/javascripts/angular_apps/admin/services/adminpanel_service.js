@@ -2,17 +2,17 @@
   'use strict';
 
   angular
-    .module('ungc.dashboard')
-    .service('DashboardService',[
+    .module('ungc.adminpanel')
+    .service('AdminpanelService',[
       'PromiseFactory', 'UtilityFactory',
-      DashboardService
+      AdminpanelService
     ]);
 
-    function DashboardService(PromiseFactory, Utils) {
+    function AdminpanelService(PromiseFactory, Utils) {
 
-      this.getAssesments = function(id) {
+      this.allAssesments = function() {
         var requestDetails = {
-          url: '/assesments.json',
+          url: '/admin/adminpanel.json',
           method: 'GET'
         };
         return PromiseFactory.generateHttpPromise(requestDetails);
