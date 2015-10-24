@@ -16,7 +16,7 @@
 
   function config($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('index', {
+      .state('home', {
         url: '/',
         templateUrl: 'admin/index.html',
         controller: 'AdminpanelController'

@@ -5,7 +5,7 @@
     .module('ungc.adminpanel')
     .controller('AdminpanelController',[
       '$scope', 'AdminpanelService',
-      AdminpanelService
+      AdminpanelController
     ]);
 
     function AdminpanelController($scope, AdminpanelService) {
