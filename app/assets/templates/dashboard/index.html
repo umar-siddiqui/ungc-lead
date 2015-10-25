@@ -21,7 +21,7 @@
         <div class="col-md-4" ng-repeat="assesment in myAssesments">
           <div class="leftText rightText">
             <h4>{{assesment.name}}</h4>
-            <p></p>
+            <p>{{assesment.description}}</p>
             <div class="twoBt clearfix">
               <a href="#/instructions"
                  ng-show="assesment.status == 'pristine'">Start</a>
