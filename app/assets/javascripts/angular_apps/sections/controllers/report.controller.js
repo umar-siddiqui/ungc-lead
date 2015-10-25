@@ -19,7 +19,6 @@
       function successCallback(response) {
         // $scope.current_graph = response.data['current_graph'];
         drawDynamicTable(response.data['current_graph']);
-        console.log(response);
       }
 
       function errorCallback(response) {
@@ -44,9 +43,6 @@
         var listLength = stage.list.length;
         if (listLength > MaxRowLength) MaxRowLength = listLength;
       });
-
-      console.log("MaxRowLength: ", MaxRowLength);
-      console.log("MaxColumbLength: ", MaxColumbLength);
 
       var myTableDiv = document.getElementsByClassName('graph')[0];
 
@@ -125,7 +121,7 @@
        // Putting descriptions under labels
       var tr = document.createElement('TR');
       tableBody.appendChild(tr);
-      
+
         var td = document.createElement('TD');
         td.appendChild(document.createTextNode('Non-Compliance'));
         td.className = "rowlabeldesc";
@@ -159,7 +155,7 @@
       td.innerHTML = "<img src=\"images/graphlegend.png\"/>";
       td.className = "legend";
       tr.appendChild(td);
-      
+
 
       myTableDiv.appendChild(table);
     }

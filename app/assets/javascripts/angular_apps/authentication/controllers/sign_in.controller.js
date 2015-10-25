@@ -20,8 +20,6 @@
         $window.location.href = '/dashboard#/';
         alert('Successfully signed in user!')
       }, function(error) {
-        console.info('Error in authenticating user!');
-        console.log(error);
         alert('Error in signing in user!');
       });
     }
