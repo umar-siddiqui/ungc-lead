@@ -37,7 +37,7 @@ module AnswersSerializers
     end
 
     def type_function?(section_name)
-      ['Strategic Integration', 'Current Performance', 'Operational Integration']
+      ['Strategic Integration', 'Cultural Integration', 'Operational Integration']
         .include? section_name
     end
   end
