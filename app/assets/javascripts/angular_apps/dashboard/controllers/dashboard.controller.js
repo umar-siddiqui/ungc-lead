@@ -11,7 +11,13 @@
     function DashboardController($scope, DashboardService) {
 
       DashboardService.getAssesments().then(function(data){
-        $scope.myAssesments = data.dashboard;
+        $scope.myAssesments = data;
+      }), function(error) {
+        alert('Something went wrong!');
+      };
+
+      DashboardService.getCurrentUserCompany().then(function(data){
+        $scope.company = data;
       }), function(error) {
         alert('Something went wrong!');
       };

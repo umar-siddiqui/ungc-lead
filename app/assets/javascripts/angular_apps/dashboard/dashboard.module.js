@@ -23,10 +23,9 @@
       });
 
     $stateProvider
-      .state('show', {
-        url: '/show',
-        templateUrl: 'dashboard/show.html',
-        controller: 'DashboardController'
+      .state('instructions', {
+        url: '/instructions',
+        templateUrl: 'dashboard/dashboard_video.html'
       });
 
     $urlRouterProvider.otherwise('/');

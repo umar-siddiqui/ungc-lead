@@ -12,7 +12,15 @@
 
       this.getAssesments = function() {
         var requestDetails = {
-          url: '/dashboard.json',
+          url: '/assesments.json',
+          method: 'GET'
+        };
+        return PromiseFactory.generateHttpPromise(requestDetails);
+      };
+
+      this.getCurrentUserCompany = function() {
+        var requestDetails = {
+          url: '/companies/current_user_company.json',
           method: 'GET'
         };
         return PromiseFactory.generateHttpPromise(requestDetails);

@@ -1,7 +1,7 @@
 ( function() {
   'use strict';
 
-  angular.module('ungc.authentication', [
+  angular.module('ungc.reports', [
     'ngAnimate',
     'ui.router',
     'templates',
@@ -11,18 +11,18 @@
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    '$httpProvider',
     config
   ]);
 
   function config($stateProvider, $urlRouterProvider) {
-
     $stateProvider
-      .state('sign_in', {
-        url: '/sign_in',
-        templateUrl: 'authentication/sign_in.html',
-        controller: 'SignInController'
+      .state('report', {
+        url: '/',
+        templateUrl: 'reports/generate_report.html',
+        controller: 'ReportController'
       });
+
+    $urlRouterProvider.otherwise('/');
   }
 
 })();

@@ -1,7 +1,38 @@
 <div class="container">
-    <h1>The Dashboard View!</h1>
-    <a href="/dashboard#/show">Assesment</a>
-    <ul>
-        <li ng-repeat="thing in myAssesments">{{thing}}</li>
-    </ul>
+  <section class="profileSec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="proImg clearfix">
+            <img src="/images/batman.jpg">
+          </div>
+          <div class="wel">
+            <h3>Welcome</h3>
+            <h2>{{company.name}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="loremTe">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="assesment in myAssesments">
+          <div class="leftText rightText">
+            <h4>{{assesment.name}}</h4>
+            <p>{{assesment.description}}</p>
+            <div class="twoBt clearfix">
+              <a href="#/instructions"
+                 ng-show="assesment.status == 'pristine'">Start</a>
+              <a href="/sections#/"
+                 ng-show="assesment.status == 'in_progress'">Resume</a>
+              <a href="/sections#/report"
+                 ng-show="assesment.status == 'completed'">View Report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

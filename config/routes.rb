@@ -12,8 +12,13 @@ Rails.application.routes.draw do
       get :current_graph
     end
   end
-  resources :dashboard, only: [:index]#, :show]
-  resources :assesment, only: [:index, :create]#, :edit, :update]
+  resources :dashboard, only: [:index]
+  resources :assesments, only: [:index, :create]
+  resources :companies, only: [] do
+    collection do
+      get :current_user_company
+    end
+  end
 
-  root to: "authentication#index"
+  root to: 'dashboard#index'
 end

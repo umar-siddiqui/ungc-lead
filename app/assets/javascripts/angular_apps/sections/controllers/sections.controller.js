@@ -10,20 +10,22 @@
 
   function SectionsController($scope, $window, $state, $http, $stateParams) {
 
+    $scope.markDone = markDone;
+
     function init(){
       getSectionTree();
-      $scope.canPublish = true;
+      $scope.canConclude = true;
     }
 
     function getSectionTree(){
 
       function successCallback(response) {
         $scope.sections = response.data['sections'];
-        console.log(response);
+        markDone($scope.sections);
       }
 
       function errorCallback(response) {
-        alert('Error')
+        alert('Something went wrong')
       }
 
       return $http({
@@ -37,25 +39,36 @@
     }
 
     $scope.fetchQuestions = function (section){
-      if(!section.submitted) {
-        $scope.section = section;
-        $state.go('sections.questions', { section_id: section._id });
-      } else{
-        alert('Section Already Submitted');
-      }
+      if(section.submitted) return;
+      $scope.section = section;
+      $state.go('sections.questions', { section_id: section._id });
     };
 
-    function checkPublishable(sections){
+    function validateConclude(sections){
       angular.forEach(sections, function(section){
-        if (!section.submitted) { return $scope.canPublish = false; };
-        checkPublishable(section.sections)
+        if (!section.submitted) { return $scope.canConclude = false; };
+        validateConclude(section.sections)
       });
     }
 
-    $scope.checkCanPublish = function(){
-      checkPublishable($scope.sections);
+    function markDone(sections){
+      angular.forEach(sections, function(section){
+        markDone(section.sections)
+        if (section.submitted) return;
+        if (section.questions_count == 0) {
+          section.submitted = _.every(section.sections, function(section) {
+            return section.submitted == true;
+          });
+        };
+      });
+    }
+
+    $scope.concluded = function(){
+      validateConclude($scope.sections);
       console.log('######################');
-      console.log($scope.canPublish);
+      console.log($scope.canConclude);
+      if(!$scope.canConclude) return alert('Please attempt all questions');
+      $state.go('report');
     }
 
     init();
