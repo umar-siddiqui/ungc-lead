@@ -16,12 +16,6 @@
   ]);
 
   function config($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'authentication/home.html',
-        controller: 'HomeController'
-      });
 
     $stateProvider
       .state('sign_in', {
@@ -29,8 +23,6 @@
         templateUrl: 'authentication/sign_in.html',
         controller: 'SignInController'
       });
-
-    $urlRouterProvider.otherwise('/');
   }
 
 })();

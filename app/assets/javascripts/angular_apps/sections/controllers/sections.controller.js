@@ -19,11 +19,10 @@
 
       function successCallback(response) {
         $scope.sections = response.data['sections'];
-        console.log(response);
       }
 
       function errorCallback(response) {
-        alert('Error')
+        alert('Something went wrong')
       }
 
       return $http({
@@ -37,12 +36,11 @@
     }
 
     $scope.fetchQuestions = function (section){
-      if(!section.submitted) {
-        $scope.section = section;
-        $state.go('sections.questions', { section_id: section._id });
-      } else{
-        alert('Section Already Submitted');
-      }
+      if(section.submitted) return;
+      console.log(angular.element('#questionsDiv')[0].scrollTop)
+      angular.element('#questionsDiv')[0].scrollTop = 0;
+      $scope.section = section;
+      $state.go('sections.questions', { section_id: section._id });
     };
 
     function checkPublishable(sections){

@@ -20,5 +20,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'authentication#index'
+  root to: 'dashboard#index'
 end
