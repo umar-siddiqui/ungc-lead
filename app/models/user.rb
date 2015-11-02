@@ -6,6 +6,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_save :send_verification
+
   ## Database authenticatable
   field :email,              type: String, default: ''
   field :encrypted_password, type: String, default: ''
@@ -29,6 +31,14 @@ class User
   has_and_belongs_to_many :assesments, dependent: :destroy
   has_many :answers, dependent: :destroy
   belongs_to :company
+
+  def send_verification
+    puts '#####################################################'
+    puts User.last
+    puts '#####################################################'
+    mail = Notifier.welcome(User.last)
+    mail.deliver_now
+  end
 
   ## Confirmable
   # field :confirmation_token,   type: String

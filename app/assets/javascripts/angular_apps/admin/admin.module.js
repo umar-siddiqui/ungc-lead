@@ -1,7 +1,7 @@
 ( function() {
   'use strict';
 
-  angular.module('ungc.adminpanel', [
+  angular.module('ungc.admin', [
     'ngAnimate',
     'ui.router',
     'templates',
@@ -19,7 +19,21 @@
       .state('home', {
         url: '/',
         templateUrl: 'admin/index.html',
-        controller: 'AdminpanelController'
+        controller: 'PanelController'
+      });
+
+    $stateProvider
+      .state('invite', {
+        url: '/invite',
+        templateUrl: 'admin/invite.html',
+        controller: 'PanelController'
+      });
+
+    $stateProvider
+      .state('report', {
+        url: '/report',
+        templateUrl: 'admin/report.html',
+        controller: 'ReportController'
       });
 
     $urlRouterProvider.otherwise('/');

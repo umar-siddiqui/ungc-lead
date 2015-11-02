@@ -18,17 +18,36 @@
   <div class="loremTe">
     <div class="container">
       <div class="row">
-        <div class="col-md-4" ng-repeat="assesment in myAssesments">
+        <div class="col-md-4" ng-repeat="assesment in assesments">
           <div class="leftText rightText">
+          <div class="clearfix">
+            <div class="pull-left">
             <h4>{{assesment.name}}</h4>
-            <p></p>
-            <div class="twoBt clearfix">
-              <a href="#/instructions"
-                 ng-show="assesment.status == 'pristine'">Start</a>
-              <a href="/sections"
-                 ng-show="assesment.status == 'in_progress'">Resume</a>
-              <a href="javascript:void(0)"
-                 ng-show="assesment.status == 'completed'">View Report</a>
+            </div>
+            <div class="pull-right">
+              <button class="btn" ng-click="editAssesment(assesment._id)">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </button>
+            </div>
+          </div>
+
+
+              <div  ng-if="assesment.description.length < 150" >
+                <p class="bottomSpace4">{{ assesment.description }}</p>
+              </div>
+              <div  ng-hide="assesment.description.length < 150" >
+                <p class="bottomSpace4">
+                  {{ assesment.description.substring(0, 150); }} ...
+                </p>
+              </div>
+            <!-- <p>{{assesment.description}}</p> -->
+            <div class="submitBtn">
+              <div class="pull-left">
+                <a href="javascript:void(0);" ng-click="assesmentReport(assesment)">View Report</a>
+              </div>
+              <div class="pull-right">
+                <a href="javascript:void(0);" ng-click="inviteUser(assesment)">Invite</a>
+              </div>
             </div>
           </div>
         </div>

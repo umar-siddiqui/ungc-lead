@@ -10,7 +10,7 @@
 
     function DashboardService(PromiseFactory, Utils) {
 
-      this.getAssesments = function(id) {
+      this.getAssesments = function() {
         var requestDetails = {
           url: '/assesments.json',
           method: 'GET'

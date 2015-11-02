@@ -19,7 +19,7 @@
       Auth.login($scope.credentials).then(function(user) {
         if(user.type == 'admin'){
           console.log('Hi Admin');
-          $window.location.href = 'admin/adminpanel#/';
+          $window.location.href = 'admin#/';
           alert('ADMIN Successfully signed in!')
         } else{
           $window.location.href = '/dashboard#/';

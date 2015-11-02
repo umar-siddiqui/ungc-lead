@@ -14,12 +14,16 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :adminpanel, only: [:index]
+    get '/', to: 'panel#index'
   end
 
   resources :dashboard, only: [:index]
 
-  resources :assesments, only: [:index, :create]
+  resources :assesments, only: [:index, :create] do
+    collection do
+      get :all_assesments
+    end
+  end
 
   resources :companies, only: [] do
     collection do
