@@ -21,7 +21,9 @@
       $scope.sendInvite = function(){
 
         var credentials = {
+            name: $scope.invite.name,
             email: $scope.invite.email,
+            type: 'user',
             password: '123456789',
             password_confirmation: '123456789'
         };

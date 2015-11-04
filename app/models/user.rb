@@ -6,12 +6,13 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  after_save :send_verification
+  after_save :send_invitation
 
   ## Database authenticatable
   field :email,              type: String, default: ''
   field :encrypted_password, type: String, default: ''
   field :type, type: String
+  field :name
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -32,11 +33,11 @@ class User
   has_many :answers, dependent: :destroy
   belongs_to :company
 
-  def send_verification
+  def send_invitation
     puts '#####################################################'
-    puts User.last
+    puts self
     puts '#####################################################'
-    mail = Notifier.welcome(User.last)
+    mail = Notifier.welcome(self)
     mail.deliver_now
   end
 
