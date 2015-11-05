@@ -14,7 +14,6 @@ class AnswersController < ApplicationController
       answer
     end
     scores = generate_scores(answers)
-
     render json: { answers: answers, scores: scores }
   end
 
@@ -35,13 +34,14 @@ class AnswersController < ApplicationController
   def generate_scores(answers)
     Formula.where(section_id: answers.first.section_id).map do |formula|
       score_value = formula.calculate(answers)
-      score = Score
-        .new(
-          value: score_value, user_id: current_user._id,
-          formula_id: formula._id, name: formula.name,
-          section_id: formula.section_id)
+      score = Score.new(
+        value: score_value, user_id: current_user._id, formula_id: formula._id,
+        name: formula.name, section_id: formula.section_id)
       score.save!
-      answers.map { |answer| answer.score_id = score._id; answer.save! }
+      answers.each do |answer|
+        answer.score_id = score._id
+        answer.save!
+      end
       score
     end
   end
