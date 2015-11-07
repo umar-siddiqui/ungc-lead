@@ -3,12 +3,14 @@
     <div class="row">
       <div class="col-md-12">
         <div class="logo pull-left">
-          <a href="#."> <img src="images/logo.png"></a>
+          <a href="dashboard#/"> <img src="images/logo.png"></a>
         </div>
         <div class="pull-right logOutBt">
           <a ng-hide="isAuthenticated" href="#/sign_in">sign in</a>
-          <a ng-show="isAuthenticated"
-             href="#/sign_in" ng-click="logout()">logout</a>
+          <a ng-show="isAuthenticated" ng-click="logout()">logout</a>
+        </div>
+        <div class="pull-right logOutBt rightSpace3">
+          <a href="dashboard#/">home</a>
         </div>
       </div>
     </div>

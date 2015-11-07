@@ -15,6 +15,12 @@
       }), function(error) {
         alert('Something went wrong!');
       };
+
+      DashboardService.getCurrentUserCompany().then(function(data){
+        $scope.company = data;
+      }), function(error) {
+        alert('Something went wrong!');
+      };
     }
 
 })();
