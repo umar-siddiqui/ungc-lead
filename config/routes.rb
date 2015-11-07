@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :answers, only: [:create] do
     collection do
       get :current_graph
+      get :report
     end
   end
   resources :dashboard, only: [:index]

@@ -32,6 +32,7 @@ group :development, :test do
   gem 'byebug'
   gem 'awesome_print'
   gem 'better_errors', '2.1.1'
+  gem 'pry'
 end
 
 group :development do
