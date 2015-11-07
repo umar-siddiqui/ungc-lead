@@ -8,7 +8,7 @@
           </div>
           <div class="wel">
             <h3>Welcome</h3>
-            <h2>Treeni</h2>
+            <h2>{{ assesments[0].name }}</h2>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
             <label for="orgName" class="signInLabel">Organization Name</label>
             <input type="text" class="form-control signUp"
                    id="orgName" placeholder="UNGC"
-                   ng-model="invite.orgName">
+                   ng-model="invite.company.name">
           </div>
           <div class="form-group">
             <label for="orgLogo" class="signInLabel">Organization Logo</label>

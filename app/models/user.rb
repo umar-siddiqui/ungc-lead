@@ -6,7 +6,7 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  after_save :send_invitation
+  after_create :send_invitation
 
   ## Database authenticatable
   field :email,              type: String, default: ''
@@ -33,10 +33,10 @@ class User
   has_many :answers, dependent: :destroy
   belongs_to :company
 
+  accepts_nested_attributes_for :company
+
+
   def send_invitation
-    puts '#####################################################'
-    puts self
-    puts '#####################################################'
     mail = Notifier.welcome(self)
     mail.deliver_now
   end

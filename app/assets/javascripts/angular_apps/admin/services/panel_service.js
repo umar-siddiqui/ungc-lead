@@ -20,7 +20,7 @@
 
       this.allUsers = function() {
         var requestDetails = {
-          url: '/users',
+          url: '/users.json',
           method: 'GET'
         };
         return PromiseFactory.generateHttpPromise(requestDetails);

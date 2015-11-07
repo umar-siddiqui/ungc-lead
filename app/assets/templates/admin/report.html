@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="wel" style="padding-top:40px;">
-            <h2>Welcome Assessment</h2>
+            <h2>{{ assesments[0].name }}</h2>
           </div>
         </div>
       </div>
@@ -22,48 +22,22 @@
                 <tr>
                   <th width="200">Invite</th>
                   <th width="250">Organisation</th>
-                  <th width="250">Contact</th>
+                  <th width="250">Contact Email</th>
                   <th width="200">Status</th>
-                  <th>&nbsp;</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><a href="javascript:void(0);">Jalbiradari</a></td>
-                  <td><a href="javascript:void(0);">NGO</a></td>
-                  <td>External</td>
-                  <td>Water stress</td>
-                  <td>
-                    <ul class="tableIcons pull-right unstyled">
-                      <li><a href="javascript:void(0);" class="icon-edit"></a></li>
-                    </ul>
+                <tr ng-repeat="user in users">
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.company.name }}</td>
+                  <td>{{ user.email }}</td>
+                  <td ng-if="(user.assesments[0].status == 'pristine')">Yet Not Started</td>
+                  <td ng-if="(user.assesments[0].status == 'in_progress')">In Progress</td>
+                  <td ng-if="(user.assesments[0].status == 'completed')">
+                    <input type="button" class="btn btn-default" ng-click=""
+                           value="view report"/>
                   </td>
                 </tr>
-
-                 <tr>
-                  <td><a href="javascript:void(0);">Goonj</a></td>
-                  <td><a href="javascript:void(0);">NGO</a></td>
-                  <td>Internal</td>
-                  <td>Electicity stress</td>
-                  <td>
-                    <ul class="tableIcons pull-right unstyled">
-                      <li><a href="javascript:void(0);" class="icon-edit"></a></li>
-                    </ul>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td><a href="javascript:void(0);">Eco clubs</a></td>
-                  <td><a href="javascript:void(0);">Internal Team</a></td>
-                  <td>Internal</td>
-                  <td>3 Material Issues</td>
-                  <td>
-                    <ul class="tableIcons pull-right unstyled">
-                      <li><a href="javascript:void(0);" class="icon-edit"></a></li>
-                    </ul>
-                  </td>
-                </tr>
-
               </tbody>
           </table>
         </div>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'registrations'}
   resources :authentication, only: [:index]
   resources :sections, only: [:index] do
     collection do
@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   end
 
   resources :dashboard, only: [:index]
+
+  resources :users, only: [:index]
 
   resources :assesments, only: [:index, :create] do
     collection do

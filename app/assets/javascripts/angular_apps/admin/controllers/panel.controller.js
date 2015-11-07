@@ -4,11 +4,11 @@
   angular
     .module('ungc.admin')
     .controller('PanelController',[
-      '$scope', '$rootScope', '$window', 'Auth', 'PanelService',
+      '$scope', '$window', 'Auth', 'PanelService',
       PanelController
     ]);
 
-    function PanelController($scope, $rootScope, $window, Auth, PanelService) {
+    function PanelController($scope, $window, Auth, PanelService) {
 
       function init(){
         PanelService.allAssesments().then(function(data){
@@ -20,35 +20,32 @@
 
       $scope.sendInvite = function(){
 
-        var credentials = {
-            name: $scope.invite.name,
-            email: $scope.invite.email,
-            type: 'user',
-            password: '123456789',
-            password_confirmation: '123456789'
-        };
+        $scope.invite['password'] = '123456789';
+        $scope.invite['password_confirmation'] = '123456789';
+        $scope.invite['type'] = 'user';
+        $scope.invite['assesment_ids'] = [$scope.assesments[0]._id];
+
+        var credentials = $scope.invite;
+
         var config = {
             headers: {
                 'X-HTTP-Method-Override': 'POST'
             }
         };
 
-        Auth.register(credentials, config).then(function(registeredUser) {
-            console.log(registeredUser);
-            $window.location.href = ("/admin#/index");
+        Auth.register(credentials, config).then(function(credentials) {
+            $window.location.href = ('/admin#/index');
         }, function(error) {
             alert('Something went wrong');
         });
       };
 
-      $scope.inviteUser = function(assesment){
-        $rootScope.assesment = assesment;
-        $window.location.href = ("/admin#/invite");
+      $scope.inviteUser = function(){
+        $window.location.href = ('/admin#/invite');
       };
 
-      $scope.assesmentReport = function(assesment){
-        //$rootScope.assesment = assesment;
-        $window.location.href = ("/admin#/report");
+      $scope.assesmentReport = function(){
+        $window.location.href = ('/admin#/report');
       };
 
       $scope.editAssesment = function() {
