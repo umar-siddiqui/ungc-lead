@@ -25,8 +25,8 @@ class Section
         assesment_id: child.assesment_id,
         name: child.name,
         sections: child.descendents(user_id),
-        submitted: Answer.where(user_id: user_id, section_id: child._id)
-                         .count > 0 || child.questions.count == 0
+        submitted: Answer.where(user_id: user_id, section_id: child._id).count > 0,
+        questions_count: child.questions.count
       }
     end
   end
@@ -37,8 +37,8 @@ class Section
       assesment_id: assesment_id,
       name: name,
       sections: descendents(user_id),
-      submitted: Answer.where(user_id: user_id, section_id: _id).count > 0 ||
-                 questions.count == 0
+      submitted: Answer.where(user_id: user_id, section_id: _id).count > 0,
+      questions_count: questions.count
     }
   end
 

@@ -30,5 +30,5 @@ Rails.application.routes.draw do
       get :current_user_company
     end
   end
-  root to: 'authentication#index'
+  root to: 'dashboard#index'
 end

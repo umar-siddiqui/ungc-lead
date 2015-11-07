@@ -19,7 +19,6 @@
       function successCallback(response) {
         // $scope.current_graph = response.data['current_graph'];
         drawDynamicTable(response.data['current_graph']);
-        console.log(response);
       }
 
       function errorCallback(response) {
@@ -45,13 +44,10 @@
         if (listLength > MaxRowLength) MaxRowLength = listLength;
       });
 
-      console.log("MaxRowLength: ", MaxRowLength);
-      console.log("MaxColumbLength: ", MaxColumbLength);
-
       var myTableDiv = document.getElementsByClassName('graph')[0];
 
       var table = document.createElement('TABLE');
-      table.border = '1';
+      table.border = '0';
 
       var tableBody = document.createElement('TBODY');
       table.appendChild(tableBody);
@@ -61,8 +57,8 @@
 
       tableBody.appendChild(tr);
 
-      // Skipping two row space at the top of table
-      for (j = 0; j < 2; j++) {
+      // Skipping one row space at the top of table
+      for (j = 0; j < 1; j++) {
         var tr = document.createElement('TR');
         tableBody.appendChild(tr);
 
@@ -101,14 +97,65 @@
         count--;
       }
 
+      //Adding a separator (horizontal rule) between labels and graph
+      var tr = document.createElement('TR');
+      tableBody.appendChild(tr);
+      var td = document.createElement('TD');
+      td.setAttribute('colspan','' + MaxColumbLength);
+      td.innerHTML = "<hr/>";
+      td.className = "line";
+      tr.appendChild(td);
+
+
+
       // Putting labels to columbs
       var tr = document.createElement('TR');
       tableBody.appendChild(tr);
       for (i = 0; i < MaxColumbLength; i++) {
         var td = document.createElement('TD');
-        td.appendChild(document.createTextNode(test[i].stage));
+        td.appendChild(document.createTextNode('Stage ' + test[i].stage));
+        td.className = "rowlabel";
         tr.appendChild(td);
       }
+
+       // Putting descriptions under labels
+      var tr = document.createElement('TR');
+      tableBody.appendChild(tr);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode('Non-Compliance'));
+        td.className = "rowlabeldesc";
+        tr.appendChild(td);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode('Compliance'));
+        td.className = "rowlabeldesc";
+        tr.appendChild(td);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode('Optimization'));
+        td.className = "rowlabeldesc";
+        tr.appendChild(td);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode('Value Proposition'));
+        td.className = "rowlabeldesc";
+        tr.appendChild(td);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode('Mission and Vision'));
+        td.className = "rowlabeldesc";
+        tr.appendChild(td);
+
+      //Adding an image for the legend of the graph
+      var tr = document.createElement('TR');
+      tableBody.appendChild(tr);
+      var td = document.createElement('TD');
+      td.setAttribute('colspan','' + MaxColumbLength);
+      td.innerHTML = "<img src=\"images/graphlegend.png\"/>";
+      td.className = "legend";
+      tr.appendChild(td);
+
 
       myTableDiv.appendChild(table);
     }

@@ -6,7 +6,4 @@ class AuthenticationController < ApplicationController
     @asset_module = 'authentication'
     @angular_module = 'ungc.' + @asset_module
   end
-
-  def index
-  end
 end
