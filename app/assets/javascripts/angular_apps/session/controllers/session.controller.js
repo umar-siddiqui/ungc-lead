@@ -19,7 +19,6 @@
     $scope.$on('devise:login', function(event, currentUser) {
       $scope.isAuthenticated = true;
       // You can get data of current user (getting user's name and etc.)
-      console.log(currentUser.inspect);
     });
 
     $scope.$on('devise:new-session', function(event, currentUser) {

@@ -15,13 +15,7 @@
     config
   ]);
 
-  function config($stateProvider, $urlRouterProvider, $httpProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'authentication/home.html',
-        controller: 'HomeController'
-      });
+  function config($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('sign_in', {
@@ -29,12 +23,6 @@
         templateUrl: 'authentication/sign_in.html',
         controller: 'SignInController'
       });
-
-    $urlRouterProvider.otherwise('/');
-
-    $httpProvider
-      .defaults.headers
-      .common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
   }
 
 })();

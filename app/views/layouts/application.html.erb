@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>UngcLead</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag @asset_module || "application" %>
-  <%= csrf_meta_tags %>
-</head>
+<html lang="en">
+  <head>
+    <!-- Document Meta Data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <title>UngcLead</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag @asset_module || "application" %>
+  </head>
 
-<body class="<%= controller.controller_name %>" ng-app="<%= @angular_module %>">
+  <body class="<%= controller.controller_name %>" ng-app="<%= @angular_module %>">
 
-  <nav>
-    <ul class="nav nav-pills pull-right" ng-controller="SessionController">
-      <li role="presentation"><a href="javascript:void(0)">Home</a></li>
-      <li role="presentation" ng-hide="isAuthenticated">
-        <a href="#/sign_in">Sign In</a>
-      </li>
-      <li role="presentation" ng-show="isAuthenticated">
-        <a href ="javascript:void(0)" ng-click="logout()">Logout</a>
-      </li>
-    </ul>
-  </nav>
+    <%= render partial: "layouts/header" %>
 
-  <%= yield %>
-</body>
+    <div class="container">
+      <%= yield %>
+    </div> <!-- /container -->
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <p>Copyright 2015 · All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 
 </html>
