@@ -1,17 +1,243 @@
-<div class="row">
-  <div class="col-sm-10">
-      <div ng-repeat="section in sections">
-        <h2>{{section.name}}</h2>
-        <div ng-repeat="node in section.sections">
-          <h3>{{node.name}}</h3>
-          <div ng-repeat="answer in node.answers">
-            <h4>Stage {{answer.value}}</h4>
-            <h4>{{answer.question.description}}</h4>
-            <!-- <h4>{{answer.option.label}}</h4> -->
-          </div>
-        </div>
-      </div>
-  </div>
-</div>
+<div id="container">
 
-<div class="graph"></div>
+  <h1>
+    Assessment Overview
+  </h1>
+
+  <div class="headertext">
+    The below chart is a representation of your current stage of sustainability integration across various readiness parameters and business functions.
+  </div>
+
+  <div class="graph"></div>
+
+  <table id="BoxChartLegend">
+    <tr>
+      <td class="celldarkbg chartlegendshort">
+        SOC
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Stage of Corporate Sustainbaility
+      </td>
+      <td class="celldarkbg chartlegendshort">
+        SO
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Sustainability Office
+      </td>
+    </tr>
+    <tr>
+      <td class="celldarkbg chartlegendshort">
+        ROE
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Role of Executive Management
+      </td>
+      <td class="celldarkbg chartlegendshort">
+        GS
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Goal Setting
+      </td>
+    </tr>
+    <tr>
+      <td class="celldarkbg chartlegendshort">
+        CFC
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Case for Change
+      </td>
+      <td class="celldarkbg chartlegendshort">
+        MBPR
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Marketing, Branding & Public Relations
+      </td>
+    </tr>
+    <tr>
+      <td class="celldarkbg chartlegendshort">
+        S&CS
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Sales & Customer Service
+      </td>
+      <td class="celldarkbg chartlegendshort">
+        R&D
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Research & Development
+      </td>
+    </tr>
+    <tr>
+      <td class="celldarkbg chartlegendshort">
+        F&A
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Finance & Accounting
+      </td>
+      <td class="celldarkbg chartlegendshort">
+        HRTD
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Talent Acquisition & Development
+      </td>
+    </tr>
+    <tr>
+      <td class="celldarkbg chartlegendshort">
+        HRPC
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Performance Management & Compensation
+      </td>
+      <td class="celldarkbg chartlegendshort">
+        S&BD
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        Strategy & Business Development
+      </td>
+    </tr>
+    <tr>
+      <td class="celldarkbg chartlegendshort">
+        GC&L
+      </td>
+      <td class="lightdarkbg chartlegendlong">
+        General Counsel & Legal
+      </td>
+    </tr>
+  </table>
+
+  <!--Page Break -->
+  <br/><br/>
+
+  <h1>
+    Section 1: Integration Readiness
+  </h1>
+
+  <!-- <div class="headertext">
+    Lorem ipsum dolor sit amet conesecteur
+  </div> -->
+
+  <div class="bottomSpace3 section" ng-repeat="section in readinessSections">
+  <table class="sectionbox" cellpadding="5px" cellspacing="0">
+    <tr >
+      <td colspan="3" class="SectionHeadingName">
+        {{section.section_name}}
+      </td>
+      <td class="SectionHeadingPriority">
+        {{section.priority}} Priority
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="celldarkbg">
+        Current Level: Stage {{section.current.stage}}
+      </td>
+      <td colspan="2" class="celldarkbg">
+        Desired Level: Stage {{section.target.stage}}
+      </td>
+    </tr>
+    <tr>
+
+      <td colspan="2" class="celllightbg stagedescription">
+        {{section.current.option}}
+      </td>
+      <td colspan="2" class="celllightbg stagedescription">
+        {{section.target.option}}
+      </td>
+
+    </tr>
+    <tr>
+      <td class="celldarkbg commentsheader">
+        Comments
+      </td>
+      <td colspan="3" class="celldarkbg comments">
+        None
+      </td>
+    </tr>
+  </table>
+  </div>
+  <!-- Page Break -->
+  <br/><br/>
+  <h1>
+    Section 2: Functional Priority
+  </h1>
+
+  <div class="headertext">
+    Lorem ipsum dolor sit amet conesecteur
+  </div>
+
+  <div id="prioritychart">
+    <img src="Screen Shot 2015-11-07 at 5.49.15 pm.png"/>
+  </div>
+  <!-- Page Break -->
+  <br/><br/>
+  <div ng-repeat="(functionName, sectionArray) in functionsSections"
+       class="bottomSpace7">
+    <h1>
+      {{functionName}}
+    </h1>
+
+    <div class="bottomSpace6"
+         ng-repeat="section in sectionArray">
+      <table class="sectionbox" cellpadding="5px" cellspacing="0">
+        <tr >
+          <td colspan="3" class="SectionHeadingName">
+            {{section.section_name}}
+          </td>
+          <td class="SectionHeadingPriority">
+            {{section.priority}} Priority
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="celldarkbg">
+            Current Level: Stage {{section.current.stage}}
+          </td>
+          <td colspan="2" class="celldarkbg">
+            Desired Level: Stage {{section.target.stage}}
+          </td>
+        </tr>
+        <tr>
+
+          <td colspan="2" class="celllightbg stagedescription">
+            {{section.current.option}}
+          </td>
+          <td colspan="2" class="celllightbg stagedescription">
+            {{section.target.option}}
+          </td>
+
+        </tr>
+        <tr>
+          <td class="celldarkbg commentsheader">
+            Comments
+          </td>
+          <td colspan="3" class="celldarkbg comments">
+            None
+          </td>
+        </tr>
+
+        <tr>
+          <td class="celldarkbg commentsheader">
+            Discussion
+          </td>
+          <td colspan="3" class="celldarkbg">
+          </td>
+        </tr>
+
+
+        <tr ng-repeat="discussion in section.discussions">
+          <td colspan="4" class="celldarkbg commentsheader">
+            <span class="discQues">
+              {{discussion.label}}
+            </span>
+            <br/>
+            <span class="discAns">
+              {{discussion.value}}
+            </span>
+          </td>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

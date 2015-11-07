@@ -623,6 +623,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -677,6 +707,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -731,6 +791,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }
@@ -794,6 +884,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -902,6 +1022,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }
@@ -964,6 +1114,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1018,6 +1198,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1072,6 +1282,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }
@@ -1134,6 +1374,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1188,6 +1458,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1242,6 +1542,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }
@@ -1304,6 +1634,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1358,6 +1718,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1412,6 +1802,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }
@@ -1474,6 +1894,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1528,6 +1978,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1582,6 +2062,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }
@@ -1644,6 +2154,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1698,6 +2238,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1752,6 +2322,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }
@@ -1814,6 +2414,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1868,6 +2498,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     },
@@ -1922,6 +2582,36 @@ sect31 = sect3.sections.create(
             { label: 'medium',value: 2 },
             { label: 'high',value: 3 }
           ]
+        },
+        {
+          control_type: 'textarea',
+          order_no: 4,
+          label: 'Discussion',
+          description: 'What new opportunities or options were uncovered by the assessment questions or functional summaries that you hadn’t fully considered before?  '
+        },
+        {
+          control_type: 'textarea',
+          order_no: 5,
+          label: 'Discussion',
+          description: 'What one or two next steps emerged from the conversation that are worth pursuing further?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 6,
+          label: 'Discussion',
+          description: 'Is there any specific additional information that you would like to receive?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 7,
+          label: 'Discussion',
+          description: 'What is one strength or skill of the function that could be better utilized by the SO for corporate benefit?'
+        },
+        {
+          control_type: 'textarea',
+          order_no: 8,
+          label: 'Discussion',
+          description: 'For Pilot Use:  Please highlight any ideas that could make this self assessment more helpful in creating new opportunities for integrating sustainability into this specific function.'
         }
       ]
     }

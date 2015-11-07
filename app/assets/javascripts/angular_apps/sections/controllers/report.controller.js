@@ -12,12 +12,12 @@
 
     function init(){
       currentGraph();
+      fetchReport();
     }
 
     function currentGraph(){
 
       function successCallback(response) {
-        // $scope.current_graph = response.data['current_graph'];
         drawDynamicTable(response.data['current_graph']);
       }
 
@@ -33,6 +33,42 @@
         }
       }).then(successCallback, errorCallback);
 
+    }
+
+    function fetchReport(){
+
+      function successCallback(response) {
+        loadSectionData(response.data.report);
+      }
+
+      function errorCallback(response) {
+        alert('Error')
+      }
+
+      return $http({
+        method: 'GET',
+        url: '/answers/report.json',
+        params: {
+          assesment_id: $stateParams.assesment_id
+        }
+      }).then(successCallback, errorCallback);
+
+    }
+
+    function loadSectionData(sections){
+      var readinessSections = [];
+      var functionsSections = {};
+      angular.forEach(sections, function(section) {
+        if(section.business_function){
+          var bfname = section.business_function.name
+          functionsSections[bfname] = functionsSections[bfname] || []
+          functionsSections[bfname].push(section)
+          return
+        }
+        readinessSections.push(section)
+      });
+      $scope.readinessSections = readinessSections;
+      $scope.functionsSections = functionsSections;
     }
 
     function drawDynamicTable(test) {

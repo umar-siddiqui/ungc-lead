@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :fetch_assesment_id, only: :current_graph
+  before_action :fetch_assesment_id, only: [:current_graph, :report]
   rescue_from Mongoid::Errors::DocumentNotFound, with: :doc_not_found
   rescue_from Mongoid::Errors::Validations, with: :doc_invalid
 
@@ -23,9 +23,27 @@ class AnswersController < ApplicationController
               .where(user_id: current_user._id,
                      assesment_id: params[:assesment_id])
               .select { |a| a.question.label == 'Current Performance' }
+
     render json: answers,
            serializer: AnswersSerializers::CurrentGraphSerializer
   end
+
+  def report
+    answers = Answer
+              .includes(:question, :score)
+              .where(user_id: current_user._id,
+                     assesment_id: params[:assesment_id])
+
+    sections = Section
+               .includes(:business_function)
+               .where(assesment_id: params[:assesment_id])
+
+    render json: answers,
+           sections: sections,
+           serializer: AnswersSerializers::ReportSerializer
+  end
+
+  private
 
   def fetch_assesment_id
     params[:assesment_id] = Assesment.first._id
