@@ -1,3 +1,5 @@
+<alert-bar error-type="danger" error-list="errors"></alert-bar>
+
 <div class="container">
     <div class="container">
       <div class="row">
@@ -31,7 +33,7 @@
                   <td>{{ user.name }}</td>
                   <td>{{ user.company.name }}</td>
                   <td>{{ user.email }}</td>
-                  <td ng-if="(user.assesments[0].status == 'pristine')">Yet Not Started</td>
+                  <td ng-if="(user.assesments[0].status == 'pristine')">Not Yet Started</td>
                   <td ng-if="(user.assesments[0].status == 'in_progress')">In Progress</td>
                   <td ng-if="(user.assesments[0].status == 'completed')">
                     <input type="button" class="btn btn-default" ng-click=""

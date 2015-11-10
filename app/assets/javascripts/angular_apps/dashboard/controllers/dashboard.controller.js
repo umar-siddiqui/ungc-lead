@@ -12,14 +12,14 @@
 
       DashboardService.getAssesments().then(function(data){
         $scope.myAssesments = data;
-      }), function(error) {
-        alert('Something went wrong!');
-      };
+      }, function(error) {
+        $scope.errors = error.data.errors;
+      });
 
       DashboardService.getCurrentUserCompany().then(function(data){
         $scope.company = data;
-      }), function(error) {
-        alert('Something went wrong!');
-      };
+      }, function(error) {
+        $scope.errors = error.data.errors;
+      });
     }
 })();
