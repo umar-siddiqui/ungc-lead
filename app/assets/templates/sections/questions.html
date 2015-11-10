@@ -9,13 +9,19 @@
 
       <div class="data"
            ng-repeat="option in question.options"
-           ng-show="question.control_type == 'radio'">
+           ng-if="question.control_type == 'radio'">
         <input type="radio" name="radio" value="{{option.value}}"
                id="{{option.value}}"
                ng-click="$parent.answer.option_id = option._id"
                ng-model="$parent.answer.value">
         <p>{{option.label}}</p>
       </div>
+
+      <div class="data"
+           ng-if="question.control_type == 'textarea'">
+        <textarea ng-model="$parent.answer.value"></textarea>
+      </div>
+
     </div>
 
     <div class="submitBtn">
@@ -27,7 +33,7 @@
   </form>
 
 </div>
-<!-- <pre>
+<pre>
   {{answers | json}}
 </pre>
- -->
+

@@ -7,7 +7,7 @@ module AnswersSerializers
       [1,2,3,4,5].map do |stage|
         {
           stage: stage,
-          list: gen_list(stage)
+          list: gen_list(stage.to_s)
         }
       end
     end

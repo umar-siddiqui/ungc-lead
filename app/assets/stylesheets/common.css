@@ -646,4 +646,121 @@ label{
 
 /*Graph CSS End*/
 
+.sectionbox {
+    margin: 0 auto; /* or margin: 0 auto 0 auto */
+width:700px;
+  font-size: 14;
 
+  /*border: 1px solid black;*/
+
+}
+
+#BoxChart
+{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#container
+{
+
+  width: 800px;
+  text-align: center;
+}
+
+td {
+
+  text-align: center;
+    width:100px;
+    border: 0px solid black;
+}
+.SectionHeadingName
+{
+  text-align: left;
+  font-weight: bold;
+  color: white;
+  background-color: #0b5394;
+}
+.SectionHeadingPriority
+{
+  text-transform: capitalize;
+  width:75px;
+  font-weight: bold;
+  color: white;
+  background-color: #6fa8dc;
+}
+.celldarkbg
+{
+  background-color: #9fc5e8;
+}
+
+.celllightbg
+{
+  background-color: #cfe2f3;
+}
+.comments
+{
+  text-align: left;
+  font-size: 12px;
+}
+
+.commentsheader
+{
+  text-align: left;
+}
+
+.stagedescription
+{
+  vertical-align: top;
+  font-size: 12px;
+  text-align: justify;
+}
+.blankrow
+{
+  height: 5px;
+}
+.discQues
+{
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+}
+.discAns
+{
+  font-size: 10px;
+  text-align: left;
+}
+
+.chartlegendshort
+{
+  width: 40px;
+  font-size: 10px;
+}
+
+.chartlegendlong
+{
+  text-align: left;
+  width:200px;
+  font-size: 10px;
+
+}
+
+#BoxChartLegend
+{
+  text-align: center;
+   margin: 10 auto;
+}
+
+
+h1 {
+
+  text-align: left;
+
+}
+
+.headertext
+{
+  float: left;
+  margin-bottom: 20px;
+  text-align: left;
+}
