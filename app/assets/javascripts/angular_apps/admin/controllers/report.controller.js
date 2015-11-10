@@ -14,13 +14,13 @@
         PanelService.allAssesments().then(function(data){
           $scope.assesments = data;
         }), function(error) {
-          alert('Something went wrong!');
+          $scope.errors = error.data.errors;
         };
 
         PanelService.allUsers().then(function(data){
           $scope.users = data;
         }), function(error) {
-          alert('Something went wrong!');
+          $scope.errors = error.data.errors;
         };
 
       };
