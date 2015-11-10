@@ -9,12 +9,7 @@ class AssesmentsController < ApplicationController
   end
 
   def all_assesments
-    respond_to do |format|
-      format.html
-      format.json do
-        render json: Assesment.all,
-               each_serializer: AdminSerializers::AdminIndexSerializer
-      end
-    end
+    render json: Assesment.all,
+           each_serializer: AdminSerializers::AdminIndexSerializer
   end
 end

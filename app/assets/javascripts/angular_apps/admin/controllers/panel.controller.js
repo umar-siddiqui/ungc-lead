@@ -4,11 +4,11 @@
   angular
     .module('ungc.admin')
     .controller('PanelController',[
-      '$scope', '$window', 'Auth', 'PanelService',
+      '$scope', '$state', 'Auth', 'PanelService',
       PanelController
     ]);
 
-    function PanelController($scope, $window, Auth, PanelService) {
+    function PanelController($scope, $state, Auth, PanelService) {
 
       function init(){
         PanelService.allAssesments().then(function(data){
@@ -34,18 +34,18 @@
         };
 
         Auth.register(credentials, config).then(function(credentials) {
-            $window.location.href = ('/admin#/index');
+            $state.go('index');
         }, function(error) {
             alert('Something went wrong');
         });
       };
 
       $scope.inviteUser = function(){
-        $window.location.href = ('/admin#/invite');
+        $state.go('invite');
       };
 
       $scope.assesmentReport = function(){
-        $window.location.href = ('/admin#/report');
+        $state.go('report');
       };
 
       $scope.editAssesment = function() {

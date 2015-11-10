@@ -1,6 +1,7 @@
+# class Notifier
 class Notifier < ApplicationMailer
-  default from: 'sunny@treeni.com',
-          return_path: 'sunny@treeni.com'
+  default from: 'selfassessment@unglobalcompact.org',
+          return_path: 'selfassessment@unglobalcompact.org'
 
   def welcome(user)
     @user = user

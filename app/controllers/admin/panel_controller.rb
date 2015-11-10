@@ -1,5 +1,5 @@
 module Admin
-# class PanelController
+  # class PanelController
   class PanelController < ApplicationController
     before_action :init_ng_module
 
