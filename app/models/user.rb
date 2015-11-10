@@ -6,9 +6,13 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_create :send_invitation
+
   ## Database authenticatable
-  field :email,              type: String, default: ""
-  field :encrypted_password, type: String, default: ""
+  field :email,              type: String, default: ''
+  field :encrypted_password, type: String, default: ''
+  field :type, type: String
+  field :name
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -28,6 +32,14 @@ class User
   has_and_belongs_to_many :assesments, dependent: :destroy
   has_many :answers, dependent: :destroy
   belongs_to :company
+
+  accepts_nested_attributes_for :company
+
+
+  def send_invitation
+    mail = Notifier.welcome(self)
+    mail.deliver_now
+  end
 
   ## Confirmable
   # field :confirmation_token,   type: String

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('ungc.dashboard')
+    .module('ungc.admin')
     .factory('PromiseFactory',[
       '$http', '$q', '$log',
       PromiseFactory

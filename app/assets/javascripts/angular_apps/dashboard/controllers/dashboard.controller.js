@@ -4,11 +4,11 @@
   angular
     .module('ungc.dashboard')
     .controller('DashboardController',[
-      '$scope', 'DashboardService',
+      '$scope', 'Auth', 'DashboardService',
       DashboardController
     ]);
 
-    function DashboardController($scope, DashboardService) {
+    function DashboardController($scope, Auth, DashboardService) {
 
       DashboardService.getAssesments().then(function(data){
         $scope.myAssesments = data;
@@ -22,5 +22,6 @@
         alert('Something went wrong!');
       };
     }
+
 
 })();

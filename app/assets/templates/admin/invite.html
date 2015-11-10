@@ -1,0 +1,66 @@
+<div class="container">
+  <section class="profileSec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="proImg clearfix">
+            <img src="/images/batman.jpg">
+          </div>
+          <div class="wel">
+            <h3>Welcome</h3>
+            <h2>{{ assesments[0].name }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div class="row" style="padding-top:20px;">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">Invite</div>
+
+      <div class="panel-body">
+        <div class="row" style="padding-top:20px;">
+        <form class="signUp" ng-submit="sendInvite()" novalidate>
+          <div class="form-group">
+            <label for="orgName" class="signInLabel">Organization Name</label>
+            <input type="text" class="form-control signUp"
+                   id="orgName" placeholder="UNGC"
+                   ng-model="invite.company.name">
+          </div>
+          <div class="form-group">
+            <label for="orgLogo" class="signInLabel">Organization Logo</label>
+            <input type="file" class="form-control signUp"
+                   accept="image/x-png, image/gif, image/jpeg"
+                   id="orgLogo" placeholder="Password"
+                   ng-model="invite.orgLogo">
+          </div>
+          <div class="form-group">
+            <label for="name" class="signInLabel">Name</label>
+            <input type="text" class="form-control signUp"
+                   id="name" placeholder="Abhishek"
+                   ng-model="invite.name">
+          </div>
+          <div class="form-group">
+            <label for="email" class="signInLabel">Email</label>
+            <input type="email" class="form-control signUp"
+                   id="email" placeholder="Enter email"
+                   ng-model="invite.email">
+          </div>
+          <center style="padding-top:20px;">
+            <input type="submit" class="btn btn-default topSpace3"
+                   value="Send Invitation"/>
+          </center>
+        </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

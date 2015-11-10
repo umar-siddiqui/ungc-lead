@@ -8,11 +8,5 @@ class DashboardController < ApplicationController
   end
 
   def index
-    respond_to do |format|
-      format.html
-      format.json do
-        render json: Assesment.all, each_serializer: DashboardSerializer
-      end
-    end
   end
 end

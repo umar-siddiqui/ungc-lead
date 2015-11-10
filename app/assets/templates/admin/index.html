@@ -1,0 +1,57 @@
+<div class="container">
+  <section class="profileSec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="proImg clearfix">
+            <img src="/images/batman.jpg">
+          </div>
+          <div class="wel">
+            <h3>Welcome</h3>
+            <h2>Treeni</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="loremTe">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="assesment in assesments">
+          <div class="leftText rightText">
+          <div class="clearfix">
+            <div class="pull-left">
+            <h4>{{assesment.name}}</h4>
+            </div>
+            <div class="pull-right">
+              <button class="btn" ng-click="editAssesment(assesment._id)">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </button>
+            </div>
+          </div>
+
+
+              <div  ng-if="assesment.description.length < 150" >
+                <p class="bottomSpace4">{{ assesment.description }}</p>
+              </div>
+              <div  ng-hide="assesment.description.length < 150" >
+                <p class="bottomSpace4">
+                  {{ assesment.description.substring(0, 150); }} ...
+                </p>
+              </div>
+            <!-- <p>{{assesment.description}}</p> -->
+            <div class="submitBtn">
+              <div class="pull-left">
+                <a href="javascript:void(0);" ng-click="assesmentReport()">View Report</a>
+              </div>
+              <div class="pull-right">
+                <a href="javascript:void(0);" ng-click="inviteUser()">Invite</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

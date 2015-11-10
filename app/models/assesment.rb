@@ -5,6 +5,7 @@ class Assesment
 
   # Attributes
   field :name, type: String
+  field :description, type: String
   field :submitted_at
   field :description
 
