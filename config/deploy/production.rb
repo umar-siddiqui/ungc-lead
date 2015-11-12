@@ -1,6 +1,6 @@
 server 'ungc.cloudapp.net', user: 'azureuser', roles: %w{app db web}, primary: true
 set :deploy_to, '/var/www/ungc-lead'
-set :branch, "master"
+set :branch, 'develop'
 
 server 'ungc.cloudapp.net',
   user: 'azureuser',
