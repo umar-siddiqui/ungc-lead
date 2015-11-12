@@ -6,7 +6,8 @@
     'ui.router',
     'templates',
     'Devise',
-    'ungc.session'
+    'ungc.session',
+    'ungc.common'
   ])
   .config([
     '$stateProvider',

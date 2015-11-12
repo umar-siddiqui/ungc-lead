@@ -13,15 +13,15 @@
       function init(){
         PanelService.allAssesments().then(function(data){
           $scope.assesments = data;
-        }), function(error) {
-          alert('Something went wrong!');
-        };
+        }, function(error) {
+          $scope.errors = error.data.errors;
+        });
       };
 
       $scope.sendInvite = function(){
 
-        $scope.invite['password'] = '123456789';
-        $scope.invite['password_confirmation'] = '123456789';
+        $scope.invite['password'] = '12345678';
+        $scope.invite['password_confirmation'] = '12345678';
         $scope.invite['type'] = 'user';
         $scope.invite['assesment_ids'] = [$scope.assesments[0]._id];
 
@@ -36,7 +36,7 @@
         Auth.register(credentials, config).then(function(credentials) {
             $state.go('index');
         }, function(error) {
-            alert('Something went wrong');
+          $scope.errors = error.data.errors;
         });
       };
 
@@ -49,7 +49,7 @@
       };
 
       $scope.editAssesment = function() {
-        alert('Edit');
+        $state.go('sections');
       };
 
     init();
