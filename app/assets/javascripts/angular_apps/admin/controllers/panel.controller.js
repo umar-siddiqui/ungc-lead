@@ -49,7 +49,7 @@
       };
 
       $scope.editAssesment = function() {
-        alert('Edit');
+        $state.go('sections');
       };
 
     init();
