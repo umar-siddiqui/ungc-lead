@@ -35,8 +35,7 @@
 
       function successCallback(response) {
         alert('Section Questions Saved');
-        console.log(response)
-        // $state.go('sections');
+        $state.go('sections');
       }
 
       function errorCallback(response) {
