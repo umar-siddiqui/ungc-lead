@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('ungc.sections')
+    .module('ungc.admin')
     .controller('QuestionsController', [
       '$scope', '$window', '$stateParams', '$http', '$state',
       QuestionsController
@@ -31,11 +31,9 @@
       }).then(successCallback, errorCallback);
     }
 
-    function saveAnswer(){
+    function saveQuestions(){
 
       function successCallback(response) {
-        $scope.section.submitted = true;
-        $scope.markDone($scope.sections);
         alert('Section Questions Saved');
         $state.go('sections');
       }
@@ -46,21 +44,13 @@
 
       return $http({
         method: 'POST',
-        url: '/answers.json',
-        data: { answers: $scope.answers }
+        url: '/questions/update_all.json',
+        data: { questions: $scope.questions }
       }).then(successCallback, errorCallback);
     }
 
-    $scope.initAnswer = function(question) {
-      return {
-        question_id: question._id,
-        section_id: $scope.section._id,
-        assesment_id: $scope.section.assesment_id
-      }
-    }
-
     $scope.save = function() {
-      saveAnswer();
+      saveQuestions();
     }
 
     init();

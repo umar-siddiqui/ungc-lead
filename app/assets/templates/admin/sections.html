@@ -1,0 +1,53 @@
+<!-- Nested node template -->
+<script type="text/ng-template" id="nodes_renderer.html">
+  <div ui-tree-handle class="tree-node tree-node-content clearfix"
+       on-node-select>
+    <a class="btn btn-warning btn-xs pull-left"
+       ng-if="node.sections && node.sections.length > 0"
+       data-nodrag ng-click="toggle(this)">
+      <span class="glyphicon"
+            ng-class="{
+              'glyphicon-chevron-right': collapsed,
+              'glyphicon-chevron-down': !collapsed
+            }">
+      </span>
+    </a>
+    <span class="pull-left">{{node.name}}</span>
+    <a class="pull-right btn btn-success btn-xs"
+       ng-show="node.submitted"
+       data-nodrag>
+       <span class="glyphicon glyphicon-ok"></span>
+    </a>
+  </div>
+  <ol ui-tree-nodes="" ng-model="node.sections" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node.sections" ui-tree-node
+        ng-include="'nodes_renderer.html'">
+    </li>
+  </ol>
+</script>
+
+<section class="assesNames">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="pull-left">Self Assessment</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <div class="col-sm-4"
+       id="sectionsDiv"
+       style="height: 1400px; overflow-y: scroll;">
+    <div ui-tree id="tree-root" data-drag-enabled="false">
+      <ol ui-tree-nodes ng-model="sections">
+        <li ng-repeat="node in sections" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="col-sm-8" id="questionsDiv">
+    <div ui-view></div>
+  </div>
+</div>

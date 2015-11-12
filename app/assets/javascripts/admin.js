@@ -1,10 +1,13 @@
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require angular/angular
 //= require angular-devise
 //= require angular-animate
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-ui-tree
+
 //= require_tree ../templates/admin
 
 //= require ./angular_apps/session/session.module.js

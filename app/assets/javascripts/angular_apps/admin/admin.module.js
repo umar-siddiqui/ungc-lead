@@ -6,6 +6,7 @@
     'ui.router',
     'templates',
     'Devise',
+    'ui.tree',
     'ungc.session'
   ])
   .config([
@@ -34,6 +35,20 @@
         url: '/report',
         templateUrl: 'admin/report.html',
         controller: 'ReportController'
+      });
+
+    $stateProvider
+      .state('sections', {
+        url: '/sections',
+        templateUrl: 'admin/sections.html',
+        controller: 'SectionsController'
+      });
+
+    $stateProvider
+      .state('sections.questions', {
+        url: '/:section_id/questions',
+        templateUrl: 'admin/questions.html',
+        controller: 'QuestionsController'
       });
 
     $urlRouterProvider.otherwise('/');
