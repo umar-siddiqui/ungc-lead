@@ -1,9 +1,9 @@
-server '52.21.113.165', user: 'ubuntu', roles: %w{app db web}, primary: true
+server 'ungc.cloudapp.net', user: 'azureuser', roles: %w{app db web}, primary: true
 set :deploy_to, '/var/www/ungc-lead'
 set :branch, "master"
 
-server '52.21.113.165',
-  user: 'ubuntu',
+server 'ungc.cloudapp.net',
+  user: 'azureuser',
   roles: %w{web app},
   ssh_options: {
     keys: %w(/home/webonise/.ssh/id_rsa),
