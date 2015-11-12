@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('ungc.sections')
+    .module('ungc.admin')
     .controller('SectionsController', [
       '$scope', '$window', '$state', '$http', '$stateParams',
       SectionsController
@@ -10,18 +10,14 @@
 
   function SectionsController($scope, $window, $state, $http, $stateParams) {
 
-    $scope.markDone = markDone;
-
     function init(){
       getSectionTree();
-      $scope.canConclude = true;
     }
 
     function getSectionTree(){
 
       function successCallback(response) {
         $scope.sections = response.data['sections'];
-        markDone($scope.sections);
       }
 
       function errorCallback(response) {
@@ -39,37 +35,11 @@
     }
 
     $scope.fetchQuestions = function (section){
+      console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz')
       if(section.submitted) return;
       $scope.section = section;
       $state.go('sections.questions', { section_id: section._id });
     };
-
-    function validateConclude(sections){
-      angular.forEach(sections, function(section){
-        if (!section.submitted) { return $scope.canConclude = false; };
-        validateConclude(section.sections)
-      });
-    }
-
-    function markDone(sections){
-      angular.forEach(sections, function(section){
-        markDone(section.sections)
-        if (section.submitted) return;
-        if (section.questions_count == 0) {
-          section.submitted = _.every(section.sections, function(section) {
-            return section.submitted == true;
-          });
-        };
-      });
-    }
-
-    $scope.concluded = function(){
-      validateConclude($scope.sections);
-      console.log('######################');
-      console.log($scope.canConclude);
-      if(!$scope.canConclude) return alert('Please attempt all questions');
-      $state.go('report');
-    }
 
     init();
 

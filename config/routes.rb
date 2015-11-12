@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: 'registrations'}
+  devise_for :users, controllers: { registrations: 'registrations' }
   resources :authentication, only: [:index]
+
   resources :sections, only: [:index] do
     collection do
       get :report
     end
     resources :questions, only: [:index]
   end
+
+  resources :questions, only: [] do
+    collection do
+      post :update_all
+    end
+  end
+
   resources :answers, only: [:create] do
     collection do
       get :current_graph

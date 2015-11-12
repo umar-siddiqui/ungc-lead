@@ -22,14 +22,6 @@ ag = BusinessFunction.create(
   name: 'Strategy & Business Development', acronym: 'AG')
 md = BusinessFunction.create(
   name: 'General Counsel & Legal', acronym: 'GC&L')
-# sc = BusinessFunction.create(
-#   name: 'Supply Chain', acronym: 'SC')
-# le = BusinessFunction.create(
-#   name: 'Legal', acronym: 'LE')
-# ea = BusinessFunction.create(
-#   name: 'External Affairs', acronym: 'EA')
-# hr = BusinessFunction.create(
-#   name: 'Human Resources', acronym: 'HR')
 ra = BusinessFunction.create(
   name: 'Readiness Assesment', acronym: 'RA')
 
