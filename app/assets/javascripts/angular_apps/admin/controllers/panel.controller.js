@@ -27,14 +27,8 @@
 
         var credentials = $scope.invite;
 
-        var config = {
-            headers: {
-                'X-HTTP-Method-Override': 'POST'
-            }
-        };
-
-        Auth.register(credentials, config).then(function(credentials) {
-            $state.go('index');
+        PanelService.newUser(credentials).then(function(credentials) {
+          $state.go('home');
         }, function(error) {
           $scope.errors = error.data.errors;
         });
@@ -52,7 +46,7 @@
         $state.go('sections');
       };
 
-    init();
+      init();
 
     };
 

@@ -5,6 +5,6 @@ class Notifier < ApplicationMailer
 
   def welcome(user)
     @user = user
-    mail(to: user.email, subject: 'Invitation to join Assesment')
+    mail(to: user.email, subject: "Invite for #{user.try(:company).try(:name)}")
   end
 end

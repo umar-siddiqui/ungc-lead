@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
 
   respond_to :html, :json
 
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :doc_not_found
+  rescue_from Mongoid::Errors::Validations, with: :doc_invalid
+
   def default_serializer_options
     { root: false }
   end
@@ -17,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def doc_invalid(exception)
-    render json: { errors: exception.document.errors },
+    render json: { errors: exception.document.errors.full_messages },
            status: :unprocessable_entity
   end
 end

@@ -29,7 +29,7 @@
       this.newUser = function(user) {
 
         var requestDetails = {
-          url: '/users.json',
+          url: '/admin/users.json',
           method: "POST",
           data: { user: user }
         };

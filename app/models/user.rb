@@ -35,7 +35,6 @@ class User
 
   accepts_nested_attributes_for :company
 
-
   def send_invitation
     mail = Notifier.welcome(self)
     mail.deliver_now
