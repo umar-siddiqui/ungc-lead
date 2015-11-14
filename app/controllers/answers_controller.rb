@@ -1,7 +1,5 @@
 class AnswersController < ApplicationController
   before_action :fetch_assesment_id, only: [:current_graph, :report]
-  rescue_from Mongoid::Errors::DocumentNotFound, with: :doc_not_found
-  rescue_from Mongoid::Errors::Validations, with: :doc_invalid
 
   def create
     answers = params[:answers].map do |ans|
