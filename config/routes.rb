@@ -28,7 +28,11 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :create]
+
+  scope :admin do
+    resources :users, only: [:create]
+  end
 
   resources :assesments, only: [:index, :create] do
     collection do

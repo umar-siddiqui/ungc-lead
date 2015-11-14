@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def doc_invalid(exception)
-    render json: { errors: exception.document.errors },
+    render json: { errors: exception.document.errors.full_messages },
            status: :unprocessable_entity
   end
 end
