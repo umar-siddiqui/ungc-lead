@@ -29,6 +29,7 @@ gem 'angular_rails_csrf', '1.0.4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem "unicorn-rails"
 
 group :development, :test do
   gem 'byebug'
