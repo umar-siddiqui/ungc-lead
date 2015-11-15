@@ -2,9 +2,9 @@
 class UsersController < ApplicationController
   def index
     if is_admin
-      users = User.all
+      users = User.where(type: 'user')
       render json: users,
-             each_serializer: AdminSerializers::UsersListingSerializer
+             each_serializer: AdminSerializers::AllUsersSerializer
     else
       render json: { errors: ['Access Denied'] },
              status: :unauthorized
