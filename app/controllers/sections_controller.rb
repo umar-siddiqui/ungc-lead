@@ -1,3 +1,4 @@
+# SectionsController
 class SectionsController < ApplicationController
   before_action :init_ng_module
   before_action :fetch_assesment_id, only: [:index, :report]
@@ -21,7 +22,8 @@ class SectionsController < ApplicationController
   end
 
   def report
-    sections = Section.where(assesment_id: params[:assesment_id], section_id: nil)
+    sections = Section.where(
+      assesment_id: params[:assesment_id], section_id: nil)
     render json: {
       sections: sections
         .map { |section| section.self_and_descendents_report(current_user._id) }
