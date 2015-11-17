@@ -3,7 +3,7 @@
   <h4>{{section.description}}</h4>
 
   <form novalidate>
-    <div ng-repeat="question in questions">
+    <div ng-repeat="question in questions | orderBy:'order_no'">
       <h6>
         <span ng-hide="editQuesFlag">{{question.description}}</span>
         <input ng-show="editQuesFlag" type="text" ng-model="question.description"/>
@@ -17,7 +17,7 @@
       </h6>
 
       <div class="data"
-           ng-repeat="option in question.options"
+           ng-repeat="option in question.options | orderBy:'value'"
            ng-if="question.control_type == 'radio'">
 
         <button class="btn pull-left"
