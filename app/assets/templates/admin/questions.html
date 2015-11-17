@@ -6,7 +6,9 @@
     <div ng-repeat="question in questions | orderBy:'order_no'">
       <h6>
         <span ng-hide="editQuesFlag">{{question.description}}</span>
-        <input ng-show="editQuesFlag" type="text" ng-model="question.description"/>
+        <textarea ng-show="editQuesFlag" ng-model="question.description"
+                  class="questionTextArea">
+        </textarea>
         <button class="btn" ng-click="editQuesFlag = !editQuesFlag">
           <span class="glyphicon"
                 ng-class="{
@@ -30,7 +32,9 @@
         </button>
 
         <p ng-hide="editFlag">{{option.label}}</p>
-        <input ng-show="editFlag" type="text" ng-model="option.label"/>
+        <textarea ng-show="editFlag" ng-model="option.label"
+                  class="optionTextArea">
+        </textarea>
       </div>
 
     </div>
