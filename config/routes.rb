@@ -44,8 +44,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :confirmations, only: [:show, :update]
-
   resources :companies do
     collection do
       get :current_user_company
