@@ -7,15 +7,20 @@
     'templates',
     'Devise',
     'ui.tree',
-    'ungc.session'
+    'ungc.session',
+    'highcharts-ng'
   ])
   .config([
     '$stateProvider',
     '$urlRouterProvider',
+    'highchartsNGProvider',
     config
   ]);
 
-  function config($stateProvider, $urlRouterProvider) {
+  function config($stateProvider, $urlRouterProvider, highchartsNGProvider) {
+    // lazyload hightchart
+    highchartsNGProvider.lazyLoad([highchartsNGProvider.HIGHCHART, "modules/exporting.js", "highcharts-more.js"]);
+
     $stateProvider
       .state('sections', {
         url: '/',
