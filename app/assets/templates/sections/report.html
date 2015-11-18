@@ -156,7 +156,7 @@
   </table>
   </div>
   <!-- Page Break -->
-  <br/><br/>
+  <!-- <br/><br/>
   <h1>
     Section 2: Functional Priority
   </h1>
@@ -167,7 +167,7 @@
 
   <div id="prioritychart">
     <img src="Screen Shot 2015-11-07 at 5.49.15 pm.png"/>
-  </div>
+  </div> -->
   <!-- Page Break -->
   <br/><br/>
   <div ng-repeat="(functionName, sectionArray) in functionsSections"
@@ -215,7 +215,7 @@
           </td>
         </tr>
 
-        <tr>
+        <tr ng-show="section.discussions">
           <td class="celldarkbg commentsheader">
             Discussion
           </td>

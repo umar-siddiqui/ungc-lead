@@ -3,12 +3,12 @@
   <h4>{{section.description}}</h4>
 
   <form novalidate>
-    <div ng-repeat="question in questions"
+    <div ng-repeat="question in questions | orderBy:'order_no'"
          ng-init="answer = $parent.answers[$index] = initAnswer(question)">
       <h6>{{question.description}}</h6>
 
       <div class="data"
-           ng-repeat="option in question.options"
+           ng-repeat="option in question.options | orderBy:'value'"
            ng-if="question.control_type == 'radio'">
         <input type="radio" name="radio" value="{{option.value}}"
                id="{{option.value}}"
@@ -24,11 +24,12 @@
 
     </div>
 
-    <div class="submitBtn">
+    <div class="submitBtn" ng-hide="loading">
         <a ng-show="questions.length > 0" href="javascript:void(0)"
            ng-click="save()">
           save
         </a>
+        <!-- <div class="spinner" ng-show="loading"></div> -->
     </div>
   </form>
 

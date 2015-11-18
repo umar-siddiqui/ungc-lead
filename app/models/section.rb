@@ -29,6 +29,9 @@ class Section
         questions_count: child.questions.count
       }
     end
+    .sort do |s1, s2|
+      s2[:name] <=> s1[:name]
+    end
   end
 
   def self_and_descendents(user_id)
@@ -58,6 +61,9 @@ class Section
                    }),
         score: Score.where(user_id: user_id, section_id: child._id).first
       }
+    end
+    .sort do |s1, s2|
+      s2[:name] <=> s1[:name]
     end
   end
 

@@ -730,13 +730,11 @@ td {
   font-size: 10px;
   text-align: left;
 }
-
 .chartlegendshort
 {
   width: 40px;
   font-size: 10px;
 }
-
 .chartlegendlong
 {
   text-align: left;
@@ -744,23 +742,26 @@ td {
   font-size: 10px;
 
 }
-
 #BoxChartLegend
 {
   text-align: center;
    margin: 10 auto;
 }
-
-
 h1 {
-
   text-align: left;
-
 }
-
 .headertext
 {
   float: left;
   margin-bottom: 20px;
   text-align: left;
+}
+.questionTextArea {
+  width: 86%;
+}
+.optionTextArea {
+  width: 80%;
+}
+.sectionbox td {
+  padding: 5px;
 }
