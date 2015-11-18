@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require angular/angular
+//= require highcharts-ng
 //= require angular-devise
 //= require angular-animate
 //= require angular-ui-router
