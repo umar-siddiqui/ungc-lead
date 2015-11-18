@@ -10,6 +10,8 @@
 
   function ReportController($scope, $window, $state, $http, $stateParams, highchartsNG) {
 
+    var $$ctrlScope = {};
+
     function init(){
       currentGraph();
       fetchReport();
@@ -39,6 +41,7 @@
 
       function successCallback(response) {
         loadSectionData(response.data.report);
+        initHighChart(response.data.function_priorities)
       }
 
       function errorCallback(response) {
@@ -196,150 +199,129 @@
       myTableDiv.appendChild(table);
     }
 
-    init();
+    function initHighChart(functionPriorities) {
 
-    highchartsNG.ready(function(){
-      $scope.functionalPriority = {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Function Priority'
-        },
-        xAxis: {
+      highchartsNG.ready(function(){
+        $scope.functionalPriority = {
+          chart: {
+              type: 'bar'
+          },
+          title: {
+              text: 'Function Priority'
+          },
+          xAxis: {
 
-            categories: [
-              'Marketing, Branding & Public Relations',
-              'Sales & Customer Service',
-              'Research & Development','Finance & Accounting',
-              'Talent Acquisition & Development',
-              'Performance Management & Compensation',
-              'Strategy & Business Development',
-              'General Counsel & Legal'
-            ],
-            labels: {
+              categories: functionPriorities.section_names,
+              labels: {
 
-                style: {
+                  style: {
 
-                    textOverflow: 'none'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-           tickInterval: 1,
-            showLastLabel:false,
-            title:
-            {
-                text: 'Influence'
-            }
-        },
-        legend: {
-            reversed: true
-        },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
-        series: [{
-            name: 'Acheiving Sustainability Goals',
-             color: 'rgba(65,170,196,1)',
-            data: [3, 3, 2, 3, 2, 1, 0]
-        }, {
-            name: 'Historical Value Creation',
-              color: 'rgba(189,182,156,1)',
-            data: [2, 2, 3, 2, 1, 2, 1]
-        }]
-      };
+                      textOverflow: 'none'
+                  }
+              }
+          },
+          yAxis: {
+              min: 0,
+             tickInterval: 1,
+              showLastLabel:false,
+              title:
+              {
+                  text: 'Influence'
+              }
+          },
+          legend: {
+              reversed: true
+          },
+          plotOptions: {
+              series: {
+                  stacking: 'normal'
+              }
+          },
+          series: [{
+              name: 'Acheiving Sustainability Goals',
+               color: 'rgba(65,170,196,1)',
+              data: functionPriorities.achieving_sustainability_goals
+          }, {
+              name: 'Historical Value Creation',
+                color: 'rgba(189,182,156,1)',
+              data: functionPriorities.historical_value_creation
+          }]
+        };
 
-      $scope.functionalSnapshot = {
+        $scope.functionalSnapshot = {
 
-        chart: {
+          chart: {
             polar: true,
             type: 'line'
-        },
+          },
 
-        title: {
+          title: {
             text: 'Functional Snapshot',
             x: -80
-        },
+          },
 
-        pane: {
+          pane: {
             size: '80%'
-        },
+          },
 
-        xAxis: {
-            categories: [
-            'Marketing, Branding & Public Relations',
-            'Sales & Customer Service',
-            'Research & Development','Finance & Accounting',
-            'Talent Acquisition & Development',
-            'Performance Management & Compensation',
-            'Strategy & Business Development',
-            'General Counsel & Legal'
-            ],
+          xAxis: {
+            categories: ['Marketing, Branding & Public Relations', 'Sales & Customer Service', 'Research & Development', 'Finance & Accounting', 'Talent Acquisition & Development', 'Performance Management & Compensation', 'Strategy & Business Development', 'General Counsel & Legal'],
             tickmarkPlacement: 'on',
             lineWidth: 0
-        },
+          },
 
-        yAxis: {
+          yAxis: {
             gridLineInterpolation: 'polygon',
             lineWidth: 0,
             min: 0,
             max: 6,
-            tickInterval:1,
+            tickInterval: 1,
             labels: {
-                format: 'Stage {value}'
+              format: 'Stage {value}'
             },
             showFirstLabel: false
-        },
+          },
 
-        tooltip: {
-            shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
-        },
-
-        legend: {
+          legend: {
             align: 'right',
             verticalAlign: 'top',
             y: 70,
             layout: 'vertical'
-        },
-        series: [{
-            type:'column',
+          },
+          series: [{
+            type: 'column',
             name: 'Priority',
             data: [6, 4.5, 1.5, 3, 4.5, 4, 1, 3],
             pointPlacement: 'on',
             color: 'rgba(112,193,179,.5)'
-        },
-        {
+          }, {
             name: 'Strategic',
-            data: [3, 2, 4, 2, 3, 1, 2],
+            data: [3, 2, 4, 2, 3, 1, 2, 4],
             pointPlacement: 'on',
             color: 'rgba(242,95,92,1)'
-        },
-        {
+          }, {
             name: 'Operational',
-            data: [2,4, 2, 3, 1, 2, 3],
+            data: [3, 2, 4, 2, 3, 1, 2, 3],
             pointPlacement: 'on',
             color: 'rgba(255,224,102,1)'
-        },
-        {
+          }, {
             name: 'Cultural',
-            data: [4, 2, 1, 2, 4, 2, 1],
+            data: [3, 4, 2, 1, 2, 4, 2, 1],
             pointPlacement: 'on',
             color: 'rgba(36,123,160,1)'
-        }]
-      };
+          }]
 
-      // Patch :: directive failing to load module feature
-      $('#chart1').highcharts($scope.functionalSnapshot);
-      $('#chart2').highcharts($scope.functionalPriority);
+        };
 
-    },this);
+        // Patch :: directive failing to load module feature
+        $('#chart1').highcharts($scope.functionalSnapshot);
+        $('#chart2').highcharts($scope.functionalPriority);
 
+      },this);
 
+    }
+
+    init();
   }
 
 })();

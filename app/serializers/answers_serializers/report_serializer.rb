@@ -1,12 +1,12 @@
 module AnswersSerializers
   # CurrentGraphSerializer
   class ReportSerializer < ActiveModel::Serializer
-    attributes :report
+    attributes :report, :function_priorities
 
     attr_accessor :answers_hash, :readiness_bf_id
 
     def report
-      serialization_options[:sections].map do |section|
+      @sections.map do |section|
         section_result(section)
       end
       .select{ |section| section }
@@ -15,6 +15,7 @@ module AnswersSerializers
     def attributes
       make_answers_hash
       set_readiness_bf_id
+      @sections = serialization_options[:sections].to_a
       super
     end
 
@@ -79,6 +80,41 @@ module AnswersSerializers
       return 'medium' if value <= 6 && value >= 3
       return 'high' if value <= 12 && value >= 8
       ''
+    end
+
+    def function_priorities
+      priority_function_section_id = priority_function_section(@sections)._id
+      sections = priority_function_sub_sections(@sections, priority_function_section_id)
+        .map { |section| priority_function_sub_section(section) }
+      {
+        section_names: sections.map { |s| s[:name] },
+        achieving_sustainability_goals:
+          sections.map { |s| s[:achieving_sustainability_goals].to_i - 1 },
+        historical_value_creation:
+          sections.map { |s| s[:historical_value_creation].to_i - 1 }
+      }
+    end
+
+    def priority_function_section(sections)
+      sections
+        .select { |sect| sect.name == 'Priority Function Identification' }
+        .first
+    end
+
+    def priority_function_sub_sections(sections, priority_function_section_id)
+      sections
+        .select { |sect| sect.section_id == priority_function_section_id }
+    end
+
+    def priority_function_sub_section(section)
+      answers = answers_hash[section._id].try :sort do |x, y|
+        x.question.order_no <=> y.question.order_no
+      end
+      {
+        name: section.name,
+        achieving_sustainability_goals: answers && answers[0].value,
+        historical_value_creation: answers && answers[1].value
+      }
     end
   end
 end
