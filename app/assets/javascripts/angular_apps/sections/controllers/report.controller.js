@@ -200,49 +200,57 @@
 
     highchartsNG.ready(function(){
       $scope.functionalPriority = {
-          chart: {
-              type: 'bar'
-          },
-          title: {
-              text: 'Function Priority'
-          },
-          xAxis: {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Function Priority'
+        },
+        xAxis: {
 
-              categories: ['Marketing, Branding & Public Relations','Sales & Customer Service','Research & Development','Finance & Accounting','Talent Acquisition & Development','Performance Management & Compensation','Strategy & Business Development','General Counsel & Legal'],
-              labels: {
+            categories: [
+              'Marketing, Branding & Public Relations',
+              'Sales & Customer Service',
+              'Research & Development','Finance & Accounting',
+              'Talent Acquisition & Development',
+              'Performance Management & Compensation',
+              'Strategy & Business Development',
+              'General Counsel & Legal'
+            ],
+            labels: {
 
-                  style: {
+                style: {
 
-                      textOverflow: 'none'
-                  }
-              }
-          },
-          yAxis: {
-              min: 0,
-             tickInterval: 1,
-              showLastLabel:false,
-              title:
-              {
-                  text: 'Influence'
-              }
-          },
-          legend: {
-              reversed: true
-          },
-          plotOptions: {
-              series: {
-                  stacking: 'normal'
-              }
-          },
-          series: [{
-              name: 'Acheiving Sustainability Goals',
-               color: 'rgba(65,170,196,1)',
-              data: [3, 3, 2, 3, 2,1,0,2]
-          }, {
-              name: 'Historical Value Creation',
-                color: 'rgba(189,182,156,1)',
-              data: [2, 2, 3, 2, 1,2,1,0]
-          }]
+                    textOverflow: 'none'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+           tickInterval: 1,
+            showLastLabel:false,
+            title:
+            {
+                text: 'Influence'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'Acheiving Sustainability Goals',
+             color: 'rgba(65,170,196,1)',
+            data: [3, 3, 2, 3, 2, 1, 0]
+        }, {
+            name: 'Historical Value Creation',
+              color: 'rgba(189,182,156,1)',
+            data: [2, 2, 3, 2, 1, 2, 1]
+        }]
       };
 
       $scope.functionalSnapshot = {
@@ -262,7 +270,15 @@
         },
 
         xAxis: {
-            categories: ['Marketing, Branding & Public Relations','Sales & Customer Service','Research & Development','Finance & Accounting','Talent Acquisition & Development','Performance Management & Compensation','Strategy & Business Development','General Counsel & Legal'],
+            categories: [
+            'Marketing, Branding & Public Relations',
+            'Sales & Customer Service',
+            'Research & Development','Finance & Accounting',
+            'Talent Acquisition & Development',
+            'Performance Management & Compensation',
+            'Strategy & Business Development',
+            'General Counsel & Legal'
+            ],
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -293,29 +309,33 @@
         series: [{
             type:'column',
             name: 'Priority',
-            data: [6, 4.5, 1.5, 3, 4.5, 4,1,3],
+            data: [6, 4.5, 1.5, 3, 4.5, 4, 1, 3],
             pointPlacement: 'on',
             color: 'rgba(112,193,179,.5)'
         },
-            {
+        {
             name: 'Strategic',
-            data: [3, 2, 4, 2, 3, 1,2,4],
+            data: [3, 2, 4, 2, 3, 1, 2],
             pointPlacement: 'on',
             color: 'rgba(242,95,92,1)'
-        }, {
+        },
+        {
             name: 'Operational',
-            data: [3,2,4, 2, 3, 1, 2, 3],
+            data: [2,4, 2, 3, 1, 2, 3],
             pointPlacement: 'on',
             color: 'rgba(255,224,102,1)'
-        },{
+        },
+        {
             name: 'Cultural',
-            data: [3, 4, 2, 1, 2, 4,2,1],
+            data: [4, 2, 1, 2, 4, 2, 1],
             pointPlacement: 'on',
             color: 'rgba(36,123,160,1)'
-        }
-                ]
+        }]
+      };
 
-    };
+      // Patch :: directive failing to load module feature
+      $('#chart1').highcharts($scope.functionalSnapshot);
+      $('#chart2').highcharts($scope.functionalPriority);
 
     },this);
 
