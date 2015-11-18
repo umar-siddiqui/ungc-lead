@@ -40,7 +40,9 @@ module AnswersSerializers
     end
 
     def function_section(section)
-      common_section(section).merge({ business_function: section.business_function })
+      common_section(section).merge({
+        business_function: section.business_function
+      })
     end
 
     def common_section(section)
@@ -56,7 +58,7 @@ module AnswersSerializers
         current: answers && { stage: answers[0].value, option:  answers[0].option.label },
         target: answers && { stage: answers[1].value, option:  target_opt },
         priority: answers && priority(answers.first.score),
-        discussions: answers && answers.drop(3)
+        discussions: answers && answers.select { |ans| ans.question.label == 'Discussion' }
                                 .map { |ans| { label: ans.question.description, value: ans.value } }
       }
     end

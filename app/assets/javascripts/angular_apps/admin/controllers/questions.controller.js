@@ -42,11 +42,16 @@
         alert('Error');
       }
 
+      function loaderLogic() {
+        $scope.loading = false;
+      }
+      $scope.loading = true;
+
       return $http({
         method: 'POST',
         url: '/questions/update_all.json',
         data: { questions: $scope.questions }
-      }).then(successCallback, errorCallback);
+      }).then(successCallback, errorCallback).finally(loaderLogic);
     }
 
     $scope.save = function() {
