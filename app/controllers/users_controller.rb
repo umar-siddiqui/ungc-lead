@@ -1,7 +1,7 @@
 # class UsersController
 class UsersController < ApplicationController
   def index
-    if is_admin
+    if current_user.type.eql?('admin')
       users = User.where(type: 'user')
       render json: users,
              each_serializer: AdminSerializers::AllUsersSerializer
@@ -20,14 +20,14 @@ class UsersController < ApplicationController
   private
 
   def permit_params
-    allow = [:email, :password, :password_confirmation, :name, :type,
-             assesment_ids: [], company: [:name]]
+    allow = [
+      :email,
+      :name,
+      :type,
+      :password,
+      :password_confirmation,
+      assesment_ids: [], company: [:name]
+    ]
     params.require(:user).permit(allow)
-  end
-
-  def is_admin
-    if current_user.type.eql?('admin')
-      return 'true'
-    end
   end
 end

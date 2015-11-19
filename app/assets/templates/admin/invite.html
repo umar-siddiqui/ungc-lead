@@ -31,30 +31,31 @@
           <div class="form-group">
             <label for="orgName" class="signInLabel">Organization Name</label>
             <input type="text" class="form-control signUp"
-                   id="orgName" placeholder="UNGC"
+                   id="orgName" placeholder="Enter Organization Name"
                    ng-model="invite.company.name">
           </div>
           <div class="form-group">
             <label for="orgLogo" class="signInLabel">Organization Logo</label>
             <input type="file" class="form-control signUp"
                    accept="image/x-png, image/gif, image/jpeg"
-                   id="orgLogo" placeholder="Password"
+                   id="orgLogo"
                    ng-model="invite.orgLogo">
           </div>
           <div class="form-group">
             <label for="name" class="signInLabel">Name</label>
             <input type="text" class="form-control signUp"
-                   id="name" placeholder="Abhishek"
+                   id="name" placeholder="Enter Name"
                    ng-model="invite.name">
           </div>
           <div class="form-group">
             <label for="email" class="signInLabel">Email</label>
             <input type="email" class="form-control signUp"
-                   id="email" placeholder="Enter email"
+                   id="email" placeholder="Enter Email"
                    ng-model="invite.email">
           </div>
           <center style="padding-top:20px;">
             <input type="submit" class="btn btn-default topSpace3"
+                   style="width:200px;"
                    value="Send Invitation"/>
           </center>
         </form>

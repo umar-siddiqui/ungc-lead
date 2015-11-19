@@ -1,6 +1,6 @@
 company = Company.create({ name: 'Treeni' })
-company.users.create({ name: 'example user', email: 'user@email.org', password: '12345678', type: 'user' })
-User.create({ name: 'example admin', email: 'admin@unglobalcompact.org', password: '12345678', type: 'admin' })
+company.users.create({ name: 'example user', email: 'user@email.org', password: '12345678', type: 'user' }).confirm!
+User.create({ name: 'example admin', email: 'admin@unglobalcompact.org', password: '12345678', type: 'admin' }).confirm!
 
 assesment = User.first.assesments.create(
   name: 'Self Assessment',

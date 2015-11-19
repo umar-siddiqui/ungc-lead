@@ -1,4 +1,9 @@
 /* Global css code starts */
+html {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+}
 .allCaps{
   text-transform: uppercase;
 }
@@ -92,32 +97,33 @@
 .rightSpace6{
   margin-right: 30px;
 }
-body{
-	font-family: 'Open Sans', sans-serif;
+body.panel{
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 60px;
 }
 header{
-	background-color: #236376;
-	padding: 20px 0;
+  background-color: #236376;
+  padding: 20px 0;
 }
 .noMargin{
-	margin: 0;
+  margin: 0;
 }
 .container{
-	width: 1200px;
+  width: 1200px;
 }
 header .logo{
-	display: block;
+  display: block;
 }
 header .logOutBt{
-	padding-top: 10px;
+  padding-top: 10px;
 }
 header .logOutBt a{
-	display: block;
-	font-size: 14px;
-	color: #ffffff;
-	font-weight: 500;
-	text-transform: uppercase;
-	-o-transition: .5s;
+  display: block;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: uppercase;
+  -o-transition: .5s;
     -ms-transition: .5s;
     -moz-transition: .5s;
     -webkit-transition: .5s;
@@ -125,24 +131,24 @@ header .logOutBt a{
 header .logOutBt a:hover,
 header .logOutBt a:focus,
 header .logOutBt a:active{
-	text-decoration: none;
-	font-weight: 600;
-	-o-transition: .5s;
+  text-decoration: none;
+  font-weight: 600;
+  -o-transition: .5s;
     -ms-transition: .5s;
     -moz-transition: .5s;
     -webkit-transition: .5s;
 }
 .assesNames {
-	padding: 20px 0 40px 0;
+  padding: 20px 0 40px 0;
 }
 .assesNames h3{
-	margin: 0;
-	font-size: 28px;
-	color: #0f495c;
-	font-weight: 300;
+  margin: 0;
+  font-size: 28px;
+  color: #0f495c;
+  font-weight: 300;
 }
 .assesNames a{
-	width: 140px;
+  width: 140px;
     height: 40px;
     display: block;
     float: left;
@@ -160,16 +166,16 @@ header .logOutBt a:active{
     -webkit-transition: .5s;
 }
 .assesNames a:last-child{
-	margin-left: 20px;
+  margin-left: 20px;
 }
 .assesNames a:active,
 .assesNames a:focus,
 .assesNames a:hover{
-	text-decoration: none;
-	background-color: #ffffff;
-	border-color:  #236376;
-	color:  #236376;
-	-o-transition: .5s;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-color:  #236376;
+  color:  #236376;
+  -o-transition: .5s;
     -ms-transition: .5s;
     -moz-transition: .5s;
     -webkit-transition: .5s;
@@ -177,87 +183,87 @@ header .logOutBt a:active{
 
 /*Accor*/
 .accordionsTabs{
-	border:1px solid #eeeeee;
-	border-right: 0;
+  border:1px solid #eeeeee;
+  border-right: 0;
 }
 .accordionsTabs .accord .toggleTab{
-	border-bottom:1px solid #eeeeee;
-	padding:20px 20px;
-	position: relative;
-	cursor: pointer;
+  border-bottom:1px solid #eeeeee;
+  padding:20px 20px;
+  position: relative;
+  cursor: pointer;
 }
 .accordionsTabs .accord .toggleTab .tickIco{
-	position: absolute;
-	width: 18px;
-	height: 14px;
-	background:url(../images/tick.png);
-	top: 25px;
-	right: 15px;
+  position: absolute;
+  width: 18px;
+  height: 14px;
+  background:url(../images/tick.png);
+  top: 25px;
+  right: 15px;
 }
 .accordionsTabs .accord .toggleTab .dropIco{
-	position: absolute;
-	width: 15px;
-	height: 10px;
-	background:url(../images/drop.png);
-	top: 25px;
-	left: 15px;
+  position: absolute;
+  width: 15px;
+  height: 10px;
+  background:url(../images/drop.png);
+  top: 25px;
+  left: 15px;
 }
 .accordionsTabs .toggleTab.active .dropIco{
-	 -ms-transform: rotate(180deg); /* IE 9 */
+   -ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
     transform: rotate(180deg);
 }
 .accordionsTabs .accoTitle{
-	font-size: 14px;
-	color: #00979e;
-	font-weight: 600;
-	text-transform: uppercase;
-	margin-left: 20px;
+  font-size: 14px;
+  color: #00979e;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 20px;
 }
 .accordionsTabs .toggleTab.active .accoTitle{
-	color: #222222;
+  color: #222222;
 }
 .accordionsTabs .proDetail p{
-	margin: 0;
-	padding: 20px 20px 20px 40px;
-	border-bottom:1px solid #eeeeee;
-	font-size: 14px;
-	color: #00979e;
-	font-weight: 500;
-	cursor: pointer;
+  margin: 0;
+  padding: 20px 20px 20px 40px;
+  border-bottom:1px solid #eeeeee;
+  font-size: 14px;
+  color: #00979e;
+  font-weight: 500;
+  cursor: pointer;
 }
 .accordionsTabs .proDetail p.active{
-	color: #222222;
+  color: #222222;
 }
 .right-cont {
-	display: none;
+  display: none;
 }
 .con-tab1{
-	display: block;
+  display: block;
 }
 .rightTab{
-	border:1px solid #eeeeee;
-	margin-left: -15px;
-	padding: 0 25px;
-	margin-bottom: 150px;
+  border:1px solid #eeeeee;
+  margin-left: -15px;
+  padding: 0 25px;
+  margin-bottom: 150px;
 }
 .right-cont h4{
-	font-size: 20px;
-	line-height: 28px;
-	color: #999999;
-	margin-bottom: 35px;
+  font-size: 20px;
+  line-height: 28px;
+  color: #999999;
+  margin-bottom: 35px;
 }
 .right-cont h6{
-	font-size: 16px;
-	line-height: 22px;
-	color: #999999;
-	margin-bottom: 35px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #999999;
+  margin-bottom: 35px;
 }
 .right-cont p{
-	font-size: 16px;
-	line-height: 22px;
-	color: #666666;
-	margin-left: 40px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666;
+  margin-left: 40px;
 }
 .right-cont input[type='radio'] {
   -webkit-appearance:none;
@@ -284,119 +290,125 @@ header .logOutBt a:active{
   background:#00979e;
 }
 .right-cont .data{
-	margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 .bTarget{
-	padding: 20px 0;
-	border-top:1px solid #eeeeee;
-	border-bottom:1px solid #eeeeee;
+  padding: 20px 0;
+  border-top:1px solid #eeeeee;
+  border-bottom:1px solid #eeeeee;
 }
 .bTarget h6{
-	margin-bottom:18px;
+  margin-bottom:18px;
 }
 .bTarget ul{
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 .bTarget ul li{
-	list-style: none;
-	float: left;
-	margin-right: 55px;
-	color: #666666;
+  list-style: none;
+  float: left;
+  margin-right: 55px;
+  color: #666666;
 }
 .bTarget ul li [type='radio']{
-	margin: 0 25px 0 0;
+  margin: 0 25px 0 0;
 }
 
 footer{
-	background-color: #999999;
-	padding: 35px 0;
+  margin:0 auto;
+  width:100%;
+  height:50px;
+  overflow:hidden;
+  position: absolute;
+  bottom: 0px;
+  background-color: #2C5765;
+  padding: 35px 0;
 }
 footer p{
-	font-size: 14px;
-	color: #ffffff;
-	text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
 }
 
 /*Dashboard css*/
 
 .proImg,
 .proImg img{
-	height: 75px;
-	width: 75px;
-	border:1px solid #eeeeee;
-	border-radius: 50%;
-	float: left;
+  height: 75px;
+  width: 75px;
+  border:1px solid #eeeeee;
+  border-radius: 50%;
+  float: left;
   display: block;
 }
 .profileSec{
-	padding: 30px 0 60px 0;
+  padding: 30px 0 60px 0;
 }
 .wel{
-	float: left;
-	margin-left: 20px;
+  float: left;
+  margin-left: 20px;
 }
 .wel h3{
-	font-size: 13px;
-	color: #666666;
-	margin-bottom: 15px;
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 15px;
 }
 .wel h2{
-	font-size: 17px;
-	color: #00979e;
-	margin: 0;
-	font-weight: 600;
+  font-size: 17px;
+  color: #00979e;
+  margin: 0;
+  font-weight: 600;
 }
 .leftText{
-	border:1px solid #eeeeee;
-	padding: 20px;
-	border-bottom: 5px solid #eeeeee;
+  border:1px solid #eeeeee;
+  padding: 20px;
+  border-bottom: 5px solid #eeeeee;
 }
 .loremTe{
-	margin-bottom: 155px;
+  margin-bottom: 155px;
 }
 .loremTe .leftText{
-	position: relative;
+  position: relative;
 }
 .loremTe .leftText h4{
-	font-size: 20px;
-	color: #222222;
-	margin: 0 0 15px 0;
+  font-size: 20px;
+  color: #222222;
+  margin: 0 0 15px 0;
 }
 .loremTe .leftText p{
-	font-size: 14px;
-	color: #999999;
-	line-height: 18px;
-	margin: 0 0 35px 0;
+  font-size: 14px;
+  color: #999999;
+  line-height: 18px;
+  margin: 0 0 35px 0;
 }
 .loremTe .leftText .twoBt{
-	border-top: 1px solid #eeeeee;
-	margin: 0 -20px -20px -20px;
+  border-top: 1px solid #eeeeee;
+  margin: 0 -20px -20px -20px;
 }
 .loremTe .leftText .twoBt a{
-	width: 50%;
-	display: inline-block;
-	float: left;
-	text-align: center;
-	font-size: 15px;
-	color: #00979e;
-	text-transform: uppercase;
-	padding: 20px 0;
-	border-right: 1px solid #eeeeee;
+  width: 50%;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  font-size: 15px;
+  color: #00979e;
+  text-transform: uppercase;
+  padding: 20px 0;
+  border-right: 1px solid #eeeeee;
 }
 .loremTe .leftText .twoBt a:hover{
-	text-decoration: none;
+  text-decoration: none;
 }
 .loremTe .leftText .penIco{
-	position: absolute;
-	width: 18px;
-	height: 18px;
-	background:url(../images/pen.png);
-	top: 25px;
-	right: 15px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background:url(../images/pen.png);
+  top: 25px;
+  right: 15px;
 }
 .loremTe .rightText .twoBt a{
-	width: 100%;
+  width: 100%;
 }
 
 /*Angular Tree directive */
@@ -404,8 +416,8 @@ footer p{
     margin-right: 8px;
 }
 .btn-warning {
-background-color: rgba(220,131,114	,1);
-border-color: rgba(220,131,114	,1);
+background-color: rgba(220,131,114  ,1);
+border-color: rgba(220,131,114  ,1);
 
 }
 .angular-ui-tree-handle {
@@ -522,124 +534,124 @@ label{
 
     width: 100px;
     height: 25px;
-	text-align: center;
+  text-align: center;
     border: 0px solid black;
 }
 
 .graph .rowlabel {
 
-	height: 20px;
-	border: 0px ;
+  height: 20px;
+  border: 0px ;
 
 }
 
 .graph .blank {
 
-	border: 0px;
-	height: 10px;
+  border: 0px;
+  height: 10px;
 
 
 }
 
 .graph .strategic {
 
-	background: rgba(230,194,135,1);
-	border: 0px ;
+  background: rgba(230,194,135,1);
+  border: 0px ;
 }
 
 .graph .strategic.high {
 
-	background: rgba(230,194,135,1);
-	border: 0px ;
+  background: rgba(230,194,135,1);
+  border: 0px ;
 }
 .graph .strategic.medium{
 
-	background: rgba(230,194,135,.75);
-	border: 0px ;
+  background: rgba(230,194,135,.75);
+  border: 0px ;
 }
 .graph .strategic.low{
 
-	background: rgba(230,194,135,.5);
-	border: 0px ;
+  background: rgba(230,194,135,.5);
+  border: 0px ;
 }
 
 .graph .cultural {
 
-	background: rgba(228,232,187,1);
-	border: 0px ;
+  background: rgba(228,232,187,1);
+  border: 0px ;
 }
 
 .graph .cultural.high {
 
-	background: rgba(228,232,187,1);
-	border: 0px ;
+  background: rgba(228,232,187,1);
+  border: 0px ;
 }
 
 .graph .cultural.medium{
 
-	background: rgba(228,232,187,.75);
-	border: 0px ;
+  background: rgba(228,232,187,.75);
+  border: 0px ;
 }
 
 .graph .cultural.low{
 
-	background: rgba(228,232,187,.5);
-	border: 0px ;
+  background: rgba(228,232,187,.5);
+  border: 0px ;
 }
 
 .graph .operational {
 
-	background: rgba(104,176,167,1);
-	border: 0px ;
+  background: rgba(104,176,167,1);
+  border: 0px ;
 }
 
 .graph .operational.high {
 
-	background: rgba(104,176,167,1);
-	border: 0px ;
+  background: rgba(104,176,167,1);
+  border: 0px ;
 }
 
 .graph .operational.medium {
 
-	background: rgba(104,176,167,.75);
-	border: 0px ;
+  background: rgba(104,176,167,.75);
+  border: 0px ;
 }
 
 .graph .operational.low {
 
-	background: rgba(104,176,167,.5);
-	border: 0px ;
+  background: rgba(104,176,167,.5);
+  border: 0px ;
 }
 
 
 
 .graph .readiness {
 
-	background: rgba(220,131,114	,1);
-	border: 0px ;
+  background: rgba(220,131,114  ,1);
+  border: 0px ;
 }
 
 .graph .line {
-	height: 10px;
+  height: 10px;
 }
 
 .graph .line hr {
 
-	border-top: 1px solid gray;
-	margin-top: 5px;
-	margin-bottom: 5px;
+  border-top: 1px solid gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .graph .rowlabeldesc{
-	vertical-align: top;
-	font-size: 12px;
-	height: 15px;
+  vertical-align: top;
+  font-size: 12px;
+  height: 15px;
 }
 
 .graph table {
 
-	font-size: 18;
-	/*border: 1px solid black;*/
-	border-spacing: 10px 5px;
+  font-size: 18;
+  /*border: 1px solid black;*/
+  border-spacing: 10px 5px;
     border-collapse: separate;
 
 }
@@ -755,6 +767,10 @@ h1 {
   float: left;
   margin-bottom: 20px;
   text-align: left;
+}
+
+.tableHeader{
+  text-align: center;
 }
 .questionTextArea {
   width: 86%;

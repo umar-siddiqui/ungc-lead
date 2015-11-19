@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { confirmations: 'confirmations' }
+  as :user do
+      patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
+  end
+
   resources :authentication, only: [:index]
 
   resources :sections, only: [:index] do
@@ -40,7 +44,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :companies, only: [] do
+  resources :companies do
     collection do
       get :current_user_company
     end
