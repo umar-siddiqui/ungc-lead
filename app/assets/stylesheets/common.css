@@ -1,9 +1,4 @@
 /* Global css code starts */
-html {
-  position: relative;
-  min-height: 100%;
-  width: 100%;
-}
 .allCaps{
   text-transform: uppercase;
 }
@@ -99,7 +94,6 @@ html {
 }
 body.panel{
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 60px;
 }
 header{
   background-color: #236376;
@@ -315,12 +309,6 @@ header .logOutBt a:active{
 }
 
 footer{
-  margin:0 auto;
-  width:100%;
-  height:50px;
-  overflow:hidden;
-  position: absolute;
-  bottom: 0px;
   background-color: #2C5765;
   padding: 35px 0;
 }

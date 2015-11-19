@@ -53,10 +53,16 @@
                    id="email" placeholder="Enter Email"
                    ng-model="invite.email">
           </div>
-          <center style="padding-top:20px;">
+          <center style="padding-top:20px;" ng-hide="loading">
             <input type="submit" class="btn btn-default topSpace3"
                    style="width:200px;"
                    value="Send Invitation"/>
+          </center>
+          <center class="spinner" ng-show="loading">
+            <img class="ajax-loader"
+               width="30"
+               height="30"
+               src="/images/spinner.gif" />
           </center>
         </form>
         </div>
