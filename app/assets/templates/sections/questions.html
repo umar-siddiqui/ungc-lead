@@ -12,8 +12,8 @@
       <div class="data"
            ng-repeat="option in question.options | orderBy:'value'"
            ng-if="question.control_type == 'radio'">
-        <input type="radio" name="radio" value="{{option.value}}"
-               id="{{option.value}}"
+        <input type="radio" name="{{option._id}}" value="{{option.value}}"
+               id="{{option._id}}"
                required
                ng-click="$parent.answer.option_id = option._id"
                ng-model="$parent.answer.value">
