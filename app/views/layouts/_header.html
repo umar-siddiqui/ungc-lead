@@ -5,10 +5,10 @@
         <div class="logo pull-left">
           <a href="javascript:void(0)"> <img src="/images/logo.png"></a>
         </div>
-        <div ng-show="isAuthenticated" class="pull-right logOutBt">
-          <a ng-show="isAuthenticated" href="javascript:void(0)" ng-click="logout()">logout</a>
+        <div ng-if="isAuthenticated" class="pull-right logOutBt">
+          <a ng-if="isAuthenticated" href="javascript:void(0)" ng-click="logout()">logout</a>
         </div>
-<!--         <div ng-show="isAuthenticated" class="pull-right logOutBt rightSpace3">
+<!--         <div ng-if="isAuthenticated" class="pull-right logOutBt rightSpace3">
           <a href="dashboard#/">home</a>
         </div> -->
       </div>
