@@ -38,14 +38,13 @@ Rails.application.configure do
 
   # Configure Mail
   config.action_mailer.default_url_options = { :host => 'ungc.cloudapp.net' }
-
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    user_name: 'exceptions.treeni@gmail.com',
-    password: 'Treeni@123',
-    authentication: 'plain',
-    enable_starttls_auto: true
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => 'email@weboapps.com',
+    :password             => 'weboqa6186',
+    :authentication       => "plain",
+    :enable_starttls_auto => true
   }
 end

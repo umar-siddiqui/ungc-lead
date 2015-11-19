@@ -11,6 +11,9 @@
     function PanelController($scope, $state, Auth, PanelService) {
 
       function init(){
+
+      $scope.loading = false;
+
         PanelService.allAssesments().then(function(data){
           $scope.assesments = data;
         }, function(error) {
@@ -19,6 +22,8 @@
       };
 
       $scope.sendInvite = function(){
+
+        loaderLogic();
 
         $scope.invite['password'] = '12345678';
         $scope.invite['password_confirmation'] = '12345678';
@@ -45,6 +50,10 @@
       $scope.editAssesment = function() {
         $state.go('sections');
       };
+
+      function loaderLogic() {
+        $scope.loading = true;
+      }
 
       init();
 
