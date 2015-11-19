@@ -315,13 +315,6 @@ header .logOutBt a:active{
 }
 
 footer{
-/*  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #2C5765;
-  padding: 35px 0*/
-
   margin:0 auto;
   width:100%;
   height:50px;
