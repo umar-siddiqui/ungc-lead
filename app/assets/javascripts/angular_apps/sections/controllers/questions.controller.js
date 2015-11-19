@@ -44,11 +44,16 @@
         alert('Error');
       }
 
+      function loaderLogic() {
+        $scope.loading = false;
+      }
+      $scope.loading = true;
+
       return $http({
         method: 'POST',
         url: '/answers.json',
         data: { answers: $scope.answers }
-      }).then(successCallback, errorCallback);
+      }).then(successCallback, errorCallback).finally(loaderLogic);
     }
 
     $scope.initAnswer = function(question) {

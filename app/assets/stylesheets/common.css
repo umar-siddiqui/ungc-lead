@@ -766,3 +766,6 @@ h1 {
 .optionTextArea {
   width: 80%;
 }
+.sectionbox td {
+  padding: 5px;
+}

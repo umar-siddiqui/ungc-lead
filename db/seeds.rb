@@ -1513,6 +1513,17 @@ sect31 = sect3.sections.create(
             { label: '4',value: 4 },
             { label: '5',value: 5 }
           ]
+        },
+        {
+          control_type: 'radio',
+          order_no: 3,
+          label: 'Criticality',
+          description: 'How critical is this capability to driving business value?',
+          options_attributes: [
+            { label: 'low',value: 1 },
+            { label: 'medium',value: 2 },
+            { label: 'high',value: 3 }
+          ]
         }
       ]
     }

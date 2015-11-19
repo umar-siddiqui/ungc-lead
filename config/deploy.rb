@@ -10,7 +10,7 @@ set :use_sudo, false
 set :deploy_via, :copy
 set :keep_releases, 5
 set :pty, true
-set :user, "azureuser"
+set :user, "ubuntu"
 set :rbenv_ruby, '2.2.3'
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :linked_files, fetch(:linked_files, []).push('config/mongoid.yml', 'config/secrets.yml')
@@ -35,7 +35,7 @@ namespace :deploy do
     end
   end
 
-  db_dumps_dir = '/home/azureuser/dbDumps'
+  db_dumps_dir = '/home/ubuntu/dbDumps'
   desc 'Backup Database'
   task :mongo_backup do
     on roles(:app), in: :sequence do

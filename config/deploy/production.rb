@@ -1,6 +1,6 @@
 server '52.7.147.7', user: 'ubuntu', roles: %w{app db web}, primary: true
 set :deploy_to, '/var/www/ungc-lead'
-set :branch, 'develop'
+set :branch, "develop"
 
 server '52.7.147.7',
   user: 'ubuntu',

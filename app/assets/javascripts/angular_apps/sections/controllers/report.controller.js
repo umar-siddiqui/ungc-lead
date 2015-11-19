@@ -4,11 +4,13 @@
   angular
     .module('ungc.session')
     .controller('ReportController', [
-      '$scope', '$window', '$state', '$http', '$stateParams',
+      '$scope', '$window', '$state', '$http', '$stateParams', 'highchartsNG',
       ReportController
     ]);
 
-  function ReportController($scope, $window, $state, $http, $stateParams) {
+  function ReportController($scope, $window, $state, $http, $stateParams, highchartsNG) {
+
+    var $$ctrlScope = {};
 
     function init(){
       currentGraph();
@@ -39,6 +41,7 @@
 
       function successCallback(response) {
         loadSectionData(response.data.report);
+        initHighChart(response.data.function_priorities, response.data.functional_snapshot);
       }
 
       function errorCallback(response) {
@@ -194,6 +197,128 @@
 
 
       myTableDiv.appendChild(table);
+    }
+
+    function initHighChart(functionPriorities, functionalSnapshot) {
+
+      highchartsNG.ready(function(){
+        $scope.functionalPriority = {
+          chart: {
+              type: 'bar'
+          },
+          title: {
+              text: 'Function Priority'
+          },
+          xAxis: {
+
+              categories: functionPriorities.section_names,
+              labels: {
+
+                  style: {
+
+                      textOverflow: 'none'
+                  }
+              }
+          },
+          yAxis: {
+              min: 0,
+             tickInterval: 1,
+              showLastLabel:false,
+              title:
+              {
+                  text: 'Influence'
+              }
+          },
+          legend: {
+              reversed: true
+          },
+          plotOptions: {
+              series: {
+                  stacking: 'normal'
+              }
+          },
+          series: [{
+              name: 'Acheiving Sustainability Goals',
+               color: 'rgba(65,170,196,1)',
+              data: functionPriorities.achieving_sustainability_goals
+          }, {
+              name: 'Historical Value Creation',
+                color: 'rgba(189,182,156,1)',
+              data: functionPriorities.historical_value_creation
+          }]
+        };
+
+        $scope.functionalSnapshot = {
+
+          chart: {
+            polar: true,
+            type: 'line'
+          },
+
+          title: {
+            text: 'Functional Snapshot',
+            x: -80
+          },
+
+          pane: {
+            size: '80%'
+          },
+
+          xAxis: {
+            categories: functionalSnapshot.function_section_names,
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+          },
+
+          yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+            max: 6,
+            tickInterval: 1,
+            labels: {
+              format: 'Stage {value}'
+            },
+            showFirstLabel: false
+          },
+
+          legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+          },
+          series: [{
+            type: 'column',
+            name: 'Priority',
+            data: functionalSnapshot.priority,
+            pointPlacement: 'on',
+            color: 'rgba(112,193,179,.5)'
+          }, {
+            name: 'Strategic',
+            data: functionalSnapshot.strategic,
+            pointPlacement: 'on',
+            color: 'rgba(242,95,92,1)'
+          }, {
+            name: 'Operational',
+            data: functionalSnapshot.operational,
+            pointPlacement: 'on',
+            color: 'rgba(255,224,102,1)'
+          }, {
+            name: 'Cultural',
+            data: functionalSnapshot.cultural,
+            pointPlacement: 'on',
+            color: 'rgba(36,123,160,1)'
+          }]
+
+        };
+
+        // Patch :: directive failing to load module feature
+        $('#chart1').highcharts($scope.functionalSnapshot);
+        $('#chart2').highcharts($scope.functionalPriority);
+
+      },this);
+
     }
 
     init();
