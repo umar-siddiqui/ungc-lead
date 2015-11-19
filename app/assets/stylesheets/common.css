@@ -781,3 +781,7 @@ h1 {
 .sectionbox td {
   padding: 5px;
 }
+.required:after {
+  content:" *";
+  color: red;
+}

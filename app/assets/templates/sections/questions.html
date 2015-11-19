@@ -2,16 +2,19 @@
   <h4>{{section.name}}</h4>
   <h4>{{section.description}}</h4>
 
-  <form novalidate>
+  <form novalidate name="questionForm">
     <div ng-repeat="question in questions | orderBy:'order_no'"
          ng-init="answer = $parent.answers[$index] = initAnswer(question)">
-      <h6>{{question.description}}</h6>
+      <h6 ng-class="{ required: question.control_type == 'radio' }">
+        {{question.description}}
+      </h6>
 
       <div class="data"
            ng-repeat="option in question.options | orderBy:'value'"
            ng-if="question.control_type == 'radio'">
         <input type="radio" name="radio" value="{{option.value}}"
                id="{{option.value}}"
+               required
                ng-click="$parent.answer.option_id = option._id"
                ng-model="$parent.answer.value">
         <p>{{option.label}}</p>
@@ -26,11 +29,17 @@
 
     <div class="submitBtn" ng-hide="loading">
         <a ng-show="questions.length > 0" href="javascript:void(0)"
-           ng-click="save()">
+           ng-click="save(questionForm)">
           save
         </a>
-        <!-- <div class="spinner" ng-show="loading"></div> -->
     </div>
+    <div class="spinner" ng-show="loading">
+      <img class="ajax-loader"
+         width="30"
+         height="30"
+         src="/images/spinner.gif" />
+    </div>
+
   </form>
 
 </div>

@@ -64,7 +64,8 @@
       }
     }
 
-    $scope.save = function() {
+    $scope.save = function(questionForm) {
+      if(questionForm.$invalid) return alert('Please answer all mandatory questions marked with *');
       saveAnswer();
     }
 
