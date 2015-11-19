@@ -35,7 +35,7 @@ namespace :deploy do
     end
   end
 
-  db_dumps_dir = '/home/ubuntu/dbDumps'
+  db_dumps_dir = '/var/www/ungc-lead/dbDumps'
   desc 'Backup Database'
   task :mongo_backup do
     on roles(:app), in: :sequence do

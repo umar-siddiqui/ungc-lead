@@ -75,7 +75,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Configure Mail
-  config.action_mailer.default_url_options = { :host => '52.7.147.7' }
+  config.action_mailer.default_url_options = { :host => 'ungc.cloudapp.net' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
