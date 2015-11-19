@@ -1,7 +1,7 @@
 module AnswersSerializers
   # CurrentGraphSerializer
   class ReportSerializer < ActiveModel::Serializer
-    attributes :report, :function_priorities
+    attributes :report, :function_priorities, :functional_snapshot
 
     attr_accessor :answers_hash, :readiness_bf_id
 
@@ -114,6 +114,54 @@ module AnswersSerializers
         name: section.name,
         achieving_sustainability_goals: answers && answers[0].value,
         historical_value_creation: answers && answers[1].value
+      }
+    end
+
+    def functional_snapshot
+      func_sections = function_sections(@sections)
+      func_sections_rslts = function_sections_results(func_sections)
+      functional_snapshot_hash(func_sections_rslts)
+    end
+
+    def function_sections(sections)
+      sections.select { |section| type_function?(section.name) }
+    end
+
+    def function_sections_results(sections)
+      sections.map do |section|
+        answers = answers_hash[section._id].try :select do |answer|
+          answer.question.order_no == 1
+        end
+
+        {
+          business_function_name: section.business_function.name,
+          section_name: section.name,
+          current: answers && answers.first.value.to_i,
+          priority: answers && answers.first.score.value / 2
+        }
+      end
+    end
+
+    def functional_snapshot_hash(section_results)
+      temp_hash = {}
+      section_results.each do |rslt|
+        next unless rslt[:current]
+        temp_hash[rslt[:business_function_name]] ||= {
+          priority: 0,
+          "Strategic Integration" => 0,
+          "Cultural Integration" => 0,
+          "Operational Integration" => 0
+        }
+        temp_hash[rslt[:business_function_name]][rslt[:section_name]] = rslt[:current]
+        temp_hash[rslt[:business_function_name]][:priority] += rslt[:priority]
+      end
+
+      {
+        function_section_names: temp_hash.keys,
+        strategic: temp_hash.map { |_key, sect| sect["Strategic Integration"] },
+        operational: temp_hash.map { |_key, sect| sect["Operational Integration"] },
+        cultural: temp_hash.map { |_key, sect| sect["Cultural Integration"] },
+        priority: temp_hash.map { |_key, sect| (sect[:priority].to_f / 3).round(2) }
       }
     end
   end

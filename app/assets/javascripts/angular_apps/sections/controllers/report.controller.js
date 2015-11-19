@@ -41,7 +41,7 @@
 
       function successCallback(response) {
         loadSectionData(response.data.report);
-        initHighChart(response.data.function_priorities)
+        initHighChart(response.data.function_priorities, response.data.functional_snapshot);
       }
 
       function errorCallback(response) {
@@ -199,7 +199,7 @@
       myTableDiv.appendChild(table);
     }
 
-    function initHighChart(functionPriorities) {
+    function initHighChart(functionPriorities, functionalSnapshot) {
 
       highchartsNG.ready(function(){
         $scope.functionalPriority = {
@@ -265,7 +265,7 @@
           },
 
           xAxis: {
-            categories: ['Marketing, Branding & Public Relations', 'Sales & Customer Service', 'Research & Development', 'Finance & Accounting', 'Talent Acquisition & Development', 'Performance Management & Compensation', 'Strategy & Business Development', 'General Counsel & Legal'],
+            categories: functionalSnapshot.function_section_names,
             tickmarkPlacement: 'on',
             lineWidth: 0
           },
@@ -291,22 +291,22 @@
           series: [{
             type: 'column',
             name: 'Priority',
-            data: [6, 4.5, 1.5, 3, 4.5, 4, 1, 3],
+            data: functionalSnapshot.priority,
             pointPlacement: 'on',
             color: 'rgba(112,193,179,.5)'
           }, {
             name: 'Strategic',
-            data: [3, 2, 4, 2, 3, 1, 2, 4],
+            data: functionalSnapshot.strategic,
             pointPlacement: 'on',
             color: 'rgba(242,95,92,1)'
           }, {
             name: 'Operational',
-            data: [3, 2, 4, 2, 3, 1, 2, 3],
+            data: functionalSnapshot.operational,
             pointPlacement: 'on',
             color: 'rgba(255,224,102,1)'
           }, {
             name: 'Cultural',
-            data: [3, 4, 2, 1, 2, 4, 2, 1],
+            data: functionalSnapshot.cultural,
             pointPlacement: 'on',
             color: 'rgba(36,123,160,1)'
           }]
