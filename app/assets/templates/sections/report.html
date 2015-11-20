@@ -226,7 +226,7 @@
           </td>
         </tr>
 
-        <tr ng-show="section.discussions">
+        <tr ng-hide="section.discussions.length == 0">
           <td class="celldarkbg commentsheader">
             Discussion
           </td>
@@ -235,7 +235,7 @@
         </tr>
 
 
-        <tr ng-repeat="discussion in section.discussions">
+        <tr ng-repeat="discussion in section.discussions" ng-show="discussion.value">
           <td colspan="4" class="celldarkbg commentsheader">
             <span class="discQues">
               {{discussion.label}}
