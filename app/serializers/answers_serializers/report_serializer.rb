@@ -137,7 +137,7 @@ module AnswersSerializers
           business_function_name: section.business_function.name,
           section_name: section.name,
           current: answers && answers.first.value.to_i,
-          priority: answers && answers.first.score.value / 2
+          priority: answers && answers.first.score.value
         }
       end
     end
@@ -161,7 +161,7 @@ module AnswersSerializers
         strategic: temp_hash.map { |_key, sect| sect["Strategic Integration"] },
         operational: temp_hash.map { |_key, sect| sect["Operational Integration"] },
         cultural: temp_hash.map { |_key, sect| sect["Cultural Integration"] },
-        priority: temp_hash.map { |_key, sect| (sect[:priority].to_f / 3).round(2) }
+        priority: temp_hash.map { |_key, sect| (sect[:priority].to_f / 6).round(2) }
       }
     end
   end
