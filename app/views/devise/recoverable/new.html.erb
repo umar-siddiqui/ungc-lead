@@ -1,0 +1,33 @@
+<div class="row" style="padding-top:20px;">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">Change your password</div>
+
+      <div class="panel-body">
+        <div class="row" style="padding-top:20px;">
+
+            <%= form_for(resource, as: resource_name, url: update_user_confirmation_path(), html: { method: :patch }) do |f| %>
+            <%= devise_error_messages! %>
+            <%= hidden_field_tag :confirmation_token, @confirmation_token %>
+
+            <div class="tableHeader">
+              <%= f.label :password, "New password" %><br />
+              <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+            </div><br/>
+
+            <div class="tableHeader">
+              <%= f.label :password_confirmation, "Confirm new password" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div><br/>
+
+            <div class="actions tableHeader">
+              <%= f.submit "Change my password" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

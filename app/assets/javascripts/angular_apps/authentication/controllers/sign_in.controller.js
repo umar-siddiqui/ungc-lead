@@ -4,11 +4,11 @@
   angular
     .module('ungc.authentication')
     .controller('SignInController',[
-      '$scope', 'Auth', '$window',
+      '$scope', 'Auth', '$window', 'AuthenticationService',
       SignInController
     ]);
 
-  function SignInController($scope, Auth, $window) {
+  function SignInController($scope, Auth, $window, AuthenticationService) {
 
     function init(){
       $scope.credentials = { email: '', password: '' };
@@ -22,10 +22,28 @@
         } else{
           $window.location.href = '/dashboard#/';
         };
-      }, function(error) {
-        $scope.errors = error.data.errors;
+      }, function(errorResponse) {
+        $scope.errors = [];
+        $scope.errors[0] = errorResponse.data.error || [];
       });
     }
+
+    $scope.forgotPassword = function() {
+
+      loaderLogic();
+
+      AuthenticationService.forgotPassword($scope.credentials.email).then(function(data) {
+        $window.location.href = '/authentication#/sign_in';
+      }, function(errorResponse) {
+        $scope.loading = false;
+        $scope.errors = errorResponse.data.error;
+      });
+
+    };
+
+    function loaderLogic() {
+      $scope.loading = true;
+    };
 
     init();
   }

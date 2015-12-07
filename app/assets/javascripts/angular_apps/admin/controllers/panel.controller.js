@@ -16,8 +16,8 @@
 
         PanelService.allAssesments().then(function(data){
           $scope.assesments = data;
-        }, function(error) {
-          $scope.errors = error.data.errors;
+        }, function(errorResponse) {
+          $scope.errors = errorResponse.data.error;
         });
       };
 
@@ -34,8 +34,10 @@
 
         PanelService.newUser(credentials).then(function(credentials) {
           $state.go('home');
-        }, function(error) {
-          $scope.errors = error.data.errors;
+        }, function(errorResponse) {
+          $scope.loading = false;
+          $scope.errors = [];
+          $scope.errors[0] = errorResponse.data.error || [];
         });
       };
 
@@ -53,7 +55,7 @@
 
       function loaderLogic() {
         $scope.loading = true;
-      }
+      };
 
       init();
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { confirmations: 'confirmations' }
+  devise_for :users, controllers: { confirmations: 'confirmations', recoverable: 'recoverable' }
   as :user do
       patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
   end
@@ -35,7 +35,11 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create]
 
   scope :admin do
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show] do
+      collection do
+        post :generate_new_password_email
+      end
+    end
   end
 
   resources :assesments, only: [:index, :create] do
