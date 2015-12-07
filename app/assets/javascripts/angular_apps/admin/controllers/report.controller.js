@@ -13,14 +13,16 @@
       function init(){
         PanelService.allAssesments().then(function(data){
           $scope.assesments = data;
-        }), function(error) {
-          $scope.errors = error.data.errors;
+        }), function(errorResponse) {
+          $scope.errors = [];
+          $scope.errors[0] = errorResponse.data.error;
         };
 
         PanelService.allUsers().then(function(data){
           $scope.users = data;
-        }), function(error) {
-          $scope.errors = error.data.errors;
+        }), function(errorResponse) {
+          $scope.errors = [];
+          $scope.errors[0] = errorResponse.data.error;
         };
 
       };

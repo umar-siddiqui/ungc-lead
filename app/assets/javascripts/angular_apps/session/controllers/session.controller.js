@@ -35,7 +35,6 @@
 
     $scope.logout = function() {
       Auth.logout().then(function(oldUser) {
-        alert("Successfully logged out!");
         $window.location.href = ("/authentication#/sign_in");
       }, function(error) {
         // An error occurred logging out.

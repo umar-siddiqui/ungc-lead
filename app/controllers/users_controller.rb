@@ -17,6 +17,12 @@ class UsersController < ApplicationController
     render json: user
   end
 
+  def generate_new_password_email
+    user = User.find_by(email: params[:email])
+    user.send_reset_password_instructions
+    redirect_to '/authentication#/sign_in'
+  end
+
   private
 
   def permit_params

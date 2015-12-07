@@ -12,3 +12,5 @@
 
 //= require ./angular_apps/authentication/authentication.module.js
 //= require_tree ./angular_apps/authentication/controllers
+//= require_tree ./angular_apps/authentication/services
+//= require_tree ./angular_apps/common
