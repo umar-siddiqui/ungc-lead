@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   def generate_new_password_email
     user = User.find_by(email: params[:email])
     user.send_reset_password_instructions
-    flash[:errors] = 'Reset password instructions have been sent to #{user.email}.'
     redirect_to '/authentication#/sign_in'
   end
 

@@ -41,7 +41,7 @@ class User
   # field :locked_at,       type: Time
 
   # Associations
-  has_and_belongs_to_many :assesments, dependent: :destroy
+  has_and_belongs_to_many :assesments
   has_many :answers, dependent: :destroy
   belongs_to :company
 
