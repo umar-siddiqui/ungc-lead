@@ -1,6 +1,12 @@
-<div id="container">
+<div id="container" class="reportBody">
 
-  <h1>
+  <style type="text/css">
+    .sectionPageBreak {
+      page-break-inside: avoid;
+    }
+  </style>
+
+  <h1 ng-click="exportToPdf()">
     Assessment Overview
   </h1>
 
@@ -10,7 +16,7 @@
 
   <div class="graph"></div>
 
-  <table id="BoxChartLegend">
+  <table id="BoxChartLegend" class="bottomSpace6">
     <tr>
       <td class="celldarkbg chartlegendshort">
         SOC
@@ -110,79 +116,62 @@
   <div id="chart1" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
 
   <!--Page Break -->
-  <br/><br/>
+  <div class="sectionPageBreak">
+    <h1>
+      Section 1: Integration Readiness
+    </h1>
 
-  <h1>
-    Section 1: Integration Readiness
-  </h1>
+    <div class="bottomSpace3 section" ng-repeat="section in readinessSections">
+    <table class="sectionbox" cellpadding="5px" cellspacing="0">
+      <tr >
+        <td colspan="3" class="SectionHeadingName">
+          {{section.section_name}}
+        </td>
+        <td class="SectionHeadingPriority">
+          {{section.priority}} Priority
+        </td>
+      </tr>
 
-  <!-- <div class="headertext">
-    Lorem ipsum dolor sit amet conesecteur
-  </div> -->
+      <tr>
+        <td colspan="2" class="celldarkbg">
+          Current Level: Stage {{section.current.stage}}
+        </td>
+        <td colspan="2" class="celldarkbg">
+          Desired Level: Stage {{section.target.stage}}
+        </td>
+      </tr>
+      <tr>
 
-  <div class="bottomSpace3 section" ng-repeat="section in readinessSections">
-  <table class="sectionbox" cellpadding="5px" cellspacing="0">
-    <tr >
-      <td colspan="3" class="SectionHeadingName">
-        {{section.section_name}}
-      </td>
-      <td class="SectionHeadingPriority">
-        {{section.priority}} Priority
-      </td>
-    </tr>
+        <td colspan="2" class="celllightbg stagedescription">
+          {{section.current.option}}
+        </td>
+        <td colspan="2" class="celllightbg stagedescription">
+          {{section.target.option}}
+        </td>
 
-    <tr>
-      <td colspan="2" class="celldarkbg">
-        Current Level: Stage {{section.current.stage}}
-      </td>
-      <td colspan="2" class="celldarkbg">
-        Desired Level: Stage {{section.target.stage}}
-      </td>
-    </tr>
-    <tr>
-
-      <td colspan="2" class="celllightbg stagedescription">
-        {{section.current.option}}
-      </td>
-      <td colspan="2" class="celllightbg stagedescription">
-        {{section.target.option}}
-      </td>
-
-    </tr>
-    <tr>
-      <td class="celldarkbg commentsheader">
-        Comments
-      </td>
-      <td colspan="3" class="celldarkbg comments">
-        None
-      </td>
-    </tr>
-  </table>
-  </div>
-  <!-- Page Break -->
-  <!-- <br/><br/>
-  <h1>
-    Section 2: Functional Priority
-  </h1>
-
-  <div class="headertext">
-    Lorem ipsum dolor sit amet conesecteur
+      </tr>
+      <tr>
+        <td class="celldarkbg commentsheader">
+          Comments
+        </td>
+        <td colspan="3" class="celldarkbg comments">
+          None
+        </td>
+      </tr>
+    </table>
+    </div>
   </div>
 
-  <div id="prioritychart">
-    <img src="Screen Shot 2015-11-07 at 5.49.15 pm.png"/>
-  </div> -->
-  <!-- Page Break -->
-  <h1>
-    Section 2: Functional Priority
-  </h1>
-  <!-- Patch :: hightchart directive not working as expected -->
-  <!-- <highchart id="chart2" config="functionalPriority"></highchart> -->
-  <div id="chart2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+  <div class="sectionPageBreak">
+    <h1>
+      Section 2: Functional Priority
+    </h1>
+    <div id="chart2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+  </div>
 
   <br/><br/>
   <div ng-repeat="(functionName, sectionArray) in functionsSections"
-       class="bottomSpace7">
+       class="bottomSpace7 sectionPageBreak">
     <h1>
       {{functionName}}
     </h1>

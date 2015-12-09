@@ -20,6 +20,9 @@ gem 'angular-rails-templates', '0.2.0'
 
 gem 'angular_rails_csrf', '1.0.4'
 
+gem 'wicked_pdf', '1.0.2'
+
+gem 'sidekiq', '4.0.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
