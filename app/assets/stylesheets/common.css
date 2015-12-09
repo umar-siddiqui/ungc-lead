@@ -773,3 +773,6 @@ h1 {
   content:' *';
   color: red;
 }
+.sectionPageBreak {
+  page-break-inside: avoid;
+}

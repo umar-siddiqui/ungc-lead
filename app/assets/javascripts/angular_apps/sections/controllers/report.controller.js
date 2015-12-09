@@ -4,11 +4,11 @@
   angular
     .module('ungc.session')
     .controller('ReportController', [
-      '$scope', '$window', '$state', '$http', '$stateParams', 'highchartsNG',
+      '$scope', '$window', '$state', '$http', '$stateParams', '$log', 'highchartsNG',
       ReportController
     ]);
 
-  function ReportController($scope, $window, $state, $http, $stateParams, highchartsNG) {
+  function ReportController($scope, $window, $state, $http, $stateParams, $log, highchartsNG) {
 
     var $$ctrlScope = {};
 
@@ -74,7 +74,7 @@
       }).then(successCallback, errorCallback);
 
       function successCallback(response) {
-        console.log(response.data);
+        $log.info(response.data);
       }
 
       function errorCallback(response) {
