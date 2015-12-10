@@ -1,6 +1,30 @@
 <div class="con-tab1 right-cont">
-  <h4>{{section.name}}</h4>
-  <h4>{{section.description}}</h4>
+  <h4>
+    <span ng-hide="editNameFlag">{{section.name}}</span>
+    <textarea ng-show="editNameFlag" ng-model="section.name"
+              class="questionTextArea">
+    </textarea>
+    <button class="btn" ng-click="editNameFlag = !editNameFlag">
+      <span class="glyphicon"
+            ng-class="{
+              'glyphicon-plus': editNameFlag,
+              'glyphicon-pencil': !editNameFlag
+            }"></span>
+    </button>
+  </h4>
+  <h4>
+    <span ng-hide="editDescFlag">{{section.description}}</span>
+    <textarea ng-show="editDescFlag" ng-model="section.description"
+              class="questionTextArea">
+    </textarea>
+    <button class="btn" ng-click="editDescFlag = !editDescFlag">
+      <span class="glyphicon"
+            ng-class="{
+              'glyphicon-plus': editDescFlag,
+              'glyphicon-pencil': !editDescFlag
+            }"></span>
+    </button>
+  </h4>
 
   <form novalidate>
     <div ng-repeat="question in questions | orderBy:'order_no'">

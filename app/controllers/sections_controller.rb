@@ -22,6 +22,10 @@ class SectionsController < ApplicationController
     end
   end
 
+  def show
+    render json: Section.find(params[:id])
+  end
+
   def report
     sections = Section.where(
       assesment_id: params[:assesment_id], section_id: nil)
