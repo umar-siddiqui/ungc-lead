@@ -31,6 +31,11 @@ class SectionsController < ApplicationController
     }
   end
 
+  def report_pdf
+    HtmlToPdfJob.perform_later(params[:content])
+    render json: { message: 'Buildind PDF' }
+  end
+
   private
 
   def fetch_assesment_id

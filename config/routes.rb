@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :sections, only: [:index] do
     collection do
       get :report
+      post :report_pdf
     end
     resources :questions, only: [:index]
   end
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     collection do
       get :current_graph
       get :report
+      get :show_all
     end
   end
 

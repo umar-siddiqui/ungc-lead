@@ -39,7 +39,6 @@
     }
 
     $scope.fetchQuestions = function (section){
-      if(section.submitted) return;
       $scope.section = section;
       $state.go('sections.questions', { section_id: section._id });
     };

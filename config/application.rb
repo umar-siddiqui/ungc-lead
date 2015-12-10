@@ -42,5 +42,6 @@ module UngcLead
       .join('vendor', 'assets', 'bower_components', 'bootstrap-sass-official',
             'assets', 'stylesheets')
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff|woff2)$)
+    config.active_job.queue_adapter = :sidekiq
   end
 end

@@ -4,11 +4,11 @@
   angular
     .module('ungc.session')
     .controller('ReportController', [
-      '$scope', '$window', '$state', '$http', '$stateParams', 'highchartsNG',
+      '$scope', '$window', '$state', '$http', '$stateParams', '$log', 'highchartsNG',
       ReportController
     ]);
 
-  function ReportController($scope, $window, $state, $http, $stateParams, highchartsNG) {
+  function ReportController($scope, $window, $state, $http, $stateParams, $log, highchartsNG) {
 
     var $$ctrlScope = {};
 
@@ -39,15 +39,6 @@
 
     function fetchReport(){
 
-      function successCallback(response) {
-        loadSectionData(response.data.report);
-        initHighChart(response.data.function_priorities, response.data.functional_snapshot);
-      }
-
-      function errorCallback(response) {
-        alert('Error')
-      }
-
       return $http({
         method: 'GET',
         url: '/answers/report.json',
@@ -56,7 +47,42 @@
         }
       }).then(successCallback, errorCallback);
 
+      function successCallback(response) {
+        loadSectionData(response.data.report);
+        initHighChart(response.data.function_priorities, response.data.functional_snapshot);
+      }
+
+      function errorCallback(response) {
+        alert('Error')
+      }
     }
+
+    function generateReportPdf(){
+      var css = $('.cssDiv').data('cssDiv');
+
+      var content = $('.mainBody').html();
+      content = content.replace(new RegExp('src=\"','g'), 'src=\"' + $(location).attr('origin') + '/');
+      css = css.replace(/background:;|src:[ ]+;/g, '');
+      content = '<!DOCTYPE html><html><head><meta charset="utf-8" />' + css + '</head><body>' + content + '<body></html>'
+
+      return $http({
+        method: 'POST',
+        url: '/sections/report_pdf.json',
+        data: {
+          content: content
+        }
+      }).then(successCallback, errorCallback);
+
+      function successCallback(response) {
+        $log.info(response.data);
+      }
+
+      function errorCallback(response) {
+        alert('Error')
+      }
+    }
+
+    $scope.exportToPdf = generateReportPdf;
 
     function loadSectionData(sections){
       var readinessSections = [];
@@ -320,6 +346,8 @@
       },this);
 
     }
+
+
 
     init();
   }
