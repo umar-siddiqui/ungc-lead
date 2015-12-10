@@ -1,5 +1,6 @@
 # SectionsController
 class SectionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :init_ng_module
   before_action :fetch_assesment_id, only: [:index, :report]
 

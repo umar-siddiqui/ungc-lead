@@ -2,6 +2,8 @@
 class AssesmentsController < ApplicationController
   extend AssesmentsSerializers
 
+  before_action :authenticate_user!
+
   def index
     if is_user
       assesments = Assesment.in(user_ids: current_user._id)
@@ -24,14 +26,10 @@ class AssesmentsController < ApplicationController
   end
 
   def is_user
-    if current_user.type.eql?('user')
-      return 'true'
-    end
+    current_user.type.eql?('user')
   end
 
   def is_admin
-    if current_user.type.eql?('admin')
-      return 'true'
-    end
+    current_user.type.eql?('admin')
   end
 end
