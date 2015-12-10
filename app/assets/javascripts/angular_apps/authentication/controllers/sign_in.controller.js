@@ -36,7 +36,7 @@
         $window.location.href = '/authentication#/sign_in';
       }, function(errorResponse) {
         $scope.loading = false;
-        $scope.errors = errorResponse.data.error;
+        $scope.errors = errorResponse.data.errors || [];
       });
 
     };

@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user!
   before_action :fetch_assesment_id, only: [:current_graph, :report]
 
   def create

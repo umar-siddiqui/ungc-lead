@@ -1,5 +1,6 @@
 # class ReportsController
 class ReportsController < ApplicationController
+  before_action :authenticate_user!
   before_action :init_ng_module
 
   def init_ng_module
