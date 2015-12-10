@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :authentication, only: [:index]
 
-  resources :sections, only: [:index] do
+  resources :sections, only: [:index, :show] do
     collection do
       get :report
       post :report_pdf

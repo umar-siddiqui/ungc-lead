@@ -18,7 +18,15 @@ class QuestionsController < ApplicationController
       question.update_attributes!(permit_params(quest))
       question
     end
-    render json: questions
+
+    section = Section.find(params[:section_id])
+    section.update_attributes!(section_permitted_params)
+
+    render json: { questions: questions, section: section }
+  end
+
+  def section_permitted_params
+    params.require(:section).permit(:name, :description)
   end
 
   def permit_params(question)

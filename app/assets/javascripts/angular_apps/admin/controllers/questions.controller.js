@@ -13,6 +13,7 @@
     function init(){
       $scope.answers = [];
       getSectionQuestions();
+      $scope.sections = $scope.sections || getSection();
     }
 
     function getSectionQuestions(){
@@ -50,8 +51,27 @@
       return $http({
         method: 'POST',
         url: '/questions/update_all.json',
-        data: { questions: $scope.questions }
+        data: {
+          questions: $scope.questions,
+          section: $scope.section,
+          section_id: $stateParams.section_id
+        }
       }).then(successCallback, errorCallback).finally(loaderLogic);
+    }
+
+    function getSection(){
+      function successCallback(response) {
+        $scope.section = response.data;
+      }
+
+      function errorCallback(response) {
+        alert('Error')
+      }
+
+      return $http({
+        method: 'GET',
+        url: '/sections/' + $stateParams.section_id + '.json'
+      }).then(successCallback, errorCallback);
     }
 
     $scope.save = function() {
