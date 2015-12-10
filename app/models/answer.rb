@@ -3,7 +3,7 @@ class Answer
   include Mongoid::Document
 
   # Attributes
-  field :value
+  field :value, type: String
 
   # Associations
   belongs_to :user
