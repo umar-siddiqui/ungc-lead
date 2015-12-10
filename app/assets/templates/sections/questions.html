@@ -4,7 +4,7 @@
 
   <form novalidate name="questionForm">
     <div ng-repeat="question in questions | orderBy:'order_no'"
-         ng-init="answer = $parent.answers[$index] = initAnswer(question)">
+         ng-init="index = $index">
       <h6 ng-class="{ required: question.control_type == 'radio' }">
         {{question.description}}
       </h6>
@@ -12,17 +12,20 @@
       <div class="data"
            ng-repeat="option in question.options | orderBy:'value'"
            ng-if="question.control_type == 'radio'">
-        <input type="radio" name="{{option._id}}" value="{{option.value}}"
+        <input type="radio" name="{{option._id}}" ng-value="option.value"
                id="{{option._id}}"
                required
-               ng-click="$parent.answer.option_id = option._id"
-               ng-model="$parent.answer.value">
+               ng-class="{
+                'ng-valid-parse': answers[index].value == option.value
+               }"
+               ng-click="answers[index].option_id = option._id; initAnswer(question, answers[index])"
+               ng-model="answers[index].value">
         <p>{{option.label}}</p>
       </div>
 
       <div class="data"
            ng-if="question.control_type == 'textarea'">
-        <textarea ng-model="$parent.answer.value"></textarea>
+        <textarea ng-model="answers[index].value" ng-change="initAnswer(question, answers[index])"></textarea>
       </div>
 
     </div>

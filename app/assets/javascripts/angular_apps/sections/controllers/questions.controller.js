@@ -4,31 +4,42 @@
   angular
     .module('ungc.sections')
     .controller('QuestionsController', [
-      '$scope', '$window', '$stateParams', '$http', '$state',
+      '$scope', '$window', '$stateParams', '$http', '$state', '$timeout', '$q',
       QuestionsController
     ]);
 
-  function QuestionsController($scope, $window, $stateParams, $http, $state) {
+  function QuestionsController($scope, $window, $stateParams, $http, $state, $timeout, $q) {
 
     function init(){
       $scope.answers = [];
-      getSectionQuestions();
-    }
+      $q.all([
+        getSectionQuestions(),
+        getSectionAnswers()
+      ]).then(successCallback, errorCallback);
 
-    function getSectionQuestions(){
-
-      function successCallback(response) {
-        $scope.questions = response.data['questions'];
+      function successCallback(responses) {
+        $scope.questions = responses[0].data['questions'];
+        $scope.answers = responses[1].data;
       }
 
-      function errorCallback(response) {
+      function errorCallback(responses) {
         alert('Error')
       }
 
+    }
+
+    function getSectionQuestions(){
       return $http({
         method: 'GET',
         url: '/sections/' + $stateParams.section_id + '/questions.json'
-      }).then(successCallback, errorCallback);
+      })
+    }
+
+    function getSectionAnswers(){
+      return $http({
+        method: 'GET',
+        url: '/answers/show_all?section_id=' + $stateParams.section_id
+      })
     }
 
     function saveAnswer(){
@@ -56,12 +67,10 @@
       }).then(successCallback, errorCallback).finally(loaderLogic);
     }
 
-    $scope.initAnswer = function(question) {
-      return {
-        question_id: question._id,
-        section_id: $scope.section._id,
-        assesment_id: $scope.section.assesment_id
-      }
+    $scope.initAnswer = function(question,answer) {
+      answer.question_id = question._id,
+      answer.section_id = $scope.section._id,
+      answer.assesment_id = $scope.section.assesment_id
     }
 
     $scope.save = function(questionForm) {

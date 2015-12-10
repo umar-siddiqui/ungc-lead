@@ -770,6 +770,9 @@ h1 {
   padding: 5px;
 }
 .required:after {
-  content:" *";
+  content:' *';
   color: red;
+}
+.sectionPageBreak {
+  page-break-inside: avoid;
 }
