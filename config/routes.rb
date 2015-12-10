@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     collection do
       get :current_graph
       get :report
+      get :show_all
     end
   end
 
