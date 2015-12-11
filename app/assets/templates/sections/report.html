@@ -1,5 +1,20 @@
 <div id="container" class="reportBody">
-  <h1 ng-click="exportToPdf()">
+  <div class="row">
+    <div class="submitBtn pull-right" ng-hide="loading">
+        <a href="javascript:void(0)"
+           ng-click="exportToPdf()">
+          Download PDF
+        </a>
+    </div>
+    <div class="spinner pull-right" ng-show="loading">
+      <img class="ajax-loader"
+         width="30"
+         height="30"
+         src="/images/spinner.gif" />
+    </div>
+  </div>
+
+  <h1>
     Assessment Overview
   </h1>
 

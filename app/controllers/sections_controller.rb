@@ -36,7 +36,11 @@ class SectionsController < ApplicationController
   end
 
   def report_pdf
-    HtmlToPdfJob.perform_later(params[:content])
+    pdf = WickedPdf.new.pdf_from_string(params[:content], margin: { top: 10, bottom: 10 })
+
+    save_path = Rails.root.join('public', 'pdfs', 'filename.pdf')
+
+    File.open(save_path, 'w+b') { |file| file << pdf }
     render json: { message: 'Buildind PDF' }
   end
 
