@@ -58,6 +58,8 @@
     }
 
     function generateReportPdf(){
+      $scope.loading = true;
+
       var css = $('.cssDiv').data('cssDiv');
 
       var content = $('.mainBody').html();
@@ -74,10 +76,12 @@
       }).then(successCallback, errorCallback);
 
       function successCallback(response) {
+        $scope.loading = false;
         $log.info(response.data);
       }
 
       function errorCallback(response) {
+        $scope.loading = false;
         alert('Error')
       }
     }
