@@ -4,11 +4,13 @@
   angular
     .module('ungc.dashboard')
     .controller('DashboardController',[
-      '$scope', 'DashboardService',
+      '$scope', '$window', 'DashboardService',
       DashboardController
     ]);
 
-    function DashboardController($scope, DashboardService) {
+    function DashboardController($scope, $window, DashboardService) {
+
+      $scope.start = start;
 
       DashboardService.getAssesments().then(function(data){
         $scope.myAssesments = data;
@@ -21,5 +23,15 @@
       }, function(error) {
         $scope.errors = error.data.errors;
       });
+
+      function start(){
+        $scope.loading = true;
+
+        DashboardService.createReport().then(function(data){
+          $window.location.href = '/sections';
+        }, function(error) {
+          $scope.errors = error.data.errors;
+        });
+      }
     }
 })();

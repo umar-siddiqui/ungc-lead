@@ -34,6 +34,12 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
 
+  resources :reports, only: [:index, :create, :update] do
+    collection do
+      put :update_report
+    end
+  end
+
   resources :users, only: [:index, :create]
 
   scope :admin do

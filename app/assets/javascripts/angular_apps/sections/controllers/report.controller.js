@@ -18,9 +18,11 @@
     }
 
     function currentGraph(){
+      $scope.loading = true;
 
       function successCallback(response) {
         drawDynamicTable(response.data['current_graph']);
+        $scope.loading = false;
       }
 
       function errorCallback(response) {
@@ -38,6 +40,7 @@
     }
 
     function fetchReport(){
+      $scope.loading = true;
 
       return $http({
         method: 'GET',
@@ -50,6 +53,7 @@
       function successCallback(response) {
         loadSectionData(response.data.report);
         initHighChart(response.data.function_priorities, response.data.functional_snapshot);
+        $scope.loading = false;
       }
 
       function errorCallback(response) {

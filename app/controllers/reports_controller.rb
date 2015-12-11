@@ -10,4 +10,22 @@ class ReportsController < ApplicationController
 
   def index
   end
+
+  def create
+    report = Report.new(user: current_user, assesment: Assesment.first, status: 'in_progress')
+    report.save!
+    render json: report
+  end
+
+  def update_report
+    report = Report.find_by(user: current_user, assesment: Assesment.first)
+    report.update_attributes!(permitted_params)
+    render json: report
+  end
+
+  private
+
+  def permitted_params
+    params.require(:report).permit(:status, :file_url)
+  end
 end

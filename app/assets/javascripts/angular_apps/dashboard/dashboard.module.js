@@ -26,7 +26,8 @@
     $stateProvider
       .state('instructions', {
         url: '/instructions',
-        templateUrl: 'dashboard/dashboard_video.html'
+        templateUrl: 'dashboard/dashboard_video.html',
+        controller: 'DashboardController'
       });
 
     $urlRouterProvider.otherwise('/');

@@ -38,6 +38,31 @@
 
     }
 
+    function updateReportState(){
+      $scope.loading = true;
+
+      function successCallback(response) {
+        $window.location.href = '/';
+        $scope.loading = false;
+      }
+
+      function errorCallback(response) {
+        alert('Something went wrong')
+      }
+
+      return $http({
+        method: 'PUT',
+        url: 'reports/update_report.json',
+        params: {
+          assesment_id: $stateParams.assesment_id
+        },
+        data: {
+          status: 'completed'
+        }
+      }).then(successCallback, errorCallback);
+
+    }
+
     $scope.fetchQuestions = function (section){
       $scope.section = section;
       $state.go('sections.questions', { section_id: section._id });
@@ -64,10 +89,8 @@
 
     $scope.concluded = function(){
       validateConclude($scope.sections);
-      console.log('######################');
-      console.log($scope.canConclude);
       if(!$scope.canConclude) return alert('Please attempt all questions');
-      $state.go('report');
+      updateReportState();
     }
 
     init();

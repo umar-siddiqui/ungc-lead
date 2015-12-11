@@ -25,6 +25,14 @@
         };
         return PromiseFactory.generateHttpPromise(requestDetails);
       };
+
+      this.createReport = function() {
+        var requestDetails = {
+          url: '/reports.json',
+          method: 'POST'
+        };
+        return PromiseFactory.generateHttpPromise(requestDetails);
+      };
     }
 
 })();

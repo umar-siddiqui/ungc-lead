@@ -5,10 +5,9 @@ module AssesmentsSerializers
     has_one :status
 
     def status
-      return 'completed' if object.submitted_at.present?
-      answers = Answer.where(user_id: scope._id, assesment_id: object._id).to_a
-      return 'in_progress' if answers.count > 0
-      return 'pristine' if answers.count == 0
+       report = Report.where(assesment_id: object._id, user_id: scope._id)
+       return report.first.status if report.first.present?
+      'pristine'
     end
   end
 end
