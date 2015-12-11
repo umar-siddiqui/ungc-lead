@@ -38,10 +38,14 @@ class SectionsController < ApplicationController
   def report_pdf
     pdf = WickedPdf.new.pdf_from_string(params[:content], margin: { top: 10, bottom: 10 })
 
-    save_path = Rails.root.join('public', 'pdfs', 'filename.pdf')
+    save_path = Rails.root.join('public', 'pdfs', "#{current_user
+      ._id.to_s}.pdf")
 
     File.open(save_path, 'w+b') { |file| file << pdf }
-    render json: { message: 'Buildind PDF' }
+    render json: {
+      message: 'Buildind PDF',
+      file_url: "/pdfs/#{current_user._id.to_s}.pdf"
+    }
   end
 
   private

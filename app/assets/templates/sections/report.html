@@ -1,19 +1,19 @@
-<div id="container" class="reportBody">
-  <div class="row">
-    <div class="submitBtn pull-right" ng-hide="loading">
-        <a href="javascript:void(0)"
-           ng-click="exportToPdf()">
-          Download PDF
-        </a>
-    </div>
-    <div class="spinner pull-right" ng-show="loading">
-      <img class="ajax-loader"
-         width="30"
-         height="30"
-         src="/images/spinner.gif" />
-    </div>
+<div class="row">
+  <div class="submitBtn pull-right" ng-class="{ hide: loading }">
+      <a href="javascript:void(0)"
+         ng-click="exportToPdf()">
+        Download PDF
+      </a>
   </div>
+  <div class="submitBtn spinner pull-right" ng-class="{ hide: !loading }">
+    <img class="ajax-loader"
+       width="30"
+       height="30"
+       src="/images/spinner.gif" />
+  </div>
+</div>
 
+<div id="container" class="reportBody">
   <h1>
     Assessment Overview
   </h1>

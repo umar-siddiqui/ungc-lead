@@ -62,7 +62,7 @@
 
       var css = $('.cssDiv').data('cssDiv');
 
-      var content = $('.mainBody').html();
+      var content = $('.reportBody').html();
       content = content.replace(new RegExp('src=\"','g'), 'src=\"' + $(location).attr('origin') + '/');
       css = css.replace(/background:;|src:[ ]+;/g, '');
       content = '<!DOCTYPE html><html><head><meta charset="utf-8" />' + css + '</head><body>' + content + '<body></html>'
@@ -78,11 +78,12 @@
       function successCallback(response) {
         $scope.loading = false;
         $log.info(response.data);
+        $window.location.href = response.data.file_url;
       }
 
       function errorCallback(response) {
         $scope.loading = false;
-        alert('Error')
+        alert('Error');
       }
     }
 
