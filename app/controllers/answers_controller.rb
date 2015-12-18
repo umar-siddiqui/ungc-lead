@@ -1,5 +1,5 @@
+# AnswersController
 class AnswersController < ApplicationController
-
   before_action :authenticate_user!
   before_action :fetch_assesment_id, only: [:current_graph, :report, :show_all, :create]
   before_action :destroy_answers, only: [:create]

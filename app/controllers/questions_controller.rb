@@ -1,4 +1,4 @@
-# QuestionsController
+  # QuestionsController
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
 
@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   end
 
   def update_all
-    questions = params[:questions].map do |quest|
+    questions = (params[:questions] || []).map do |quest|
       question = Question.find(quest[:_id])
       question.update_attributes!(permit_params(quest))
       question
