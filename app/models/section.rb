@@ -24,6 +24,7 @@ class Section
         _id: child.id,
         assesment_id: child.assesment_id,
         name: child.name,
+        description: child.description,
         sections: child.descendents(user_id),
         submitted: Answer.where(user_id: user_id, section_id: child._id).count > 0,
         questions_count: child.questions.count
@@ -39,6 +40,7 @@ class Section
       _id: id,
       assesment_id: assesment_id,
       name: name,
+      description: description,
       sections: descendents(user_id),
       submitted: Answer.where(user_id: user_id, section_id: _id).count > 0,
       questions_count: questions.count
@@ -51,6 +53,7 @@ class Section
         _id: child.id,
         assesment_id: child.assesment_id,
         name: child.name,
+        description: child.description,
         sections: child.descendents_report(user_id),
         answers: Answer
           .includes(:question, :option)
@@ -72,6 +75,7 @@ class Section
       _id: id,
       assesment_id: assesment_id,
       name: name,
+      description: description,
       sections: descendents_report(user_id),
       answers: Answer
         .includes(:question, :option)
