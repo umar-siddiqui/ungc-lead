@@ -4,13 +4,6 @@
     <textarea ng-show="editNameFlag" ng-model="section.name"
               class="questionTextArea">
     </textarea>
-    <button class="btn" ng-click="editNameFlag = !editNameFlag">
-      <span class="glyphicon"
-            ng-class="{
-              'glyphicon-plus': editNameFlag,
-              'glyphicon-pencil': !editNameFlag
-            }"></span>
-    </button>
   </h4>
   <h4>
     <span ng-hide="editDescFlag">{{section.description}}</span>
