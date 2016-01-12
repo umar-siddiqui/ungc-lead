@@ -1,4 +1,5 @@
 /* Global css code starts */
+.page-break { display:block; clear:both; page-break-after:always; }
 .allCaps{
   text-transform: uppercase;
 }

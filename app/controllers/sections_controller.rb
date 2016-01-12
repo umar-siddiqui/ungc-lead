@@ -36,19 +36,22 @@ class SectionsController < ApplicationController
   end
 
   def report_pdf
-    pdf = WickedPdf.new.pdf_from_string(params[:content], margin: { top: 10, bottom: 10 })
+    file_url = "/pdfs/#{current_user._id.to_s}.pdf"
+    save_path = Rails.root.join('public').to_s + file_url
+    job = HtmlToPdfJob.perform_later(params[:content], save_path)
+    render json: { file_url: file_url }
+  end
 
-    save_path = Rails.root.join('public', 'pdfs', "#{current_user
-      ._id.to_s}.pdf")
-
-    File.open(save_path, 'w+b') { |file| file << pdf }
-    render json: {
-      message: 'Buildind PDF',
-      file_url: "/pdfs/#{current_user._id.to_s}.pdf"
-    }
+  def check_job_status
+    render json: { complete: File.exist?(Rails.root.join('public').to_s + params[:file_url]),
+                   file_url: params[:file_url] }
   end
 
   private
+
+  def report_render
+
+  end
 
   def fetch_assesment_id
     params[:assesment_id] ||= Assesment.first._id

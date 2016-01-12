@@ -126,68 +126,14 @@
   <!--Page Break -->
   <div class="sectionPageBreak">
     <h1>
-      Section 1: Integration Readiness
+      Integration Readiness
     </h1>
 
-    <div class="bottomSpace3 section" ng-repeat="section in readinessSections">
-    <table class="sectionbox" cellpadding="5px" cellspacing="0">
-      <tr >
-        <td colspan="3" class="SectionHeadingName">
-          {{section.section_name}}
-        </td>
-        <td class="SectionHeadingPriority">
-          {{section.priority}} Priority
-        </td>
-      </tr>
-
-      <tr>
-        <td colspan="2" class="celldarkbg">
-          Current Level: Stage {{section.current.stage}}
-        </td>
-        <td colspan="2" class="celldarkbg">
-          Desired Level: Stage {{section.target.stage}}
-        </td>
-      </tr>
-      <tr>
-
-        <td colspan="2" class="celllightbg stagedescription">
-          {{section.current.option}}
-        </td>
-        <td colspan="2" class="celllightbg stagedescription">
-          {{section.target.option}}
-        </td>
-
-      </tr>
-      <tr>
-        <td class="celldarkbg commentsheader">
-          Comments
-        </td>
-        <td colspan="3" class="celldarkbg comments">
-          None
-        </td>
-      </tr>
-    </table>
-    </div>
-  </div>
-
-  <div class="sectionPageBreak">
-    <h1>
-      Section 2: Functional Priority
-    </h1>
-    <div id="chart2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-  </div>
-
-  <br/><br/>
-  <div ng-repeat="(functionName, sectionArray) in functionsSections"
-       class="bottomSpace7 sectionPageBreak">
-    <h1>
-      {{functionName}}
-    </h1>
-
-    <div class="bottomSpace6"
-         ng-repeat="section in sectionArray">
+    <div class="bottomSpace3 section" ng-repeat="section in readinessSections"
+         style="page-break-inside:avoid;">
       <table class="sectionbox" cellpadding="5px" cellspacing="0">
-        <tr >
+
+        <tr>
           <td colspan="3" class="SectionHeadingName">
             {{section.section_name}}
           </td>
@@ -204,16 +150,68 @@
             Desired Level: Stage {{section.target.stage}}
           </td>
         </tr>
-        <tr>
 
+        <tr>
           <td colspan="2" class="celllightbg stagedescription">
             {{section.current.option}}
           </td>
           <td colspan="2" class="celllightbg stagedescription">
             {{section.target.option}}
           </td>
-
         </tr>
+
+        <tr>
+          <td class="celldarkbg commentsheader">
+            Comments
+          </td>
+          <td colspan="3" class="celldarkbg comments">
+            None
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sectionPageBreak">
+    <h1>
+      Functional Priority
+    </h1>
+    <div id="chart2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+  </div>
+
+  <div ng-repeat="(functionName, sectionArray) in functionsSections" class="bottomSpace7" style="page-break-inside:avoid">
+    <h1>{{functionName}}</h1>
+
+    <div class="bottomSpace6" ng-repeat="section in sectionArray" style="page-break-inside:avoid">
+
+      <table class="sectionbox" cellpadding="5px" cellspacing="0">
+        <tr>
+          <td colspan="3" class="SectionHeadingName">
+            {{section.section_name}}
+          </td>
+          <td class="SectionHeadingPriority">
+            {{section.priority}} Priority
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="celldarkbg">
+            Current Level: Stage {{section.current.stage}}
+          </td>
+          <td colspan="2" class="celldarkbg">
+            Desired Level: Stage {{section.target.stage}}
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="celllightbg stagedescription">
+            {{section.current.option}}
+          </td>
+          <td colspan="2" class="celllightbg stagedescription">
+            {{section.target.option}}
+          </td>
+        </tr>
+
         <tr>
           <td class="celldarkbg commentsheader">
             Comments
@@ -223,7 +221,7 @@
           </td>
         </tr>
 
-        <tr ng-hide="section.discussions.length == 0">
+        <tr ng-if="section.discussions.length == 0">
           <td class="celldarkbg commentsheader">
             Discussion
           </td>
@@ -242,9 +240,9 @@
               {{discussion.value}}
             </span>
           </td>
-          </td>
         </tr>
       </table>
+
     </div>
   </div>
 

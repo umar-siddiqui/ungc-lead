@@ -16,6 +16,8 @@ set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :linked_files, fetch(:linked_files, []).push('config/mongoid.yml', 'config/secrets.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
+set :sidekiq_env, fetch(:rack_env, fetch(:rails_env, fetch(:production)))
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do

@@ -23,6 +23,8 @@ gem 'angular_rails_csrf', '1.0.4'
 gem 'wicked_pdf', '1.0.2'
 
 gem 'sidekiq', '4.0.1'
+gem 'sinatra', require: false
+gem 'sidekiq-status', '0.6.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,6 +44,7 @@ group :development, :test do
   gem 'capistrano-rbenv', '~> 2.0', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-sidekiq', '~> 0.5.3'
   gem 'pry'
 end
 

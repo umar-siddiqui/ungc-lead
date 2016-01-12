@@ -1,4 +1,6 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
+  mount Sidekiq::Web, at: '/sidekiq'
   devise_for :users, controllers: { confirmations: 'confirmations', recoverable: 'recoverable' }
   as :user do
       patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
     collection do
       get :report
       post :report_pdf
+      get :check_job_status
     end
     resources :questions, only: [:index]
   end

@@ -4,11 +4,11 @@
   angular
     .module('ungc.session')
     .controller('ReportController', [
-      '$scope', '$window', '$state', '$http', '$stateParams', '$log', 'highchartsNG',
+      '$scope', '$window', '$state', '$http', '$stateParams', '$log', '$timeout', 'highchartsNG',
       ReportController
     ]);
 
-  function ReportController($scope, $window, $state, $http, $stateParams, $log, highchartsNG) {
+  function ReportController($scope, $window, $state, $http, $stateParams, $log, $timeout, highchartsNG) {
 
     var $$ctrlScope = {};
 
@@ -22,7 +22,6 @@
 
       function successCallback(response) {
         drawDynamicTable(response.data['current_graph']);
-        $scope.loading = false;
       }
 
       function errorCallback(response) {
@@ -53,11 +52,29 @@
       function successCallback(response) {
         loadSectionData(response.data.report);
         initHighChart(response.data.function_priorities, response.data.functional_snapshot);
-        $scope.loading = false;
       }
 
       function errorCallback(response) {
+        $scope.loading = false;
         alert('Error')
+      }
+    }
+
+    function functionalPriorityLoaded(){
+      $$ctrlScope.functionalPriorityLoaded = true;
+      if($$ctrlScope.functionalSnapshotLoaded == true){
+        $timeout(function() {
+          $scope.loading = false;
+        }, 5000);
+      }
+    }
+
+    function functionalSnapshotLoaded(){
+      $$ctrlScope.functionalSnapshotLoaded = true;
+      if($$ctrlScope.functionalPriorityLoaded == true){
+        $timeout(function() {
+          $scope.loading = false;
+        }, 5000);
       }
     }
 
@@ -80,9 +97,33 @@
       }).then(successCallback, errorCallback);
 
       function successCallback(response) {
+        checkIfJobCompelete(response.data.file_url)
+      }
+
+      function errorCallback(response) {
         $scope.loading = false;
-        $log.info(response.data);
-        $window.location.href = response.data.file_url;
+        alert('Error');
+      }
+    }
+
+    function checkIfJobCompelete(file_url){
+      return $http({
+        method: 'GET',
+        url: '/sections/check_job_status.json',
+        params: {
+          file_url: file_url
+        }
+      }).then(successCallback, errorCallback);
+
+      function successCallback(response) {
+        if(response.data.complete == true){
+          $window.location.href = response.data.file_url;
+        } else {
+          console.log(response);
+          $timeout(function() {
+            checkIfJobCompelete(file_url)
+          }, 5000);
+        }
       }
 
       function errorCallback(response) {
@@ -239,7 +280,10 @@
       highchartsNG.ready(function(){
         $scope.functionalPriority = {
           chart: {
-              type: 'bar'
+              type: 'bar',
+              events: {
+                load: functionalPriorityLoaded
+              }
           },
           title: {
               text: 'Function Priority'
@@ -287,7 +331,10 @@
 
           chart: {
             polar: true,
-            type: 'line'
+            type: 'line',
+            events: {
+              load: functionalSnapshotLoaded
+            }
           },
 
           title: {
