@@ -15,6 +15,9 @@ class SectionsController < ApplicationController
       format.json do
         sections = Section
                    .where(assesment_id: params[:assesment_id], section_id: nil)
+                   .sort do |s1, s2|
+                     s1[:sequence_no] <=> s2[:sequence_no]
+                   end
         render json: {
           sections: sections
             .map { |section| section.self_and_descendents(current_user._id) } }
