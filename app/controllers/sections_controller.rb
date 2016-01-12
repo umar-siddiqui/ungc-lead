@@ -38,7 +38,7 @@ class SectionsController < ApplicationController
   def report_pdf
     file_url = "/pdfs/#{current_user._id.to_s}.pdf"
     save_path = Rails.root.join('public').to_s + file_url
-    job = HtmlToPdfJob.perform_later(params[:content], save_path)
+    HtmlToPdfJob.perform_later(params[:content], save_path)
     render json: { file_url: file_url }
   end
 
@@ -48,10 +48,6 @@ class SectionsController < ApplicationController
   end
 
   private
-
-  def report_render
-
-  end
 
   def fetch_assesment_id
     params[:assesment_id] ||= Assesment.first._id

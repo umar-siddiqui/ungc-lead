@@ -5,6 +5,7 @@ class Section
   # Attributes
   field :name, type: String
   field :description
+  field :sequence_no, type: Integer
 
   # Associations
   belongs_to :assesment
@@ -27,11 +28,12 @@ class Section
         description: child.description,
         sections: child.descendents(user_id),
         submitted: Answer.where(user_id: user_id, section_id: child._id).count > 0,
-        questions_count: child.questions.count
+        questions_count: child.questions.count,
+        sequence_no: child.sequence_no
       }
     end
     .sort do |s1, s2|
-      s2[:name] <=> s1[:name]
+      s1[:sequence_no] <=> s2[:sequence_no]
     end
   end
 
@@ -43,7 +45,8 @@ class Section
       description: description,
       sections: descendents(user_id),
       submitted: Answer.where(user_id: user_id, section_id: _id).count > 0,
-      questions_count: questions.count
+      questions_count: questions.count,
+      sequence_no: sequence_no
     }
   end
 
@@ -62,11 +65,12 @@ class Section
                     question: { only: [:description, :order_no] },
                     option: { only: [:label] }
                    }),
-        score: Score.where(user_id: user_id, section_id: child._id).first
+        score: Score.where(user_id: user_id, section_id: child._id).first,
+        sequence_no: child.sequence_no
       }
     end
     .sort do |s1, s2|
-      s2[:name] <=> s1[:name]
+      s1[:sequence_no] <=> s2[:sequence_no]
     end
   end
 
@@ -84,7 +88,8 @@ class Section
                     question: { only: [:description, :order_no] },
                     option: { only: [:label] }
                    }),
-      score: Score.where(user_id: user_id, section_id: _id).first
+      score: Score.where(user_id: user_id, section_id: _id).first,
+      sequence_no: sequence_no
     }
   end
 end
