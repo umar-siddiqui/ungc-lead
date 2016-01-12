@@ -6,6 +6,7 @@
     'ui.router',
     'templates',
     'Devise',
+    'ngSanitize',
     'ui.tree',
     'ungc.session',
     'ungc.common'

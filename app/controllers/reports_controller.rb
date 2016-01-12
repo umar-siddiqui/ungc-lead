@@ -12,8 +12,8 @@ class ReportsController < ApplicationController
   end
 
   def create
-    report = Report.new(user: current_user, assesment: Assesment.first, status: 'in_progress')
-    report.save!
+    report = Report.find_or_create_by!(user: current_user, assesment: Assesment.first, status: 'in_progress')
+    # report.save!
     render json: report
   end
 

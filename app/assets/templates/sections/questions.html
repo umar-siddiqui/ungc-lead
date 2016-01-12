@@ -1,6 +1,6 @@
 <div class="con-tab1 right-cont">
   <h4>{{section.name}}</h4>
-  <h4>{{section.description}}</h4>
+  <h4 ng-bind-html="section.description | linky"></h4>
 
   <form novalidate name="questionForm">
     <div ng-repeat="question in questions | orderBy:'order_no'"
