@@ -24,7 +24,6 @@ gem 'wicked_pdf', '1.0.2'
 
 gem 'sidekiq', '4.0.1'
 gem 'sinatra', require: false
-gem 'sidekiq-status', '0.6.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
