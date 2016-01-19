@@ -3,8 +3,8 @@ company.users.create({ name: 'example user', email: 'user@email.org', password: 
 User.create({ name: 'example admin', email: 'admin@unglobalcompact.org', password: '12345678', type: 'admin' }).confirm!
 
 assesment = User.first.assesments.create(
-  name: 'Self Assessment',
-  description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit amet Lorem ipsum dolor sit amet')
+  name: 'Roadmap to Integrated Sustainability Self Assessment',
+  description: 'This self assessment tool has been designed to help companies accelerate the integration of sustainability across all its major business functions.')
 
 eml = BusinessFunction.create(
   name: 'Marketing, Branding & Public Relations', acronym: 'MBPR')

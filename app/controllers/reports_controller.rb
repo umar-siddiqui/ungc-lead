@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
   end
 
   def create
-    report = Report.find_or_create_by!(user: current_user, assesment: Assesment.first, status: 'in_progress')
+    report = Report.where(user: current_user, assesment: Assesment.first, status: 'in_progress').first_or_create
     # report.save!
     render json: report
   end
