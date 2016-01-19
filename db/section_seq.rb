@@ -32,10 +32,19 @@ sc_seq = {
   # Master Sections
   'Readiness Assesment' => 1,
   'Priority Function Identification' => 2,
-  'Functional Assesment' => 3
+  'Functional Assesment' => 3,
+  # Subsections Sections
+  'Functional Assesment' => 1,
+  'Functional Assesment' => 2,
+  'Functional Assesment' => 3,
+
+  'Strategic Integration' => 1,
+  'Operational Integration' => 2,
+  'Cultural Integration' => 3
 }
 
 Section.update_all(sequence_no: -1)
+
 
 sc_seq.each do |key, value|
   Section.where(name: key).each do |sec|
