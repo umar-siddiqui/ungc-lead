@@ -439,11 +439,12 @@ border-color: rgba(220,131,114  ,1);
     background: #f8faff;
     color: #00979e;
 }
-
+.tree-node-text {
+  max-width: 235px;
+}
 .nodrop {
     background-color: #f2dede;
 }
-
 .tree-node-content {
     margin: 5px;
 }
