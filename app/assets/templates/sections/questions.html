@@ -6,7 +6,7 @@
     <div ng-repeat="question in questions | orderBy:'order_no'"
          ng-init="index = $index">
       <h6 ng-class="{ required: question.control_type == 'radio' }">
-        {{question.description}}
+        <span ng-bind-html="question.description"></span>
       </h6>
 
       <div class="data"
@@ -25,7 +25,10 @@
 
       <div class="data"
            ng-if="question.control_type == 'textarea'">
-        <textarea ng-model="answers[index].value" ng-change="initAnswer(question, answers[index])"></textarea>
+        <textarea ng-model="answers[index].value"
+                  class="questionTextArea"
+                  ng-change="initAnswer(question, answers[index])">
+        </textarea>
       </div>
 
     </div>

@@ -22,7 +22,7 @@
   <form novalidate>
     <div ng-repeat="question in questions | orderBy:'order_no'">
       <h6>
-        <span ng-hide="editQuesFlag">{{question.description}}</span>
+        <span ng-hide="editQuesFlag" ng-bind-html="question.description"></span>
         <textarea ng-show="editQuesFlag" ng-model="question.description"
                   class="questionTextArea">
         </textarea>
