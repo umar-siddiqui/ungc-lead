@@ -9,6 +9,7 @@
     'ngSanitize',
     'ui.tree',
     'ungc.session',
+    'ungc.common',
     'highcharts-ng'
   ])
   .config([

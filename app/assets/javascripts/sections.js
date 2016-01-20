@@ -18,3 +18,4 @@
 //= require ./angular_apps/sections/sections.module.js
 //= require_tree ./angular_apps/sections/controllers
 //= require_tree ./angular_apps/sections/directives
+//= require_tree ./angular_apps/common
