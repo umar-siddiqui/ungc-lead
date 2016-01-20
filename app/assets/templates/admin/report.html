@@ -33,12 +33,12 @@
                   <td>{{ user.name }}</td>
                   <td>{{ user.company.name }}</td>
                   <td>{{ user.email }}</td>
-                  <td ng-if="(user.assesments[0].status == 'pristine')">Not Yet Started</td>
-                  <td ng-if="(user.assesments[0].status == 'in_progress')">In Progress</td>
-                  <td ng-if="(user.assesments[0].status == 'completed')">
-                    <input type="button" class="btn btn-default" ng-click=""
-                           value="view report"/>
-                  </td>
+                  <td ng-if="(!user.report)">Not Yet Started</td>
+                  <td ng-if="(user.report.status == 'in_progress')">In Progress</td>
+                  <td ng-if="(user.report.status == 'completed')">Completed</td>
+                  <!-- <td ng-if="(user.report.status == 'completed')">
+                    <a href="/pdfs/{{user._id}}.pdf">View Report</a>
+                  </td> -->
                 </tr>
               </tbody>
           </table>
