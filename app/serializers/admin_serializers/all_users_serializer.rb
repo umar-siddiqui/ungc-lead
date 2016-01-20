@@ -5,22 +5,19 @@ module AdminSerializers
 
     has_many :assesments
     has_one :company
+    has_one :report
 
     def assesments
       object.assesments.map do |assesment|
         {
           _id: assesment._id,
-          name: assesment.name,
-          status: status(assesment)
+          name: assesment.name
         }
       end
     end
 
-    def status(assesment)
-      return 'completed' if assesment.submitted_at.present?
-      answers = Answer.where(assesment_id: assesment._id).to_a
-      return 'in_progress' if answers.count > 0
-      return 'pristine' if answers.count == 0
+    def report
+      object.report.as_json
     end
   end
 end

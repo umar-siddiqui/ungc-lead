@@ -1,13 +1,10 @@
 <alert-bar error-type="danger" error-list="errors"></alert-bar>
 
-<div class="container">
+<div class="clearfix">
   <section class="profileSec">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <!-- <div class="proImg clearfix">
-            <img src="/images/batman.jpg">
-          </div> -->
           <div class="wel">
             <h3>Welcome</h3>
             <h2>UNGC</h2>
@@ -17,44 +14,30 @@
     </div>
   </section>
 
-
   <div class="loremTe">
     <div class="container">
       <div class="row">
-        <div class="col-md-4" ng-repeat="assesment in assesments">
-          <div class="leftText rightText">
-          <div class="clearfix">
-            <div class="pull-left">
+        <div class="col-md-12" ng-repeat="assesment in assesments">
+          <div class="leftText">
             <h4>{{assesment.name}}</h4>
-            </div>
-            <div class="pull-right">
-              <button class="btn" ng-click="editAssesment(assesment._id)">
-                <span class="glyphicon glyphicon-pencil"></span>
-              </button>
-            </div>
-          </div>
-
-
-              <div  ng-if="assesment.description.length < 150" >
-                <p class="bottomSpace4">{{ assesment.description }}</p>
-              </div>
-              <div  ng-hide="assesment.description.length < 150" >
-                <p class="bottomSpace4">
-                  {{ assesment.description.substring(0, 150); }} ...
-                </p>
-              </div>
+            <span class="penIco" ng-click="editAssesment(assesment._id)"></span>
             <!-- <p>{{assesment.description}}</p> -->
-            <div class="submitBtn">
-              <div class="pull-left">
-                <a href="javascript:void(0);" ng-click="assesmentReport()">View Invites</a>
-              </div>
-              <div class="pull-right">
-                <a href="javascript:void(0);" ng-click="inviteUser()">Invite</a>
-              </div>
+            <div  ng-if="assesment.description.length < 150" >
+              <p class="bottomSpace4">{{ assesment.description }}</p>
+            </div>
+            <div  ng-hide="assesment.description.length < 150" >
+              <p class="bottomSpace4">
+                {{ assesment.description.substring(0, 150); }} ...
+              </p>
+            </div>
+            <div class="twoBt clearfix">
+              <a href="javascript:void(0);" ng-click="assesmentReport()">View Invites</a>
+              <a href="javascript:void(0);" ng-click="inviteUser()">Invite</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

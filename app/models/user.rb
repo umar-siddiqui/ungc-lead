@@ -44,6 +44,7 @@ class User
   has_and_belongs_to_many :assesments
   has_many :answers, dependent: :destroy
   belongs_to :company
+  has_one :report
 
   accepts_nested_attributes_for :company
 
