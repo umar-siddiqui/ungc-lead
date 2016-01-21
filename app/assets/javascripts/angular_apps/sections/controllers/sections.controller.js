@@ -92,13 +92,14 @@
       var result = _.countBy(section.sections, function(section) {
         return section.submitted;
       });
-      if(result[true] <= no) $scope.canConclude = false;
+      $scope.canConclude = angular.isUndefined(result[true]) || result[true] < no ? false : true;
     }
 
     $scope.concluded = function(){
       checkIfSectionDone([$scope.sections[0], $scope.sections[1]]);
       checkIfRequiredNumberDone($scope.sections[2], 3);
-      if(!$scope.canConclude) return $scope.errors.push('Please attempt all questions under Readiness Assesment, Priority Function Identification and Minimum 3 subsections of Functional Assesment');
+      $scope.errors = [];
+      if(!$scope.canConclude) return $scope.errors.push('Please complete the Readiness and Functional Priority sections and at least 3 Functionals Assessments before concluding.');
       updateReportState();
     }
 

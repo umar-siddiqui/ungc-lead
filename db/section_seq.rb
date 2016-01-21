@@ -45,8 +45,7 @@ sc_seq = {
 
 Section.update_all(sequence_no: -1)
 
-
-sc_seq.each do |key, value|
+sc_seq.each do |key, _value|
   Section.where(name: key).each do |sec|
     sec.sequence_no = sc_seq[key]
     sec.save!
