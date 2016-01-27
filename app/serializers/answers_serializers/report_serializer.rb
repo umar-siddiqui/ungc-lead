@@ -22,7 +22,7 @@ module AnswersSerializers
     private
 
     def set_readiness_bf_id
-      @readiness_bf_id = BusinessFunction.where(name: 'Readiness Assesment', acronym: 'RA').first._id
+      @readiness_bf_id = BusinessFunction.find_by(acronym: 'RA')._id
     end
 
     def type_function?(section_name)
@@ -148,9 +148,9 @@ module AnswersSerializers
         next unless rslt[:current]
         temp_hash[rslt[:business_function_name]] ||= {
           priority: 0,
-          "Strategic Integration" => 0,
-          "Cultural Integration" => 0,
-          "Operational Integration" => 0
+          'Strategic Integration' => 0,
+          'Cultural Integration' => 0,
+          'Operational Integration' => 0
         }
         temp_hash[rslt[:business_function_name]][rslt[:section_name]] = rslt[:current]
         temp_hash[rslt[:business_function_name]][:priority] += rslt[:priority]
@@ -158,9 +158,9 @@ module AnswersSerializers
 
       {
         function_section_names: temp_hash.keys,
-        strategic: temp_hash.map { |_key, sect| sect["Strategic Integration"] },
-        operational: temp_hash.map { |_key, sect| sect["Operational Integration"] },
-        cultural: temp_hash.map { |_key, sect| sect["Cultural Integration"] },
+        strategic: temp_hash.map { |_key, sect| sect['Strategic Integration'] },
+        operational: temp_hash.map { |_key, sect| sect['Operational Integration'] },
+        cultural: temp_hash.map { |_key, sect| sect['Cultural Integration'] },
         priority: temp_hash.map { |_key, sect| (sect[:priority].to_f / 6).round(2) }
       }
     end
