@@ -93,8 +93,31 @@
 .rightSpace6{
   margin-right: 30px;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
 body.panel{
   font-family: 'Open Sans', sans-serif;
+}
+footer{
+  background-color: #2C5765;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+footer p{
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
 }
 header{
   background-color: #236376;
@@ -309,15 +332,7 @@ header .logOutBt a:active{
   margin: 0 25px 0 0;
 }
 
-footer{
-  background-color: #2C5765;
-  padding: 35px 0;
-}
-footer p{
-  font-size: 14px;
-  color: #ffffff;
-  text-align: center;
-}
+
 
 /*Dashboard css*/
 
