@@ -99,7 +99,7 @@
       checkIfSectionDone([$scope.sections[0], $scope.sections[1]]);
       checkIfRequiredNumberDone($scope.sections[2], 3);
       $scope.errors = [];
-      if(!$scope.canConclude) return $scope.errors.push('Please complete the Readiness and Functional Priority sections and at least 3 Functionals Assessments before concluding.');
+      if(!$scope.canConclude) return $scope.errors.push('Please complete the Readiness and Functional Priority sections and at least 3 Functional Assessments before concluding.');
       updateReportState();
     }
 
