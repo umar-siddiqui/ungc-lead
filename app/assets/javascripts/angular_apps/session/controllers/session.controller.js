@@ -3,18 +3,27 @@
 
   angular.module('ungc.session')
   .controller('SessionController', [
-    'Auth', '$scope', '$window',
+    'Auth', '$scope', '$window', '$location',
     SessionController
   ]);
 
-  function SessionController(Auth, $scope, $window) {
+  function SessionController(Auth, $scope, $window, $location) {
     // Check on load if user signed in
     Auth.currentUser().then(function(user) {
+      $scope.currentUser = user;
       $scope.isAuthenticated = true;
+      if ($window.location.pathname == '/' && user.type == 'admin') {
+        $window.location.href = '/admin';
+      };
     }, function(error) {
       // Log on console to check out what the error is.
       $window.location.href = "/authentication#/sign_in";
     });
+
+    $scope.redirectDashboard = function (){
+      var url = $scope.currentUser.type == 'admin' ? '/admin' : '/';
+      $window.location.href = url;
+    }
 
     $scope.$on('devise:login', function(event, currentUser) {
       $scope.isAuthenticated = true;
