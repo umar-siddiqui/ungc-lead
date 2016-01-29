@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="logo pull-left">
-          <a href="javascript:void(0)"> <img src="/images/treeni_logo.png"></a>
+          <a href="javascript:void(0)" ng-click="redirectDashboard()"><img src="/images/treeni_logo.png"></a>
         </div>
         <div ng-if="isAuthenticated" class="pull-right logOutBt">
           <a ng-if="isAuthenticated" href="javascript:void(0)" ng-click="logout()">logout</a>
