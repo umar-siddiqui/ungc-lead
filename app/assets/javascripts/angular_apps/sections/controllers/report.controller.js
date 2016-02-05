@@ -4,11 +4,11 @@
   angular
     .module('ungc.session')
     .controller('ReportController', [
-      '$scope', '$window', '$state', '$http', '$stateParams', '$log', '$timeout', 'highchartsNG',
+      '$scope', '$window', '$state', '$http', '$stateParams', '$log', '$timeout', 'highchartsNG', '$templateCache',
       ReportController
     ]);
 
-  function ReportController($scope, $window, $state, $http, $stateParams, $log, $timeout, highchartsNG) {
+  function ReportController($scope, $window, $state, $http, $stateParams, $log, $timeout, highchartsNG, $templateCache) {
 
     var $$ctrlScope = {};
 
@@ -86,7 +86,8 @@
       var content = $('.reportBody').html();
       content = content.replace(new RegExp('src=\"','g'), 'src=\"' + $(location).attr('origin') + '/');
       css = css.replace(/background:;|src:[ ]+;/g, '');
-      content = '<!DOCTYPE html><html><head><meta charset="utf-8" />' + css + '</head><body>' + content + '<body></html>'
+      content = content + $templateCache.get('sections/understand_report.html');
+      content = '<!DOCTYPE html><html><head><meta charset="utf-8" />' + css + '</head><body>' + content + '</body></html>'
 
       return $http({
         method: 'POST',
