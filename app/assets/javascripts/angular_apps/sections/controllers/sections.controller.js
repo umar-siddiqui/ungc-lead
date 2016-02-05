@@ -66,7 +66,7 @@
 
     $scope.fetchQuestions = function (section){
       $scope.errors = [];
-      if(section.name == 'Functional Assesment' && !checkIfSectionsDone([$scope.sections[0], $scope.sections[1]], true)){
+      if(section.name == 'Functional Assessment' && !checkIfSectionsDone([$scope.sections[0], $scope.sections[1]], true)){
         $scope.errors
               .push('Please complete the Readiness and Functional Priority sections before attempting Functional Assessment Sections');
         return $scope.$apply();
