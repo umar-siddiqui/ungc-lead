@@ -3,7 +3,7 @@
   <div ui-tree-handle class="tree-node tree-node-content clearfix"
        on-node-select>
     <a class="btn btn-warning btn-xs pull-left"
-       ng-if="node.sections && node.sections.length > 0"
+       ng-if="node.sections && node.sections.length > 0 && (node.name != 'Functional Assesment' || checkIfSectionsDoneForFS(node))"
        data-nodrag ng-click="toggle(this)">
       <span class="glyphicon"
             ng-class="{
@@ -20,7 +20,7 @@
     </a>
   </div>
   <ol ui-tree-nodes="" ng-model="node.sections" ng-class="{hidden: collapsed}">
-    <li ng-repeat="node in node.sections" ui-tree-node
+    <li ng-repeat="node in node.sections" ui-tree-node collapsed="true"
         ng-include="'nodes_renderer.html'">
     </li>
   </ol>
@@ -48,7 +48,7 @@
        style="height: 1400px; overflow-y: scroll;">
     <div ui-tree id="tree-root" data-drag-enabled="false">
       <ol ui-tree-nodes ng-model="sections">
-        <li ng-repeat="node in sections" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+        <li ng-repeat="node in sections" ui-tree-node collapsed="true" ng-include="'nodes_renderer.html'"></li>
       </ol>
     </div>
   </div>

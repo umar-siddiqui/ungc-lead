@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from Mongoid::Errors::DocumentNotFound, with: :doc_not_found
   rescue_from Mongoid::Errors::Validations, with: :doc_invalid
+  before_action :dynamic_mailer_option
+
+  def dynamic_mailer_option
+    ActionMailer::Base.default_url_options[:host] = request.host_with_port
+  end
 
   def default_serializer_options
     { root: false }
