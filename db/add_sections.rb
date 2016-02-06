@@ -41,7 +41,7 @@
 
   f1 = s1.formulas.create({ name: 'total', expression: 'ON1 + ON2' })
 
-  s2 = Section.find_by(name: 'Functional Assesment').sections.create(
+  s2 = Section.find_by(name: 'Functional Assessment').sections.create(
     name: n.name,
     description: '',
     assesment_id: Assesment.first._id,
