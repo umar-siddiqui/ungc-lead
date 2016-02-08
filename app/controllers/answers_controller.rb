@@ -30,6 +30,8 @@ class AnswersController < ApplicationController
   end
 
   def report
+    assesment_id = params[:assesment_id].present? ? params[:assesment_id] : Assesment.first.id
+
     answers = Answer
               .includes(:question, :score)
               .where(user_id: current_user._id,
