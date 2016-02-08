@@ -127,7 +127,7 @@
       }).then(successCallback, errorCallback);
 
       function successCallback(response) {
-        // loadSectionData(response.data.report);
+        $scope.loading = false;
         initHighChart(response.data.function_priorities, response.data.functional_snapshot);
       }
 
@@ -283,15 +283,12 @@
       }
     }
 
-
-
-
     init();
 
     $scope
       .$on('onSelectNode', function (event, section) {
         $scope.fetchQuestions(section)
-        fetchReport();
+        if(section.name == 'Functional Assessment') fetchReport();
       });
   }
 

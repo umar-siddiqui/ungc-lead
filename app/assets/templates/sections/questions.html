@@ -1,6 +1,8 @@
 <div class="con-tab1 right-cont">
   <h4>{{section.name}}</h4>
-  <div id="chart2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+  <div ng-if="section.name == 'Functional Assessment'" id="chart2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
   <h4 ng-bind-html="section.description"></h4>
 
   <form novalidate name="questionForm">
