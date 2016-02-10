@@ -179,7 +179,7 @@
               }
           },
           series: [{
-              name: 'Acheiving Sustainability Goals',
+              name: 'Achieving Sustainability Goals',
                color: 'rgba(65,170,196,1)',
               data: functionPriorities.achieving_sustainability_goals
           }, {
