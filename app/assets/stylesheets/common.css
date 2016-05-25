@@ -551,18 +551,15 @@ label{
 
 .graph .strategic.high {
 
-  background: rgba(230,194,135,1);
-  border: 0px ;
+  /*background: rgba(230,194,135,1);*/
 }
 .graph .strategic.medium{
 
-  background: rgba(230,194,135,.75);
-  border: 0px ;
+  /*background: rgba(230,194,135,.75);*/
 }
 .graph .strategic.low{
 
-  background: rgba(230,194,135,.5);
-  border: 0px ;
+  /*background: rgba(230,194,135,.5);*/
 }
 
 .graph .cultural {
@@ -573,20 +570,17 @@ label{
 
 .graph .cultural.high {
 
-  background: rgba(228,232,187,1);
-  border: 0px ;
+  /*background: rgba(228,232,187,1);*/
 }
 
 .graph .cultural.medium{
 
-  background: rgba(228,232,187,.75);
-  border: 0px ;
+  /*background: rgba(228,232,187,.75);*/
 }
 
 .graph .cultural.low{
 
-  background: rgba(228,232,187,.5);
-  border: 0px ;
+  /*background: rgba(228,232,187,.5);*/
 }
 
 .graph .operational {
@@ -597,20 +591,17 @@ label{
 
 .graph .operational.high {
 
-  background: rgba(104,176,167,1);
-  border: 0px ;
+  /*background: rgba(104,176,167,1);*/
 }
 
 .graph .operational.medium {
 
-  background: rgba(104,176,167,.75);
-  border: 0px ;
+  /*background: rgba(104,176,167,.75);*/
 }
 
 .graph .operational.low {
 
-  background: rgba(104,176,167,.5);
-  border: 0px ;
+  /*background: rgba(104,176,167,.5);*/
 }
 
 
