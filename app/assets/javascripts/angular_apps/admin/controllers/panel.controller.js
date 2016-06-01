@@ -36,8 +36,7 @@
           $state.go('home');
         }, function(errorResponse) {
           $scope.loading = false;
-          $scope.errors = [];
-          $scope.errors[0] = errorResponse.data.error || [];
+          $scope.errors = errorResponse.data.errors || [];
         });
       };
 
