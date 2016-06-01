@@ -10,10 +10,9 @@ class ConfirmationsController < Devise::ConfirmationsController
     with_unconfirmed_confirmable do
       do_show
     end
-    unless @confirmable.errors.empty?
-      self.resource = @confirmable
-      render 'devise/confirmations/new'
-    end
+
+    redirect_to controller: 'authentication',
+                action: 'index' if @confirmable.errors.present?
   end
 
   # PUT /resource/confirmation
