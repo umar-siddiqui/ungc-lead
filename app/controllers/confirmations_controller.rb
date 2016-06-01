@@ -11,8 +11,7 @@ class ConfirmationsController < Devise::ConfirmationsController
       do_show
     end
 
-    redirect_to controller: 'authentication',
-                action: 'index' if @confirmable.errors.present?
+    redirect_to '/authentication#/sign_in' if @confirmable.errors.present?
   end
 
   # PUT /resource/confirmation
